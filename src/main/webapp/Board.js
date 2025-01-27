@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // 게시글 데이터를 가져오는 함수
     async function fetchPosts() {
         try {
-            const response = await fetch('http://localhost:8000/api/board');
+            const response = await fetch('http://localhost:8000/api/Board');
             const data = await response.json();
             posts = data;
             renderPosts();
@@ -130,4 +130,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-  
+    // 게시글 데이터를 처음 가져오기
+    fetchPosts();
+});
