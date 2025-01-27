@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>로그인</title>
-    <link rel="stylesheet" href="common.css">
-    <link rel="stylesheet" href="login.css">
-    
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>로그인</title>
+	<link rel="stylesheet" href="common.css">
+	<link rel="stylesheet" href="login.css">
+
 </head>
+
 <body>
 	<!-- 네비게이션 -->
 	<nav class="navbar">
@@ -25,35 +27,35 @@
 			<button class="nav-button" data-path="authButton">로그인</button>
 		</div>
 	</nav>
-	
-    <div class="container">
-        <div class="login-box">
-            <h2>로그인</h2>
-            
-            <p id="error-message" class="error-message"></p> <!-- 오류 메시지 출력 -->
 
-            <form id="login-form">
-                <div class="form-group">
-                    <label for="email">이메일</label>
-                    <input type="text" id="email" name="email" placeholder="이메일을 입력하세요" required>
-                </div>
+	<div class="container">
+		<div class="login-box">
+			<h2>로그인</h2>
 
-                <div class="form-group">
-                    <label for="password">비밀번호</label>
-                    <input type="password" id="password" name="password" placeholder="비밀번호를 입력하세요" required>
-                </div>
+			<p id="error-message" class="error-message"></p> <!-- 오류 메시지 출력 -->
 
-                <button type="submit" id="login-button">로그인</button>
-            </form>
+			<form id="login-form">
+				<div class="form-group">
+					<label for="email">이메일</label>
+					<input type="text" id="email" name="email" placeholder="이메일을 입력하세요" required>
+				</div>
 
-            <p class="signup-text">
-                계정이 없으신가요? 
-                <a href="signup.html" class="signup-link">회원가입</a>
-            </p>
-        </div>
-    </div>
-    
-    <!-- Footer -->
+				<div class="form-group">
+					<label for="password">비밀번호</label>
+					<input type="password" id="password" name="password" placeholder="비밀번호를 입력하세요" required>
+				</div>
+				<br>
+				<button type="submit" id="login-button">로그인</button>
+			</form>
+
+			<p class="signup-text">
+				계정이 없으신가요?
+				<a href="signup.html" class="signup-link">회원가입</a>
+			</p>
+		</div>
+	</div>
+
+	<!-- Footer -->
 	<footer class="footer">
 		<p>© 2025 MyTeamWebsite. All rights reserveds.</p>
 		<p>
@@ -61,8 +63,9 @@
 			고객센터: 1544-1234
 		</p>
 	</footer>
-	
-    <script src="login.js"></script>
-    <script src="main.js"></script>
+
+	<script src="login.js"></script>
+	<script src="main.js"></script>
 </body>
+
 </html>
