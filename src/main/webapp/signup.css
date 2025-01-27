@@ -1,33 +1,37 @@
+/* body 설정 */
 body {
     font-family: Arial, sans-serif;
     background: linear-gradient(to right, #eef2ff, #cfd9df);
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
     height: 100vh;
     margin: 0;
 }
 
+/* 컨테이너가 네비게이션과 푸터 사이에 위치 */
 .container {
-    width: 100%;
-    max-width: 400px;
+    flex: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 20px 60px; /* 네비게이션과 푸터 여백 조정 */
 }
 
+/* 회원가입 박스 */
 .signup-box {
     background: white;
-    width: 350px;
-    height: 400px;
-    padding: 30px;
+    width: 400px;
+    max-width: 90%;
+    padding: 40px;
+    
+    margin-top: 100px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
-h2 {
-    margin-bottom: 20px;
-    color: #333;
-}
-
+/* 입력 폼 스타일 */
 .form-group {
     margin-bottom: 15px;
     text-align: left;
@@ -41,7 +45,7 @@ label {
 
 input, select {
     width: 100%;
-    padding: 8px;
+    padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
@@ -49,7 +53,7 @@ input, select {
 
 button {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     background-color: #4a90e2;
     color: white;
     border: none;
