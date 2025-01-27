@@ -5,27 +5,54 @@ body {
     padding: 0;
 }
 
+/* 페이지 레이아웃 */
 #board-container {
-    background-color: #f9fafb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    margin-top: 160px;
 }
 
+/* 제목 */
 h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: #333;
+    margin-bottom: 1.5rem;
+}
+
+/* 검색창 */
+input, select, button {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 4px;
+}
+
+input:focus, select:focus, button:focus {
+    outline: none;
+    border-color: #3b82f6;
 }
 
 button {
     cursor: pointer;
 }
 
-#search-query {
-    width: 300px;
+button:hover {
+    background-color: #1d4ed8;
+}
+
+/* 게시글 목록 */
+#posts-list {
+    width: 100%;
+    max-width: 1000px;
 }
 
 .post-item {
     display: flex;
-    border-bottom: 1px solid #e5e7eb;
+    align-items: center;
     padding: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+    cursor: pointer;
     transition: background-color 0.3s;
 }
 
@@ -55,7 +82,55 @@ button {
     color: #6b7280;
 }
 
-button:disabled {
+.pagination-button {
+    padding: 0.5rem 1rem;
+    background-color: #e5e7eb;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.pagination-button:hover {
     background-color: #d1d5db;
-    cursor: not-allowed;
+}
+
+/* 글쓰기 버튼 */
+#write-post-button {
+    background-color: #3b82f6;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#write-post-button:hover {
+    background-color: #2563eb;
+}
+
+/* 페이지네이션 버튼들 */
+#pagination-buttons {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+#pagination-buttons .page-button {
+    padding: 0.5rem;
+    background-color: #e5e7eb;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#pagination-buttons .page-button:hover {
+    background-color: #d1d5db;
+}
+
+/* 모바일 스타일 */
+@media (max-width: 768px) {
+    .post-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
