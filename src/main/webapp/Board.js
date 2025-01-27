@@ -1,116 +1,105 @@
-const postsPerPage = 10;  // 한 페이지당 10개씩 표시
-let posts = [];
-let filteredPosts = [];
-let currentPage = 1;
+document.addEventListener('DOMContentLoaded', () => {
+	const postsList = document.getElementById('posts-list');
+	const paginationButtons = document.getElementById('pagination-buttons');
+	const searchQueryInput = document.getElementById('search-query');
+	const searchFilterSelect = document.getElementById('search-filter');
+	const writePostButton = document.getElementById('write-post-button');
 
-// 초기 게시글 데이터를 가져오는 함수
-async function fetchPosts() {
-    try {
-        const response = await fetch('http://localhost:8000/api/board');
-        const data = await response.json();
-        posts = data;
-        filteredPosts = posts;
-        renderPosts();
-        renderPaginationButtons();
-    } catch (error) {
-        console.error('Error fetching posts:', error);
-    }
-}
+	const postsPerPage = 10;
+	let posts = [];
+	let filteredPosts = [];
+	let currentPage = 1;
 
-// 게시글 목록을 렌더링하는 함수
-function renderPosts() {
-    const postsList = document.getElementById('posts-list');
-    postsList.innerHTML = '';  // 기존 내용 제거
+	const fetchPosts = async () => {
+		try {
+			const response = await fetch('http://localhost:8000/api/board');
+			const data = await response.json();
+			posts = data;
+			filteredPosts = posts;
+			renderPosts();
+			renderPaginationButtons();
+		} catch (error) {
+			console.error('Error fetching posts:', error);
+		}
+	};
 
-    const startIndex = (currentPage - 1) * postsPerPage;
-    const endIndex = startIndex + postsPerPage;
-    const paginatedPosts = filteredPosts.slice(startIndex, endIndex);
+	const renderPosts = () => {
+		postsList.innerHTML = '';
+		const startIndex = (currentPage - 1) * postsPerPage;
+		const paginatedPosts = filteredPosts.slice(startIndex, startIndex + postsPerPage);
 
-    paginatedPosts.forEach((post) => {
-        const postElement = document.createElement('div');
-        postElement.classList.add('post-item');
-        postElement.innerHTML = `
-            <img src="${post.thumbnail}" alt="Thumbnail" class="post-thumbnail" />
-            <div class="post-info">
-                <p class="post-title">${post.post_title}</p>
-                <div class="post-meta">
-                    <span>👤 ${post.email}</span>
-                    <span>👁 ${post.post_views}</span>
-                    <span>👍 ${post.post_likes}</span>
-                    <span>📅 ${new Date(post.create_dt).toLocaleString('ko-KR', {
-                        year: 'numeric',
-                        month: 'long',
-                        day: 'numeric',
-                        hour: '2-digit',
-                        minute: '2-digit'
-                    })}</span>
+		paginatedPosts.forEach(post => {
+			const postElement = document.createElement('div');
+			postElement.classList.add('post');
+			postElement.innerHTML = `
+                <div>
+                    <h2>${post.post_title}</h2>
+                    <p>작성자: ${post.email}</p>
+                    <p>조회수: ${post.post_views}</p>
+                    <p>작성일: ${new Date(post.create_dt).toLocaleString()}</p>
                 </div>
-            </div>
-        `;
-        postElement.onclick = () => handlePostClick(post.post_idx);
-        postsList.appendChild(postElement);
-    });
-}
+            `;
+			postsList.appendChild(postElement);
+		});
+	};
 
-// 페이지네이션 버튼을 렌더링하는 함수
-function renderPaginationButtons() {
-    const paginationButtons = document.getElementById('pagination-buttons');
-    paginationButtons.innerHTML = '';  // 기존 내용 제거
+	const renderPaginationButtons = () => {
+		paginationButtons.innerHTML = '';
+		const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
 
-    const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
+		for (let i = 1; i <= totalPages; i++) {
+			const button = document.createElement('button');
+			button.textContent = i;
+			button.classList.add('pagination-button');
+			button.addEventListener('click', () => {
+				currentPage = i;
+				renderPosts();
+			});
+			paginationButtons.appendChild(button);
+		}
+	};
 
-    const prevButton = document.createElement('button');
-    prevButton.classList.add('pagination-button');
-    prevButton.innerText = '이전';
-    prevButton.disabled = currentPage === 1;
-    prevButton.onclick = () => {
-        if (currentPage > 1) {
-            currentPage--;
-            renderPosts();
-            renderPaginationButtons();
-        }
-    };
-    paginationButtons.appendChild(prevButton);
+	const handleSearch = () => {
+		const searchQuery = searchQueryInput.value.toLowerCase();
+		const searchFilter = searchFilterSelect.value;
 
-    for (let i = 1; i <= totalPages; i++) {
-        const pageButton = document.createElement('button');
-        pageButton.classList.add('pagination-button');
-        pageButton.innerText = i;
-        pageButton.onclick = () => {
-            currentPage = i;
-            renderPosts();
-            renderPaginationButtons();
-        };
-        paginationButtons.appendChild(pageButton);
-    }
+		filteredPosts = posts.filter(post => {
+			const title = post.post_title.toLowerCase();
+			const content = post.post_content.toLowerCase();
+			const author = post.email.toLowerCase();
 
-    const nextButton = document.createElement('button');
-    nextButton.classList.add('pagination-button');
-    nextButton.innerText = '다음';
-    nextButton.disabled = currentPage === totalPages;
-    nextButton.onclick = () => {
-        if (currentPage < totalPages) {
-            currentPage++;
-            renderPosts();
-            renderPaginationButtons();
-        }
-    };
-    paginationButtons.appendChild(nextButton);
-}
+			switch (searchFilter) {
+				case '제목':
+					return title.includes(searchQuery);
+				case '내용':
+					return content.includes(searchQuery);
+				case '제목+내용':
+					return title.includes(searchQuery) || content.includes(searchQuery);
+				case '작성자':
+					return author.includes(searchQuery);
+				default:
+					return true;
+			}
+		});
 
-// 게시글 클릭 시 상세 페이지로 이동하는 함수
-function handlePostClick(postIdx) {
-    window.location.href = `/post/${postIdx}`;
-}
+		currentPage = 1;
+		renderPosts();
+		renderPaginationButtons();
+	};
 
-// 검색 처리 함수
-function handleSearch() {
-    const searchQuery = document.getElementById('search-query').value.toLowerCase();
-    const searchFilter = document.getElementById('search-filter').value;
+	const handleWritePostButtonClick = () => {
+		const isLoggedIn = localStorage.getItem('token');
+		if (!isLoggedIn) {
+			alert('로그인이 필요한 서비스입니다.');
+			window.location.href = '/login.html';
+		} else {
+			window.location.href = '/dopost.html';
+		}
+	};
 
-    filteredPosts = posts.filter((post) => {
-        const title = post.post_title.toLowerCase();
-        const content = post.post_content.toLowerCase();
-        const author = post.email.toLowerCase();
+	searchQueryInput.addEventListener('input', handleSearch);
+	searchFilterSelect.addEventListener('change', handleSearch);
+	writePostButton.addEventListener('click', handleWritePostButtonClick);
 
-        switch (search
+	fetchPosts();
+});
