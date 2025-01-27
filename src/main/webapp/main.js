@@ -18,7 +18,7 @@ const signupButton = document.getElementById("signupButton");
 if (signupButton) {
     signupButton.addEventListener("click", () => {
         alert("회원가입 페이지로 이동합니다.");
-        window.location.href = "/signup";
+        window.location.href = "signup.html";
     });
 }
 
