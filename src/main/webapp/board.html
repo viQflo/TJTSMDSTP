@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>커뮤니티 게시판</title>
+    <link rel="stylesheet" href="board.css">
+    <link rel="stylesheet" href="common.css">
+    <script src="board.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>커뮤니티 게시판</h1>
+
+        <!-- 검색창 -->
+        <div class="search-container">
+            <select id="search-filter">
+                <option value="제목">제목</option>
+                <option value="내용">내용</option>
+                <option value="제목+내용">제목+내용</option>
+                <option value="작성자">작성자</option>
+            </select>
+            <input id="search-query" type="text" placeholder="검색어를 입력하세요">
+            <button id="search-button">검색</button>
+        </div>
+
+        <!-- 게시글 목록 -->
+        <div id="posts-list"></div>
+
+        <!-- 페이지네이션 -->
+        <div id="pagination" class="pagination"></div>
+
+        <!-- 글쓰기 버튼 -->
+        <button id="write-button">글쓰기</button>
+    </div>
+</body>
+</html>
