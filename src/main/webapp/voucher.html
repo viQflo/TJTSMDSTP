@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>바우처 사이트</title>
+<link rel="stylesheet" href="common.css">
+<link rel="stylesheet" href="voucher.css">
+</head>
+<body>
+	<!-- 네비게이션 -->
+	<nav class="navbar">
+		<div class="logo" id="homeButton">
+			<img src="vite.svg" alt="Logo" class="logo-img">
+			<div>
+				<p class="logo-text">누구나</p>
+				<p class="sub-text">Look+na</p>
+			</div>
+		</div>
+		<div class="nav-links">
+			<button class="nav-button" data-path="voucher.html">바우처 정보</button>
+			<button class="nav-button" data-path="counsel">상담 연결서비스</button>
+			<button class="nav-button" data-path="Board">커뮤니티</button>
+			<button class="nav-button" data-path="authButton">로그인</button>
+		</div>
+	</nav>
+
+	<main class="container">
+		<!-- 검색창 -->
+		<div class="search-bar">
+			<input type="text" id="query" placeholder="원하는 바우처 정보를 입력하세요.">
+			<button id="searchButton">🔍</button>
+		</div>
+
+		<div class="filters">
+			<select id="category">
+				<option value="분류체계">분류체계</option>
+				<option value="공무원">공무원(소방,경찰 등)</option>
+				<option value="장애인">장애인</option>
+				<option value="고령">고령</option>
+				<option value="학생">학생</option>
+				<option value="학부모">학부모</option>
+			</select> <select id="serviceType">
+				<option value="서비스유형">서비스유형</option>
+				<option value="상담">상담</option>
+				<option value="지원금">지원금</option>
+			</select>
+			<button class="reset-button" id="resetButton">⭯</button>
+		</div>
+	
+		<!-- 포트폴리오 -->
+		<section class="portfolio">
+			<h2>바우처 사이트</h2>
+			<div class="portfolio-grid" id="portfolioGrid"></div>
+		</section>
+	</main>
+
+	<!-- 푸터 -->
+	<footer class="footer">
+		<p>© 2025 MyTeamWebsite. All rights reserved.</p>
+		<p>
+			이메일: <a href="mailto:wayawaya@smhrd.com">wayawaya@smhrd.com</a> |
+			고객센터: 1544-1234
+		</p>
+	</footer>
+
+	<script src="voucher.js"></script>
+	<script src="main.js"></script>
+</body>
+</html>

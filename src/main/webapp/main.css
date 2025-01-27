@@ -1,0 +1,67 @@
+/* 메인 컨텐츠 */
+.main-content {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	background: linear-gradient(to right, #ffe4e1, #ffdab9, #add8e6);
+	padding: 80px 20px;
+	margin-top: 660px; /* 헤더 높이 반영 */
+}
+
+.button-container button {
+	padding: 10px 20px;
+	margin: 10px;
+	background-color: #007bff;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.button-container button:hover {
+	background-color: #0056b3;
+}
+
+.profile-container {
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+	flex-wrap: wrap;
+	margin-top: 30px;
+}
+
+.profile-container .profile {
+	text-decoration: none; /* 밑줄 제거 */
+	color: black; /* 글씨를 검은색으로 설정 */
+	font-weight: bold; /* 글씨를 볼드체로 설정 */
+}
+
+.profile-container .profile:hover {
+	text-decoration: none; /* 호버 시에도 밑줄 제거 */
+	color: black; /* 호버 시에도 검은색 유지 */
+}
+
+.profile img {
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	object-fit: cover;
+	margin-bottom: 10px;
+}
+
+/* 동영상 스타일 */
+.video-container {
+	width: 100%;
+	height: 450px;
+	overflow: hidden;
+	position: relative;
+}
+
+.video-container video {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
