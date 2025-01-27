@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 /* 기본 스타일 */
+=======
+
+/* 湲곕낯 �ㅽ���� */
+>>>>>>> branch 'master' of https://github.com/viQflo/TJTSMDSTP
 body {
     font-family: Arial, sans-serif;
     background: linear-gradient(to right, #eef2ff, #cfd9df);
@@ -60,7 +65,7 @@ button:hover {
     background-color: #357ab7;
 }
 
-/* 오류 메시지 스타일 */
+/* �ㅻ� 硫���吏� �ㅽ���� */
 .error-message {
     color: red;
     font-weight: bold;
