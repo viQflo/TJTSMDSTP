@@ -4,10 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>로그인</title>
+    <link rel="stylesheet" href="common.css">
     <link rel="stylesheet" href="login.css">
-    <script src="login.js" defer></script>
+    
 </head>
 <body>
+	<!-- 네비게이션 -->
+	<nav class="navbar">
+		<div class="logo" id="homeButton">
+			<img src="vite.svg" alt="Logo" class="logo-img">
+			<div>
+				<p class="logo-text">누구나</p>
+				<p class="sub-text">Look+na</p>
+			</div>
+		</div>
+		<div class="nav-links">
+			<button class="nav-button" data-path="voucher.html">바우처 정보</button>
+			<button class="nav-button" data-path="counsel">상담 연결서비스</button>
+			<button class="nav-button" data-path="Board.html">커뮤니티</button>
+			<button class="nav-button" data-path="authButton">로그인</button>
+		</div>
+	</nav>
+	
     <div class="container">
         <div class="login-box">
             <h2>로그인</h2>
@@ -34,5 +52,17 @@
             </p>
         </div>
     </div>
+    
+    <!-- Footer -->
+	<footer class="footer">
+		<p>© 2025 MyTeamWebsite. All rights reserveds.</p>
+		<p>
+			이메일: <a href="mailto:wayawaya@smhrd.com">wayawaya@smhrd.com</a> |
+			고객센터: 1544-1234
+		</p>
+	</footer>
+	
+    <script src="login.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>

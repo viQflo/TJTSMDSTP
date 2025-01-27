@@ -24,52 +24,52 @@
          <button class="nav-button" data-path="authButton">로그인</button>
       </div>
    </nav>
-	<!-- 커뮤니티 게시판 페이지 -->
-	<div id="board-container"
-		class="min-h-screen flex flex-col items-center justify-center bg-white p-6">
-		<h1 class="text-3xl font-bold text-center text-gray-800 mb-6">커뮤니티
-			게시판</h1>
+   <!-- 커뮤니티 게시판 페이지 -->
+   <div id="board-container"
+      class="min-h-screen flex flex-col items-center justify-center bg-white p-6">
+      <h1 class="text-3xl font-bold text-center text-gray-800 mb-6">커뮤니티
+         게시판</h1>
 
-		<!-- 검색창 -->
-		<div class="flex justify-center items-center mb-8 gap-2">
-			<select id="search-filter"
-				class="border border-gray-300 rounded-l-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400">
-				<option value="제목">제목</option>
-				<option value="내용">내용</option>
-				<option value="제목+내용">제목+내용</option>
-				<option value="작성자">작성자</option>
-			</select> <input id="search-query" type="text" placeholder="검색어를 입력하세요"
-				class="border border-gray-300 px-4 py-2 w-80 focus:outline-none focus:ring-2 focus:ring-blue-400" />
-			<button id="search-button"
-				class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">검색</button>
-		</div>
+      <!-- 검색창 -->
+      <div class="flex justify-center items-center mb-8 gap-2">
+         <select id="search-filter"
+            class="border border-gray-300 rounded-l-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400">
+            <option value="제목">제목</option>
+            <option value="내용">내용</option>
+            <option value="제목+내용">제목+내용</option>
+            <option value="작성자">작성자</option>
+         </select> <input id="search-query" type="text" placeholder="검색어를 입력하세요"
+            class="border border-gray-300 px-4 py-2 w-80 focus:outline-none focus:ring-2 focus:ring-blue-400" />
+         <button id="search-button"
+            class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">검색</button>
+      </div>
 
-		<!-- 게시글 목록 -->
-		<div id="posts-list" class="w-full max-w-4xl">
-			<!-- 게시글들이 여기에 동적으로 추가됩니다. -->
-		</div>
+      <!-- 게시글 목록 -->
+      <div id="posts-list" class="w-full max-w-4xl">
+         <!-- 게시글들이 여기에 동적으로 추가됩니다. -->
+      </div>
 
-		<!-- 페이지네이션 버튼 -->
-		<div id="pagination-buttons"
-			class="flex justify-center space-x-2 mt-6">
-			<!-- 페이지네이션 버튼들이 여기에 동적으로 추가됩니다. -->
-		</div>
+      <!-- 페이지네이션 버튼 -->
+      <div id="pagination-buttons"
+         class="flex justify-center space-x-2 mt-6">
+         <!-- 페이지네이션 버튼들이 여기에 동적으로 추가됩니다. -->
+      </div>
 
-		<!-- 글쓰기 버튼 -->
-		<button id="write-post-button"
-			class="bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-600 mt-4">
-			글쓰기</button>
-	</div>
-	<!-- Footer -->
-	<footer class="footer">
-		<p>© 2025 MyTeamWebsite. All rights reserveds.</p>
-		<p>
-			이메일: <a href="mailto:wayawaya@smhrd.com">wayawaya@smhrd.com</a> |
-			고객센터: 1544-1234
-		</p>
-	</footer>
+      <!-- 글쓰기 버튼 -->
+      <button id="write-post-button"
+         class="bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-600 mt-4">
+         글쓰기</button>
+   </div>
+   <!-- Footer -->
+   <footer class="footer">
+      <p>© 2025 MyTeamWebsite. All rights reserveds.</p>
+      <p>
+         이메일: <a href="mailto:wayawaya@smhrd.com">wayawaya@smhrd.com</a> |
+         고객센터: 1544-1234
+      </p>
+   </footer>
 
-	<script src="board.js"></script>
-	<script src="main.js"></script>
+   <script src="Board.js"></script>
+   <script src="main.js"></script>
 </body>
 </html>
