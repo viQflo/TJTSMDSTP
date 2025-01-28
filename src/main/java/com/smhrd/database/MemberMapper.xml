@@ -7,7 +7,7 @@
 
 
 <mapper namespace="com.smhrd.model.MemberDAO">
-	<insert id="join" parameterType="MemberDTO">
+	<insert id="join" parameterType="com.smhrd.model.MemberDTO">
 		INSERT INTO TB_USER (
 		EMAIL,
 		PW,
@@ -19,8 +19,7 @@
 		PHONE,
 		USER_TYPE,
 		CREATE_DT
-		)
-		VALUES (
+		) VALUES (
 		#{email},
 		#{pw},
 		#{name},
@@ -30,7 +29,7 @@
 		#{job},
 		#{phone},
 		#{userType},
-		SYSTIMESTAMP -- CREATE_DT는 현재 타임스탬프
+		SYSTIMESTAMP
 		)
 	</insert>
 

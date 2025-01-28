@@ -1,3 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.smhrd.database.mybatis-config"></mapper>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- 환경설정 (계정, driver, url) -->
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver"
+					value="oracle.jdbc.driver.OracleDriver" />
+				<property name="url"
+					value="jdbc:oracle:thin:@project-db-cgi.smhrd.com:1524:xe" />
+				<property name="username" value="mp_24K_bigdata28_p2_1" />
+				<property name="password" value="smhrd1" />
+			</dataSource>
+		</environment>
+	</environments>
+
+	<!-- SQL문들을 정의해주는 MAPPER.XML 경로 지정 -->
+	<mappers>
+		<mapper resource="com/smhrd/database/MemberMapper.xml" />
+	</mappers>
+</configuration>

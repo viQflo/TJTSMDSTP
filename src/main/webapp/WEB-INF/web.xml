@@ -6,4 +6,12 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd">
 	<display-name>Archetype Created Web Application</display-name>
+	<filter>
+		<filter-name>CORSFilter</filter-name>
+		<filter-class>com.smhrd.controller.CORSFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>CORSFilter</filter-name>
+		<url-pattern>/*</url-pattern> <!-- 모든 요청에 대해 적용 -->
+	</filter-mapping>
 </web-app>

@@ -1,28 +1,27 @@
 package com.smhrd.database;
 
-import java.io.IOException;
-import java.io.Reader;
-
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-public class SqlSessionManager { 
-   public static SqlSessionFactory sqlSessionFactory;
+import java.io.IOException;
+import java.io.InputStream;
 
-   static {
-      String resource = "com/smhrd/database/mybatis-config.xml";
-      Reader reader;
-      try {
-         reader = Resources.getResourceAsReader(resource);
+public class SqlSessionManager {
 
-         sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
-      } catch (IOException e) {
-         e.printStackTrace();
-      }
-   }
+	private static SqlSessionFactory sqlSessionFactory;
 
-   public static SqlSessionFactory getSqlSession() {
-      return sqlSessionFactory;
-   }
+	static {
+		try {
+			String resource = "mybatis-config.xml"; // MyBatis 설정 파일 경로
+			InputStream inputStream = Resources.getResourceAsStream(resource);
+			sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static SqlSessionFactory getSqlSession() {
+		return sqlSessionFactory;
+	}
 }
