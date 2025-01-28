@@ -33,9 +33,9 @@ main {
 	border-radius: 50px;
 	padding: 10px 20px;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-	margin-top: 160px; /* 헤더와 분리되는 여백 */
-	max-width: 900px; /* 기존 700px → 900px로 변경 */
-	width: 90%; /* 화면이 작아질 때 유연하게 조정됨 */
+	margin-top: 160px; 
+	max-width: 900px; 
+	width: 90%; 
 	margin-left: auto;
 	margin-right: auto;
 }
