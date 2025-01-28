@@ -111,9 +111,4 @@ html, body {
     text-decoration: underline;
 }
 
-/* 화면이 클 경우 푸터를 항상 하단에 유지 */
-@media (min-height: 700px) {
-    .footer {
-        position: absolute;
-    }
-}
+

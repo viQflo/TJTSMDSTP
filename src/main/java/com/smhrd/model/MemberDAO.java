@@ -15,5 +15,12 @@ public class MemberDAO {
 			return result;
 		}
 	}
+	
+	// 로그인 메서드
+    public MemberDTO login(MemberDTO memberDTO) {
+        try (SqlSession session = sqlSessionFactory.openSession(true)) {
+            return session.selectOne("login", memberDTO);
+        }
+    }
 
 }
