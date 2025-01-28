@@ -32,6 +32,22 @@
       SYSTIMESTAMP
       )
    </insert>
+	<!-- 로그인 SQL -->
+	<select id="login" parameterType="com.smhrd.model.MemberDTO"
+		resultType="com.smhrd.model.MemberDTO">
+		SELECT
+		EMAIL,
+		NAME,
+		NICK,
+		BIRTHDATE,
+		GENDER,
+		JOB,
+		PHONE,
+		USER_TYPE,
+		CREATE_DT
+		FROM TB_USER
+		WHERE EMAIL = #{email} AND PW = #{pw}
+	</select>
 
 
 
