@@ -1,6 +1,7 @@
 package com.smhrd.controller;
 
 import java.io.IOException;
+import java.util.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,10 +13,16 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.smhrd.model.MemberDAO;
 import com.smhrd.model.MemberDTO;
 
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
+
 @WebServlet("/api/login")
 public class LoginController extends HttpServlet {
 
 	private final MemberDAO memberDAO = new MemberDAO();
+
+	// JWT 비밀 키
+	private static final String SECRET_KEY = "mySecretKey";
 
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -41,11 +48,17 @@ public class LoginController extends HttpServlet {
 		try {
 			// 사용자 인증 로직 처리
 			MemberDTO result = memberDAO.login(memberDTO);
-
 			if (result != null) {
+				// 로그인 성공 시 JWT 생성
+				String jwtToken = Jwts.builder().setSubject(result.getEmail()) // 사용자 이메일을 Subject로 설정
+						.setIssuedAt(new Date()) // 발급 시간
+						.setExpiration(new Date(System.currentTimeMillis() + 3600000)) // 만료 시간 (1시간)
+						.signWith(SignatureAlgorithm.HS256, SECRET_KEY) // 서명 (비밀 키 사용)
+						.compact();
+
+				// JWT 토큰을 클라이언트에 반환
 				response.setStatus(HttpServletResponse.SC_OK);
-				String token = generateToken(result); // JWT 토큰 생성
-				response.getWriter().write("{\"token\":\"" + token + "\"}");
+				response.getWriter().write("{\"message\":\"로그인 성공\", \"token\":\"" + jwtToken + "\"}");
 			} else {
 				response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
 				response.getWriter().write("{\"message\":\"이메일 또는 비밀번호가 잘못되었습니다.\"}");
@@ -53,12 +66,7 @@ public class LoginController extends HttpServlet {
 		} catch (Exception e) {
 			e.printStackTrace();
 			response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
-			response.getWriter().write("{\"message\":\"서버 내부 오류가 발생했습니다.\"}");
+			response.getWriter().write("{\"message\":\"서버 오류가 발생했습니다.\"}");
 		}
-	}
-
-	// JWT 토큰 생성 메서드 (간단한 예시)
-	private String generateToken(MemberDTO member) {
-		return member.getEmail() + "_token"; // 실제로는 JWT 라이브러리를 사용해 토큰 생성
 	}
 }

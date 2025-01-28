@@ -21,7 +21,7 @@ public class CORSFilter implements Filter {
 		HttpServletResponse httpResponse = (HttpServletResponse) response;
 
 		// CORS 헤더 설정
-		httpResponse.setHeader("Access-Control-Allow-Origin", "*"); // 모든 도메인 허용
+		httpResponse.setHeader("Access-Control-Allow-Origin", "http://localhost:8081"); // 모든 도메인 허용
 		httpResponse.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
 		httpResponse.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
 		httpResponse.setHeader("Access-Control-Allow-Credentials", "true");
