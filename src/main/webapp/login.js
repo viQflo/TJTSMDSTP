@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const loginForm = document.getElementById("login-form");
     const errorMessage = document.getElementById("error-message");
-    const API_BASE_URL = "http://127.0.0.1:8000/api";
+    const API_BASE_URL = "http://localhost:8081/TJTSMDS/api";
 
     loginForm.addEventListener("submit", async function (event) {
         event.preventDefault();
