@@ -7,31 +7,31 @@
 
 
 <mapper namespace="com.smhrd.model.MemberDAO">
-	<insert id="join" parameterType="com.smhrd.model.MemberDTO">
-		INSERT INTO TB_USER (
-		EMAIL,
-		PW,
-		NAME,
-		NICK,
-		BIRTHDATE,
-		GENDER,
-		JOB,
-		PHONE,
-		USER_TYPE,
-		CREATE_DT
-		) VALUES (
-		#{email},
-		#{pw},
-		#{name},
-		#{nick},
-		#{birthdate},
-		#{gender},
-		#{job},
-		#{phone},
-		#{userType},
-		SYSTIMESTAMP
-		)
-	</insert>
+   <insert id="join" parameterType="com.smhrd.model.MemberDTO">
+      INSERT INTO TB_USER (
+      EMAIL,
+      PW,
+      NAME,
+      NICK,
+      BIRTHDATE,
+      GENDER,
+      JOB,
+      PHONE,
+      USER_TYPE,
+      CREATE_DT
+      ) VALUES (
+      #{email},
+      #{pw},
+      #{name},
+      #{nick},
+      #{birthdate},
+      #{gender},
+      #{job},
+      #{phone},
+      #{userType},
+      SYSTIMESTAMP
+      )
+   </insert>
 	<!-- 로그인 SQL -->
 	<select id="login" parameterType="com.smhrd.model.MemberDTO"
 		resultType="com.smhrd.model.MemberDTO">

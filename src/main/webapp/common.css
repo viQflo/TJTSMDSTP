@@ -97,7 +97,7 @@ html, body {
     padding: 15px 0;
     border-top: 1px solid #ccc;
     width: 100%;
-    position: relative; /* 기본적으로 문서 흐름 유지 */
+    position: fixed; /* 기본적으로 문서 흐름 유지 */
     bottom: 0;
 }
 
@@ -111,4 +111,7 @@ html, body {
     text-decoration: underline;
 }
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> branch 'master' of https://github.com/viQflo/TJTSMDSTP
