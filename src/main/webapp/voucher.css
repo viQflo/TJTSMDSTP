@@ -1,14 +1,11 @@
 @font-face {
-    font-family: "HancomUljuCheonjeonriPetroglyph";
+    font-family: "HANCOMULJUCHEONJEONRIPETROGLYPH";
     src: url("C:/WINDOWS/FONTS/HANCOMULJUCHEONJEONRIPETROGLYPH.TTF") format("truetype");
 }
 
-body {
-    font-family: "MyCustomFont", sans-serif;
-}
 /* 공통 스타일 */
 body {
-	font-family: Arial, sans-serif;
+	font-family: "HancomUljuCheonjeonriPetroglyph", sans-serif;
 	background-color: #f9f9f9;
 	margin: 0;
 	padding: 0;
@@ -37,7 +34,8 @@ main {
 	padding: 10px 20px;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 	margin-top: 160px; /* 헤더와 분리되는 여백 */
-	max-width: 700px;
+	max-width: 900px; /* 기존 700px → 900px로 변경 */
+	width: 90%; /* 화면이 작아질 때 유연하게 조정됨 */
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -46,8 +44,9 @@ main {
 	flex: 1;
 	border: none;
 	outline: none;
-	padding: 10px;
+	padding: 12px;
 	font-size: 1rem;
+	width: 100%;
 }
 
 .search-bar button {
