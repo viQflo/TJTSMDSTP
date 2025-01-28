@@ -1,3 +1,11 @@
+@font-face {
+    font-family: "HancomUljuCheonjeonriPetroglyph";
+    src: url("C:/WINDOWS/FONTS/HANCOMULJUCHEONJEONRIPETROGLYPH.TTF") format("truetype");
+}
+
+body {
+    font-family: "MyCustomFont", sans-serif;
+}
 body {
     font-family: Arial, sans-serif;
     background: linear-gradient(to right, #eef2ff, #cfd9df);
