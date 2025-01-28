@@ -1,10 +1,74 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
-<meta charset="EUC-KR">
-<title>Insert title here</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나의 상담사 찾기</title>
+    <link rel="stylesheet" href="counsel.html.css">
+    <link rel="stylesheet" href="common.css">
 </head>
 <body>
+	<!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo" id="homeButton">
+            <img src="vite.svg" alt="Logo" class="logo-img">
+            <div>
+                <p class="logo-text">누구나</p>
+                <p class="sub-text">Look+na</p>
+            </div>
+        </div>
+        <div class="nav-links">
+            <button class="nav-button" data-path="voucher.html">바우처 정보</button>
+            <button class="nav-button" data-path="counsel.html">상담 연결서비스</button>
+            <button class="nav-button" data-path="Board.html">커뮤니티</button>
+            <button class="nav-button" data-path="authButton">로그인</button>
+        </div>
+    </nav>
+    
 
+    <div class="consultant-container">
+        <!-- 🔹 나의 상담사 찾기 -->
+        <div class="section-title region-title">
+            <span class="icon">📍</span> 나의 상담사 찾기
+        </div>
+
+        <div class="region-list" id="regionList">
+            <!-- 지역 체크박스가 JavaScript에서 동적으로 추가됨 -->
+        </div>
+
+        <div class="toggle-button">
+            <button id="toggleRegionButton">지역 목록 닫기 -</button>
+        </div>
+
+        <!-- 🔹 나의 증상 선택하기 -->
+        <div class="section-title symptoms-title">
+            <span class="icon">🧠</span> 나의 증상 선택하기
+        </div>
+
+        <div class="symptom-list" id="symptomList">
+            <!-- 증상 체크박스가 JavaScript에서 동적으로 추가됨 -->
+        </div>
+
+        <div class="toggle-button">
+            <button id="toggleSymptomsButton">증상 목록 닫기 -</button>
+        </div>
+
+        <!-- 🔹 상담사 찾기 버튼 -->
+        <div class="find-button-container">
+            <button class="find-button">상담사 찾기 →</button>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2025 MyTeamWebsite. All rights reserved.</p>
+        <p>
+            이메일: <a href="mailto:wayawaya@smhrd.com">wayawaya@smhrd.com</a> |
+            고객센터: 1544-1234
+        </p>
+    </footer> 
+
+    <script src="counsel.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>

@@ -1,1 +1,106 @@
-@charset "EUC-KR";
+/* 🔹 기본 스타일 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* 🔹 컨테이너 */
+.consultant-container {
+    width: 100%;
+    max-width: 700px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 🔹 섹션 제목 */
+.section-title {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 8px;
+    color: white;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.icon {
+    margin-right: 8px;
+}
+
+/* 🔹 지역 및 증상 선택 */
+.region-title {
+    background: linear-gradient(to right, #2563eb, #4f46e5);
+}
+
+.symptoms-title {
+    background: linear-gradient(to right, #16a34a, #0d9488);
+}
+
+/* 🔹 리스트 스타일 */
+.region-list, .symptom-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+}
+
+/* 🔹 체크박스 */
+input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+}
+
+/* 🔹 토글 버튼 */
+.toggle-button {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.toggle-button button {
+    background: none;
+    border: none;
+    color: #2563eb;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.toggle-button button:hover {
+    text-decoration: underline;
+}
+
+/* 🔹 상담사 찾기 버튼 */
+.find-button-container {
+    text-align: right;
+    margin-top: 20px;
+}
+
+.find-button {
+    background: linear-gradient(to right, #2563eb, #0d9488);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.find-button:hover {
+    opacity: 0.8;
+}
