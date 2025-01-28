@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <<<<<<< HEAD
     const fetchPosts = async () => {
         try {
-            const response = await fetch('http://localhost:8000/api/board');
+            const response = await fetch('http://localhost:8001/api/board');
             const data = await response.json();
             posts = data;
             filteredPosts = posts;
