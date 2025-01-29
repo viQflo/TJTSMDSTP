@@ -1,0 +1,162 @@
+/* 네비게이션 바 스타일 */
+.navbar {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.logo-img {
+    height: 40px;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.sub-text {
+    font-size: 0.9rem;
+    color: #888;
+    margin-left: 5px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-button {
+    background-color: transparent;
+    border: none;
+    color: #333;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.nav-button.active {
+    color: #007bff;
+}
+
+/* 메인 컨테이너 */
+body {
+    font-family: Arial, sans-serif;
+    background: #f9f9f9;
+    margin: 0;
+    padding-top: 80px;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 700px;
+    background: white;
+    padding: 200px 20px 160px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+
+/* 🔹 중앙 정렬 추가 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* 프로필 스타일 */
+.profile-section {
+    margin-bottom: 20px;
+}
+
+.profile-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid #ddd;
+}
+
+/* 정보 입력 스타일 */
+.info-section {
+    background: #f1f1f1;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.info-section label {
+    display: block;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.info-section input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+/* 버튼 */
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.blue-button {
+    background: #007bff;
+    color: white;
+}
+
+.gray-button {
+    background: #555;
+    color: white;
+}
+
+.red-button {
+    background: red;
+    color: white;
+    margin-top: 10px;
+}
+
+/* 상담 테이블 */
+.counsel-section table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.counsel-section th, .counsel-section td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+}
+
+.counsel-section th {
+    background: #ddd;
+}

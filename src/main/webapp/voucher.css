@@ -1,22 +1,23 @@
-@font-face {
-    font-family: "HANCOMULJUCHEONJEONRIPETROGLYPH";
-    src: url("C:/WINDOWS/FONTS/HANCOMULJUCHEONJEONRIPETROGLYPH.TTF") format("truetype");
-}
 
 /* 공통 스타일 */
 body {
-	font-family: "HancomUljuCheonjeonriPetroglyph", sans-serif;
+	font-family: Arial, sans-serif;
 	background-color: #f9f9f9;
 	margin: 0;
 	padding: 0;
 }
 
 .container {
-	max-width: 1200px;
+	max-width: 1400px;
 	margin: 0 auto;
-	padding: 20px;
+	padding: 120px 20px 120px;
+	
 }
-
+section {
+	max-width: 1400px;
+	margin: 0 auto;
+	padding: 10px;
+}
 /* 메인 콘텐츠에 충분한 여백 추가 */
 main {
 	padding-top: 200px; /* 헤더 높이 + 여유 공간 */
@@ -96,20 +97,20 @@ main {
 
 /* 포트폴리오 */
 .portfolio {
-	margin-top: 40px;
+	margin: 40px 0px 40px;	
 }
 
 .portfolio h2 {
 	font-size: 2rem;
 	font-weight: bold;
 	margin-bottom: 20px;
-}
+	}
 
-.portfolio-grid {
+#portfolioGrid{
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 🔹 3개의 열로 고정 */
     gap: 20px;
-    justify-items: center; /* 🔹 아이템을 중앙 정렬 */
+    justify-content: center; /* 🔹 아이템을 중앙 정렬 */
     align-items: stretch; /* 🔹 아이템 높이를 맞추기 */
 }
 
