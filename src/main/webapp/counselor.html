@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>상담사 연결</title>
+	<link rel="stylesheet" href="common.css">
+	<link rel="stylesheet" href="counselor.css">
+</head>
+
+<body>
+	<!-- 네비게이션 -->
+	<nav class="navbar">
+		<div class="logo" id="homeButton">
+			<img src="vite.svg" alt="Logo" class="logo-img">
+			<div>
+				<p class="logo-text">누구나</p>
+				<p class="sub-text">Look+na</p>
+			</div>
+		</div>
+		<div class="nav-links">
+			<button class="nav-button" data-path="voucher.html">바우처 정보</button>
+			<button class="nav-button" data-path="counsel.html">상담 연결서비스</button>
+			<button class="nav-button" data-path="Board.html">커뮤니티</button>
+			<button class="nav-button" data-path="login.html">로그인</button>
+		</div>
+	</nav>
+
+	<main class="counselor-container">
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<section class="counselor conn">
+			<h2>상담사 연결 선택창</h2>
+			<div></div>
+		</section>
+		<div class="search-filter">
+			<input type="text" id="search" placeholder="상담사 이름 또는 분야 검색">
+			<select id="filter">
+				<option value="all">전체</option>
+				<option value="high-rating">평점 높은 순</option>
+				<option value="low-rating">평점 낮은 순</option>
+				<option value="counting">상담 건수 순</option>				
+				<option value="new">신규 상담사 순</option>
+			</select>
+		</div>
+
+		<div class="counselor-list" id="counselor-list">
+			<!-- 상담사 정보 동적 추가 -->
+		</div>
+
+		<!-- 예약 팝업 (모달) -->
+		<div id="reservationModal" class="modal">
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<h3 id="modalTitle">상담 예약</h3>
+				<p id="modalInfo">상담사를 선택하고 예약을 진행하세요.</p>
+				<button id="confirmReservation" class="confirm-btn">네, 알겠습니다.</button>
+			</div>
+		</div>
+	</main>
+
+	<!-- Footer -->
+	<footer class="footer">
+		<p>© 2025 MyTeamWebsite. All rights reserveds.</p>
+		<p>
+			이메일: <a href="mailto:wayawaya@smhrd.com">wayawaya@smhrd.com</a> |
+			고객센터: 1544-1234
+		</p>
+	</footer>
+	<script src="main.js"></script>
+	<script src="counselor.js"></script>
+</body>
+
+</html>

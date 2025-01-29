@@ -18,7 +18,9 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+    margin-top: 70px;
+    margin-bottom: 50px;
+    }
 
 /* 🔹 섹션 제목 */
 .section-title {
@@ -49,7 +51,7 @@ body {
 .region-list, .symptom-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    gap: 10px;
+    gap: 20px 20px;
     margin-bottom: 10px;
 }
 
