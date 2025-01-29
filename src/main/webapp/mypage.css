@@ -1,162 +1,112 @@
-/* 네비게이션 바 스타일 */
-.navbar {
-    background-color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    border-bottom: 1px solid #ddd;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-}
-
-.logo-img {
-    height: 40px;
-}
-
-.logo-text {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-left: 10px;
-}
-
-.sub-text {
-    font-size: 0.9rem;
-    color: #888;
-    margin-left: 5px;
-}
-
-.nav-links {
-    display: flex;
-    gap: 15px;
-}
-
-.nav-button {
-    background-color: transparent;
-    border: none;
-    color: #333;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.nav-button.active {
-    color: #007bff;
-}
-
-/* 메인 컨테이너 */
 body {
-    font-family: Arial, sans-serif;
-    background: #f9f9f9;
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
     margin: 0;
-    padding-top: 80px;
-    display: flex;
-    justify-content: center;
+    padding: 20px;
+    text-align: center;
 }
 
 .container {
-    width: 700px;
+    max-width: 500px;
     background: white;
-    padding: 200px 20px 160px;
+    padding: 20px;
+    margin: auto;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-
-/* 🔹 중앙 정렬 추가 */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }
 
-
-/* 프로필 스타일 */
-.profile-section {
-    margin-bottom: 20px;
+.title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
 }
 
-.profile-img {
+.profile img {
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    border: 3px solid #ddd;
+    margin-bottom: 10px;
 }
 
-/* 정보 입력 스타일 */
-.info-section {
-    background: #f1f1f1;
+.profile h3 {
+    margin: 5px 0;
+}
+
+.info-section, .password-section, .counsel-section {
+    background: #f9f9f9;
     padding: 15px;
+    margin-top: 15px;
     border-radius: 8px;
-    margin-bottom: 20px;
+    text-align: left;
 }
 
-.info-section label {
+.info-item {
+    margin-bottom: 10px;
+}
+
+.info-item label {
     display: block;
     font-size: 14px;
-    margin-top: 10px;
+    font-weight: bold;
 }
 
-.info-section input {
+.info-item input {
     width: 100%;
     padding: 8px;
-    border: 1px solid #ccc;
+    border: 1px solid #ddd;
     border-radius: 5px;
-    margin-top: 5px;
 }
 
-/* 버튼 */
-.button-group {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
+.buttons {
+    margin-top: 15px;
 }
 
 button {
-    padding: 10px;
+    margin: 5px;
+    padding: 8px 12px;
     border: none;
+    color: white;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 14px;
 }
 
-.blue-button {
-    background: #007bff;
-    color: white;
+#edit-btn {
+    background-color: #007bff;
 }
 
-.gray-button {
-    background: #555;
-    color: white;
+#logout-btn {
+    background-color: #6c757d;
 }
 
-.red-button {
-    background: red;
-    color: white;
-    margin-top: 10px;
+#change-password-btn {
+    background-color: #dc3545;
 }
 
-/* 상담 테이블 */
-.counsel-section table {
+table {
     width: 100%;
-    border-collapse: collapse;
     margin-top: 10px;
+    border-collapse: collapse;
 }
 
-.counsel-section th, .counsel-section td {
-    border: 1px solid #ccc;
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
     padding: 8px;
     text-align: center;
 }
 
-.counsel-section th {
-    background: #ddd;
+.status-pending {
+    background-color: yellow;
+}
+
+.status-progress {
+    background-color: blue;
+    color: white;
+}
+
+.status-complete {
+    background-color: green;
+    color: white;
 }
