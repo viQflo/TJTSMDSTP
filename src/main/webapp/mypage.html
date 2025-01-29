@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마이페이지</title>
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="mypage.css">
+</head>
+<body>
+    <!-- 네비게이션 바 -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="vite.svg" alt="Logo" class="logo-img">
+            <div>
+                <p class="logo-text">누구나</p>
+                <p class="sub-text">Look+na</p>
+            </div>
+        </div>
+        <div class="nav-links">
+            <button class="nav-button">바우처 정보</button>
+            <button class="nav-button">상담 연결서비스</button>
+            <button class="nav-button">커뮤니티</button>
+            <button class="nav-button active">마이페이지</button>
+            <button class="nav-button">로그아웃</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2 class="title">마이페이지</h2>
+
+        <!-- 프로필 섹션 -->
+        <div class="profile-section">
+            <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Profile" class="profile-img">
+            <h3 id="userName">홍길동</h3>
+            <p id="userJob">홈프로텍터</p>
+        </div>
+
+        <!-- 회원 정보 섹션 -->
+        <div class="info-section">
+            <h3>회원 정보</h3>
+            <label>이름</label>
+            <input type="text" id="name" disabled>
+
+            <label>이메일</label>
+            <input type="email" id="email" disabled>
+
+            <label>전화번호</label>
+            <input type="text" id="phone" disabled>
+        </div>
+
+        <!-- 버튼 섹션 -->
+        <div class="button-group">
+            <button id="editButton" class="blue-button">정보 수정</button>
+            <button id="logoutButton" class="gray-button">로그아웃</button>
+        </div>
+
+        <!-- 비밀번호 변경 섹션 -->
+        <div class="password-section">
+            <h3>비밀번호 변경</h3>
+            <input type="password" id="newPassword" placeholder="새 비밀번호 입력">
+            <button id="changePasswordButton" class="red-button">변경</button>
+        </div>
+
+        <!-- 상담 신청 현황 -->
+        <div class="counsel-section">
+            <h3>상담 신청 현황</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>신청 날짜</th>
+                        <th>상담 유형</th>
+                        <th>상담자 이름</th>
+                        <th>진행 상태</th>
+                    </tr>
+                </thead>
+                <tbody id="counselTableBody"></tbody>
+            </table>
+        </div>
+    </div>
+    <!-- Footer -->
+   <footer class="footer">
+      <p>© 2025 MyTeamWebsite. All rights reserveds.</p>
+      <p>
+         이메일: <a href="mailto:wayawaya@smhrd.com">wayawaya@smhrd.com</a> |
+         고객센터: 1544-1234
+      </p>
+   </footer>
+
+    <script src="mypage.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
