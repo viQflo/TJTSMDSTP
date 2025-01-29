@@ -1,12 +1,3 @@
-@font-face {
-    font-family: "HancomUljuCheonjeonriPetroglyph";
-    src: url("C:/WINDOWS/FONTS/HANCOMULJUCHEONJEONRIPETROGLYPH.TTF") format("truetype");
-}
-
-body {
-    font-family: "MyCustomFont", sans-serif;
-   
-}
 /* 메인 컨텐츠 */
 .main-content {
     flex: 1;
