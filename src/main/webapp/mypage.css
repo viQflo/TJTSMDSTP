@@ -9,11 +9,11 @@ body {
 .container {
     max-width: 500px;
     background: white;
-    padding-top: 130px;
+    padding-top: 120px;
     
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding-bottom: 150px;
+    padding-bottom: 80px;
     width: 50%;  /* 컨테이너의 너비를 설정 */
     max-width: 600px; /* 최대 너비 제한 */
     margin: 0 auto;  /* 중앙 정렬 */
