@@ -90,7 +90,7 @@ html, body {
     padding: 15px 0;
     border-top: 1px solid #ccc;
     width: 100%;
-    position: fixed; /* 기본적으로 문서 흐름 유지 */
+    position: relative; /* 화면 하단에 고정되도록 설정 */
     bottom: 0;
 }
 
