@@ -1,19 +1,23 @@
 /* 기본 스타일 */
 html, body {
-	height: 100%;
-	margin: 0;
-	padding: 0;
-	display: flex;
-	flex-direction: column;
-	cursor: url('cur1089.cur'), auto !important;
+   height: 100% !important;
+   margin: 0 !important;
+   padding: 0 !important;
+   display: flex !important;
+   flex-direction: column !important;
+   cursor: url('cur1089.cur'), auto !important;
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> branch 'master' of https://github.com/viQflo/TJTSMDSTP.git
 *:hover {
     cursor: url('cur1089.cur'), auto !important;
 }
 
 .navbar {
+<<<<<<< HEAD
     background-color: white;
     display: flex;
     align-items: center;
@@ -30,108 +34,139 @@ html, body {
     z-index: 1000;
     border-bottom: 1px solid #ddd;
     box-sizing: border-box;
+=======
+   background-color: white !important;
+   display: flex !important;
+   align-items: center !important;
+   padding: 10px 20px !important;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+   position: fixed !important;
+   top: 0 !important;
+   width: 100% !important;
+   height: auto !important;
+   z-index: 1000 !important;
+   border-bottom: 1px solid #ddd !important;
+   box-sizing: border-box !important;
+>>>>>>> branch 'master' of https://github.com/viQflo/TJTSMDSTP.git
 }
 
 /* 로고 영역 크기 조정 */
 .logo {
+<<<<<<< HEAD
     flex: 0 0 250px; /* 고정된 너비 설정 */
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+=======
+   flex: 1 !important; /* 헤더의 1/3 공간 */
+   display: flex !important;
+   align-items: center !important;
+   justify-content: center !important; /* 중앙 정렬 */
+   cursor: pointer !important;
+>>>>>>> branch 'master' of https://github.com/viQflo/TJTSMDSTP.git
 }
 
 .logo-img {
-	height: 40px;
+   height: 40px !important;
 }
 
 .logo-text {
-	font-size: 1.5rem;
-	margin-left: 10px;
-	font-weight: bold;
-	color: #333;
+   font-size: 1.5rem !important;
+   margin-left: 10px !important;
+   font-weight: bold !important;
+   color: #333 !important;
 }
 
 .sub-text {
-	font-size: 0.9rem;
-	color: #888;
-	margin-left: 5px;
+   font-size: 0.9rem !important;
+   color: #888 !important;
+   margin-left: 5px !important;
 }
 
 /* 네비게이션 링크 고정 */
 .nav-links {
+<<<<<<< HEAD
     flex: 0 0 700px; /* 고정 너비 설정 */
     display: flex;
     justify-content: space-between; /* 일정한 간격 유지 */
     gap: 20px;
+=======
+   flex: 2 !important; /* 헤더의 2/3 공간 */
+   display: flex !important;
+   justify-content: space-around !important; /* 중앙 정렬 */
+   column-gap: 30px !important;
+   background: none !important;
+   height: auto !important;
+>>>>>>> branch 'master' of https://github.com/viQflo/TJTSMDSTP.git
 }
 
 .nav-links button {
-	background-color: transparent;
-	border: none;
-	color: #333;
-	font-size: 1rem;
-	font-weight: bold;
-	cursor: pointer;
-	transition: color 0.3s;
+   background-color: transparent !important;
+   border: none !important;
+   color: #333 !important;
+   font-size: 1rem !important;
+   font-weight: bold !important;
+   cursor: pointer !important;
+   transition: color 0.3s !important;   
 }
 
 .nav-links button:hover {
-	color: #007bff;
+   color: #007bff !important;
 }
 
 /* 컨텐츠를 푸터 위로 밀어주는 컨테이너 */
 .container {
-	flex: 1;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	padding: 80px 20px 40px; /* 네비게이션과 푸터 간격 추가 */
+   flex: 1 !important;
+   display: flex !important;
+   flex-direction: column !important;
+   align-items: center !important;
+   justify-content: center !important;
+   padding: 80px 20px 40px !important; /* 네비게이션과 푸터 간격 추가 */
 }
 
 /* 푸터 */
 .footer {
-	background-color: white;
-	color: #666;
-	font-size: 0.9rem;
-	text-align: center;
-	padding: 15px 0;
-	border-top: 1px solid #ccc;
-	width: 100%;
-	position: relative; /* 화면 하단에 고정되도록 설정 */
-	bottom: 0;
+   background-color: white !important;
+   color: #666 !important;
+   font-size: 0.9rem !important;
+   text-align: center !important;
+   padding: 15px 0 !important;
+   border-top: 1px solid #ccc !important;
+   width: 100% !important;
+   position: relative !important; /* 화면 하단에 고정되도록 설정 */
+   bottom: 0 !important;
 }
 
 /* 푸터 링크 스타일 */
 .footer a {
-	color: #007bff;
-	text-decoration: none;
+   color: #007bff !important;
+   text-decoration: none !important;
 }
 
 .footer a:hover {
-	text-decoration: underline;
+   text-decoration: underline !important;
 }
 
 /* 별 이펙트 */
 .star {
-    position: absolute;
-    width: 8px;
-    height: 8px;
-    background-color: gold;
-    border-radius: 50%;
-    box-shadow: 0 0 8px rgba(255, 215, 0, 0.8);
-    pointer-events: none;
-    animation: fall 1s ease-out forwards;
+    position: absolute !important;
+    width: 8px !important;
+    height: 8px !important;
+    background-color: gold !important;
+    border-radius: 50% !important;
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.8) !important;
+    pointer-events: none !important;
+    animation: fall 1s ease-out forwards !important;
 }
 
 @keyframes fall {
     0% {
-        transform: translateY(0) scale(1);
-        opacity: 1;
+        transform: translateY(0) scale(1) !important;
+        opacity: 1 !important;
     }
     100% {
-        transform: translateY(50px) scale(0);
-        opacity: 0;
+        transform: translateY(50px) scale(0) !important;
+        opacity: 0 !important;
     }
 }

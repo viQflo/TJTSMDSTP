@@ -42,7 +42,7 @@ input {
     box-sizing: border-box;
 }
 
-button {
+#login-button {
     width: 100%;
     padding: 10px;
     background-color: #4a90e2;
@@ -52,11 +52,10 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+#login-button:hover {
     background-color: #357ab7;
 }
 
-/*  ㅻ  硫   吏   ㅽ     */
 .error-message {
     color: red;
     font-weight: bold;

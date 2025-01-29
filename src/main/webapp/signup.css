@@ -51,7 +51,7 @@ input, select {
     box-sizing: border-box;
 }
 
-button {
+#signup-button {
     width: 100%;
     padding: 12px;
     background-color: #4a90e2;
@@ -61,7 +61,7 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+#signup-button:hover {
     background-color: #357ab7;
 }
 
