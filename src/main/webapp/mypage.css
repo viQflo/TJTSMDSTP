@@ -9,12 +9,16 @@ body {
 .container {
     max-width: 500px;
     background: white;
-    padding: 20px;
-    margin: auto;
+    padding-top: 130px;
+    
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding-bottom: 150px;
+    width: 50%;  /* 컨테이너의 너비를 설정 */
+    max-width: 600px; /* 최대 너비 제한 */
+    margin: 0 auto;  /* 중앙 정렬 */
 }
-
+   
 .title {
     font-size: 22px;
     font-weight: bold;
@@ -33,6 +37,7 @@ body {
 }
 
 .info-section, .password-section, .counsel-section {
+    width: 70%;
     background: #f9f9f9;
     padding: 15px;
     margin-top: 15px;
@@ -51,10 +56,11 @@ body {
 }
 
 .info-item input {
-    width: 100%;
+    width: 80%;
     padding: 8px;
     border: 1px solid #ddd;
     border-radius: 5px;
+    margin: 10px auto;
 }
 
 .buttons {
@@ -80,6 +86,7 @@ button {
 
 #change-password-btn {
     background-color: #dc3545;
+    align-items: inherit;
 }
 
 table {
