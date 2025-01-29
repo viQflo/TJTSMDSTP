@@ -1,107 +1,133 @@
-
 /* 기본 스타일 */
 html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	cursor: url('cur1089.cur'), auto !important;
+}
+
+
+*, *:hover, *:focus, *:active {
+    cursor: url('cur1089.cur'), auto !important;
 }
 
 /* 네비게이션 바 */
 .navbar {
-    background-color: white;
-    display: flex;
-    align-items: center;
-    padding: 10px 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    border-bottom: 1px solid #ddd;
-    box-sizing: border-box;
+	background-color: white;
+	display: flex;
+	align-items: center;
+	padding: 10px 20px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 1000;
+	border-bottom: 1px solid #ddd;
+	box-sizing: border-box;
 }
 
 /* 로고와 텍스트 */
 .logo {
-    flex: 1; /* 헤더의 1/3 공간 */
-    display: flex;
-    align-items: center;
-    justify-content: center; /* 중앙 정렬 */
-    cursor: pointer;
+	flex: 1; /* 헤더의 1/3 공간 */
+	display: flex;
+	align-items: center;
+	justify-content: center; /* 중앙 정렬 */
+	cursor: pointer;
 }
 
 .logo-img {
-    height: 40px;
+	height: 40px;
 }
 
 .logo-text {
-    font-size: 1.5rem;
-    margin-left: 10px;
-    font-weight: bold;
-    color: #333;
+	font-size: 1.5rem;
+	margin-left: 10px;
+	font-weight: bold;
+	color: #333;
 }
 
 .sub-text {
-    font-size: 0.9rem;
-    color: #888;
-    margin-left: 5px;
+	font-size: 0.9rem;
+	color: #888;
+	margin-left: 5px;
 }
 
 /* 네비게이션 링크 */
 .nav-links {
-    flex: 2; /* 헤더의 2/3 공간 */
-    display: flex;
-    justify-content: center; /* 중앙 정렬 */
-    gap: 20px;
+	flex: 2; /* 헤더의 2/3 공간 */
+	display: flex;
+	justify-content: center; /* 중앙 정렬 */
+	gap: 20px;
 }
 
 .nav-links button {
-    background-color: transparent;
-    border: none;
-    color: #333;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: color 0.3s;
+	background-color: transparent;
+	border: none;
+	color: #333;
+	font-size: 1rem;
+	font-weight: bold;
+	cursor: pointer;
+	transition: color 0.3s;
 }
 
 .nav-links button:hover {
-    color: #007bff;
+	color: #007bff;
 }
 
 /* 컨텐츠를 푸터 위로 밀어주는 컨테이너 */
 .container {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 80px 20px 40px; /* 네비게이션과 푸터 간격 추가 */
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 80px 20px 40px; /* 네비게이션과 푸터 간격 추가 */
 }
 
 /* 푸터 */
 .footer {
-    background-color: white;
-    color: #666;
-    font-size: 0.9rem;
-    text-align: center;
-    padding: 15px 0;
-    border-top: 1px solid #ccc;
-    width: 100%;
-    position: relative; /* 화면 하단에 고정되도록 설정 */
-    bottom: 0;
+	background-color: white;
+	color: #666;
+	font-size: 0.9rem;
+	text-align: center;
+	padding: 15px 0;
+	border-top: 1px solid #ccc;
+	width: 100%;
+	position: relative; /* 화면 하단에 고정되도록 설정 */
+	bottom: 0;
 }
 
 /* 푸터 링크 스타일 */
 .footer a {
-    color: #007bff;
-    text-decoration: none;
+	color: #007bff;
+	text-decoration: none;
 }
 
 .footer a:hover {
-    text-decoration: underline;
+	text-decoration: underline;
 }
 
+/* 별 이펙트 */
+.star {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: gold;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.8);
+    pointer-events: none;
+    animation: fall 1s ease-out forwards;
+}
 
+@keyframes fall {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(50px) scale(0);
+        opacity: 0;
+    }
+}
