@@ -9,32 +9,36 @@ html, body {
 }
 
 
-*, *:hover, *:focus, *:active {
+*:hover {
     cursor: url('cur1089.cur'), auto !important;
 }
 
-/* 네비게이션 바 */
 .navbar {
-	background-color: white;
-	display: flex;
-	align-items: center;
-	padding: 10px 20px;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-	position: fixed;
-	top: 0;
-	width: 100%;
-	z-index: 1000;
-	border-bottom: 1px solid #ddd;
-	box-sizing: border-box;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* 중앙 정렬 */
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    width: 1920px; /* 고정 너비 */
+    height: 134.49px; /* 고정 높이 */
+    margin: auto;
+    left: 50%;
+    transform: translateX(-50%); /* 화면 중앙 정렬 */
+    z-index: 1000;
+    border-bottom: 1px solid #ddd;
+    box-sizing: border-box;
 }
 
-/* 로고와 텍스트 */
+/* 로고 영역 크기 조정 */
 .logo {
-	flex: 1; /* 헤더의 1/3 공간 */
-	display: flex;
-	align-items: center;
-	justify-content: center; /* 중앙 정렬 */
-	cursor: pointer;
+    flex: 0 0 250px; /* 고정된 너비 설정 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 }
 
 .logo-img {
@@ -54,12 +58,12 @@ html, body {
 	margin-left: 5px;
 }
 
-/* 네비게이션 링크 */
+/* 네비게이션 링크 고정 */
 .nav-links {
-	flex: 2; /* 헤더의 2/3 공간 */
-	display: flex;
-	justify-content: center; /* 중앙 정렬 */
-	gap: 20px;
+    flex: 0 0 700px; /* 고정 너비 설정 */
+    display: flex;
+    justify-content: space-between; /* 일정한 간격 유지 */
+    gap: 20px;
 }
 
 .nav-links button {
