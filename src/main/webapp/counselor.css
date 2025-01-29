@@ -1,0 +1,153 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+
+
+/* 제목을 담백하게 표시 */
+.section-title {
+    text-align: left;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 20px 0 10px 20px;
+}
+
+
+
+.search-filter {
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.search-filter input, .search-filter select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.counselor-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4개의 동일한 열 */
+    gap: 50px;
+    padding: 100px;
+    align-items: center;
+}
+
+.counselor-card {
+	width: 300px;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.counselor-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.counselor-card h3 {
+    margin: 5px 0;
+}
+
+.counselor-card p {
+    color: #555;
+    font-size: 14px;
+}
+
+.rating {
+    color: #f39c12;
+    font-weight: bold;
+}
+
+.book-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.book-btn:hover {
+    background-color: #218838;
+}
+/* 🔹 모달 배경 */
+.modal {
+    display: none; /* 기본적으로 숨김 */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* 반투명 검은 배경 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 🔹 모달 창 */
+/* 🔹 모달 창 스타일 수정 */
+.modal-content {
+    display: flex;
+    flex-direction: column; /* 요소들을 세로 정렬 */
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 20px;
+    width: 350px; /* 적절한 너비 설정 */
+    max-width: 90%; /* 반응형 고려 */
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* 🔹 닫기 버튼 스타일 */
+.close {
+    align-self: flex-end;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* 🔹 제목 스타일 */
+#modalTitle {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* 🔹 설명 문구 스타일 */
+#modalInfo {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* 🔹 예약 버튼 스타일 */
+.confirm-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: auto;
+    max-width: 200px; /* 버튼이 너무 커지는 문제 방지 */
+    font-size: 16px;
+}
+
+.confirm-btn:hover {
+    background-color: #218838;
+}
+

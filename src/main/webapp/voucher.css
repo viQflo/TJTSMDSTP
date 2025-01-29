@@ -109,7 +109,7 @@ main {
 #portfolioGrid {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* 🔹 4개의 열로 고정 */
-    gap: 20px;
+    gap: 70px 70px;
     justify-content: space-between; /* 🔹 아이템을 균등 간격으로 정렬 */
     align-items: stretch; /* 🔹 아이템 높이를 맞추기 */
 }

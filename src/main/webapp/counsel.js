@@ -53,8 +53,9 @@ document.addEventListener("DOMContentLoaded", function () {
         if (selectedRegions.length === 0 || selectedSymptoms.length === 0) {
             alert("최소 한 개의 지역과 증상을 선택하세요!");
             return;
-        }
+        }else {window.location.href = "counselor.html";}
 
-        alert(`선택된 지역: ${selectedRegions.join(", ")}\n선택된 증상: ${selectedSymptoms.join(", ")}`);
+        
+        ;
     });
 });
