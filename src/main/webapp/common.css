@@ -1,11 +1,4 @@
-@font-face {
-    font-family: "HancomUljuCheonjeonriPetroglyph";
-    src: url("C:/WINDOWS/FONTS/HANCOMULJUCHEONJEONRIPETROGLYPH.TTF") format("truetype");
-}
 
-body {
-    font-family: "MyCustomFont", sans-serif;
-}
 /* 기본 스타일 */
 html, body {
     height: 100%;
@@ -111,7 +104,4 @@ html, body {
     text-decoration: underline;
 }
 
-<<<<<<< HEAD
-=======
 
->>>>>>> branch 'master' of https://github.com/viQflo/TJTSMDSTP

@@ -1,11 +1,3 @@
-@font-face {
-    font-family: "HancomUljuCheonjeonriPetroglyph";
-    src: url("C:/WINDOWS/FONTS/HANCOMULJUCHEONJEONRIPETROGLYPH.TTF") format("truetype");
-}
-
-body {
-    font-family: "MyCustomFont", sans-serif;
-}
 body {
     font-family: Arial, sans-serif;
     background: linear-gradient(to right, #eef2ff, #cfd9df);
@@ -64,7 +56,7 @@ button:hover {
     background-color: #357ab7;
 }
 
-/* �ㅻ� 硫���吏� �ㅽ���� */
+/*  ㅻ  硫   吏   ㅽ     */
 .error-message {
     color: red;
     font-weight: bold;

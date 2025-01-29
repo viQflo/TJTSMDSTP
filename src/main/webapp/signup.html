@@ -9,99 +9,140 @@
     <link rel="stylesheet" href="signup.css">
 </head>
 <body>
-    
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="logo" id="homeButton">
-            <img src="vite.svg" alt="Logo" class="logo-img">
-            <div>
-                <p class="logo-text">누구나</p>
-                <p class="sub-text">Look+na</p>
-            </div>
-        </div>
-        <div class="nav-links">
-            <button class="nav-button" data-path="voucher.html">바우처 정보</button>
-            <button class="nav-button" data-path="counsel.html">상담 연결서비스</button>
-            <button class="nav-button" data-path="Board.html">커뮤니티</button>
-            <button class="nav-button" data-path="login.html">로그인</button>
-        </div>
-    </nav>
 
-    <!-- 메인 컨텐츠 -->
-    <div class="container">
-        <div class="signup-box">
-            <h2>회원가입</h2>
-            <form id="signup-form">
-                <div class="form-group">
-                    <label for="email">이메일</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
+	<!-- Navbar -->
+	<nav class="navbar">
+		<div class="logo" id="homeButton">
+			<img src="vite.svg" alt="Logo" class="logo-img">
+			<div>
+				<p class="logo-text">누구나</p>
+				<p class="sub-text">Look+na</p>
+			</div>
+		</div>
+		<div class="nav-links">
+			<button class="nav-button" data-path="voucher.html">바우처 정보</button>
+			<button class="nav-button" data-path="counsel.html">상담 연결서비스</button>
+			<button class="nav-button" data-path="Board.html">커뮤니티</button>
+			<button class="nav-button" data-path="login.html">로그인</button>
+		</div>
+	</nav>
 
-                <div class="form-group">
-                    <label for="pw">비밀번호</label>
-                    <input type="password" id="pw" name="pw" required>
-                </div>
+	<!-- 메인 컨텐츠 -->
+	<div class="container">
+		<div class="signup-box">
+			<h2>회원가입</h2>
+			<form id="signup-form">
+				<div class="form-group">
+					<label for="email">이메일</label> 
+					<input type="email" id="email" name="email" required>
+				</div>
+				<div class="form-group">
+					<label for="pw">비밀번호</label> 
+					<input type="password" id="pw" name="pw" required>
+				</div>
+				<div class="form-group">
+					<label for="name">이름</label> 
+					<input type="text" id="name" name="name" required>
+				</div>
+				<div class="form-group">
+					<label for="nick">닉네임</label> 
+					<input type="text" id="nick" name="nick" required>
+				</div>
+				<div class="form-group">
+					<label for="birthdate">생년월일</label> 
+					<input type="date" id="birthdate" name="birthdate" required>
+				</div>
+				<div class="form-group">
+					<label for="gender">성별</label> 
+					<select id="gender" name="gender" required>
+						<option value="">선택하세요</option>
+						<option value="남성">남성</option>
+						<option value="여성">여성</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="job">직업</label> 
+					<input type="text" id="job" name="job">
+				</div>
+				<div class="form-group">
+					<label for="phone">전화번호</label> 
+					<input type="tel" id="phone" name="phone" required>
+				</div>
+				<div class="form-group">
+					<label for="user_type">사용자 유형</label> 
+					<select id="user_type" name="user_type">
+						<option value="일반">일반 사용자</option>
+						<option value="상담">전문 상담사</option>
+						<option value="관리">관리자</option>
+					</select>
+				</div>
+				<button type="submit" id="signup-button">회원가입</button>
+				<p id="signup-message" class="message"></p>
+			</form>
+		</div>
+	</div>
 
-                <div class="form-group">
-                    <label for="name">이름</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
+	<!-- 추가 정보 입력 모달 -->
+	<div id="additional-info-modal" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<h2>상담사 추가 정보 입력</h2>
+			<div class="form-group">
+				<label for="region">지역</label>
+				<select id="region" name="region">
+					<option value="서울">서울</option>
+					<option value="부산">부산</option>
+					<option value="대구">대구</option>
+					<option value="인천">인천</option>
+					<option value="광주">광주</option>
+					<option value="대전">대전</option>
+					<option value="울산">울산</option>
+					<option value="세종">세종</option>
+					<option value="경기">경기</option>
+					<option value="강원">강원</option>
+					<option value="충북">충북</option>
+					<option value="충남">충남</option>
+					<option value="전북">전북</option>
+					<option value="전남">전남</option>
+					<option value="경북">경북</option>
+					<option value="경남">경남</option>
+					<option value="제주">제주</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="symptoms">증상</label>
+				<select id="symptoms" name="symptoms">
+					<option value="우울감">우울감</option>
+					<option value="불안">불안</option>
+					<option value="공황">공황</option>
+					<option value="스트레스">스트레스</option>
+					<option value="불면증">불면증</option>
+					<option value="강박">강박</option>
+					<option value="충동 조절 문제">충동 조절 문제</option>
+					<option value="감정 조절 어려움">감정 조절 어려움</option>
+					<option value="집중력 부족">집중력 부족</option>
+					<option value="기억력 감퇴">기억력 감퇴</option>
+					<option value="사회적 고립">사회적 고립</option>
+					<option value="대인관계 어려움">대인관계 어려움</option>
+					<option value="트라우마">트라우마</option>
+					<option value="외상 후 스트레스">외상 후 스트레스</option>
+					<option value="자존감 저하">자존감 저하</option>
+				</select>
+			</div>
+			<button id="submit-additional-info">추가정보 제출</button>
+		</div>
+	</div>
 
-                <div class="form-group">
-                    <label for="nick">닉네임</label>
-                    <input type="text" id="nick" name="nick" required>
-                </div>
+	<!-- Footer -->
+	<footer class="footer">
+		<p>© 2025 MyTeamWebsite. All rights reserved.</p>
+		<p>
+			이메일: <a href="mailto:wayawaya@smhrd.com">wayawaya@smhrd.com</a> |
+			고객센터: 1544-1234
+		</p>
+	</footer>
 
-                <div class="form-group">
-                    <label for="birthdate">생년월일</label>
-                    <input type="date" id="birthdate" name="birthdate" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="gender">성별</label>
-                    <select id="gender" name="gender" required>
-                        <option value="">선택하세요</option>
-                        <option value="남성">남성</option>
-                        <option value="여성">여성</option>
-                        
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="job">직업</label>
-                    <input type="text" id="job" name="job">
-                </div>
-
-                <div class="form-group">
-                    <label for="phone">전화번호</label>
-                    <input type="tel" id="phone" name="phone" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="user_type">사용자 유형</label>
-                    <select id="user_type" name="user_type">
-                        <option value="일반">일반 사용자</option>
-                        <option value="상담">전문 상담사</option>
-                        <option value="관리">관리자</option>
-                    </select>
-                </div>
-
-                <button type="submit" id="signup-button">회원가입</button>
-                <p id="signup-message" class="message"></p>
-            </form>
-        </div>
-    </div>
-    
-    <!-- Footer -->
-    <footer class="footer">
-        <p>© 2025 MyTeamWebsite. All rights reserved.</p>
-        <p>
-            이메일: <a href="mailto:wayawaya@smhrd.com">wayawaya@smhrd.com</a> |
-            고객센터: 1544-1234
-        </p>
-    </footer> 
-
-    <script src="signup.js"></script>
-    <script src="main.js"></script>
+	<script src="signup.js"></script>
+	<script src="main.js"></script>
 </body>
 </html>

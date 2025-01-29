@@ -2,70 +2,70 @@
 <html lang="ko">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>로그인</title>
-	<link rel="stylesheet" href="common.css">
-	<link rel="stylesheet" href="login.css">
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>로그인</title>
+   <link rel="stylesheet" href="common.css">
+   <link rel="stylesheet" href="login.css">
 
 </head>
 
 <body>
-	<!-- 네비게이션 -->
-	<nav class="navbar">
-		<div class="logo" id="homeButton">
-			<img src="vite.svg" alt="Logo" class="logo-img">
-			<div>
-				<p class="logo-text">누구나</p>
-				<p class="sub-text">Look+na</p>
-			</div>
-		</div>
-		<div class="nav-links">
-			<button class="nav-button" data-path="voucher.html">바우처 정보</button>
-			<button class="nav-button" data-path="counsel.html">상담 연결서비스</button>
-			<button class="nav-button" data-path="Board.html">커뮤니티</button>
-			<button class="nav-button" data-path="login.html">로그인</button>
-		</div>
-	</nav>
+   <!-- 네비게이션 -->
+   <nav class="navbar">
+      <div class="logo" id="homeButton">
+         <img src="vite.svg" alt="Logo" class="logo-img">
+         <div>
+            <p class="logo-text">누구나</p>
+            <p class="sub-text">Look+na</p>
+         </div>
+      </div>
+      <div class="nav-links">
+         <button class="nav-button" data-path="voucher.html">바우처 정보</button>
+         <button class="nav-button" data-path="counsel.html">상담 연결서비스</button>
+         <button class="nav-button" data-path="Board.html">커뮤니티</button>
+         <button class="nav-button" data-path="login.html">로그인</button>
+      </div>
+   </nav>
 
-	<div class="container">
-		<div class="login-box">
-			<h2>로그인</h2>
+   <div class="container">
+      <div class="login-box">
+         <h2>로그인</h2>
 
-			<p id="error-message" class="error-message"></p> <!-- 오류 메시지 출력 -->
+         <p id="error-message" class="error-message"></p> <!-- 오류 메시지 출력 -->
 
-			<form id="login-form">
-				<div class="form-group">
-					<label for="email">이메일</label>
-					<input type="text" id="email" name="email" placeholder="이메일을 입력하세요" required>
-				</div>
+         <form id="login-form">
+            <div class="form-group">
+               <label for="email">이메일</label>
+               <input type="text" id="email" name="email" placeholder="이메일을 입력하세요" required>
+            </div>
 
-				<div class="form-group">
-					<label for="password">비밀번호</label>
-					<input type="password" id="password" name="password" placeholder="비밀번호를 입력하세요" required>
-				</div>
-				<br>
-				<button type="submit" id="login-button">로그인</button>
-			</form>
+            <div class="form-group">
+               <label for="password">비밀번호</label>
+               <input type="password" id="password" name="password" placeholder="비밀번호를 입력하세요" required>
+            </div>
+            <br>
+            <button type="submit" id="login-button">로그인</button>
+         </form>
 
-			<p class="signup-text">
-				계정이 없으신가요?
-				<a href="signup.html" class="signup-link">회원가입</a>
-			</p>
-		</div>
-	</div>
+         <p class="signup-text">
+            계정이 없으신가요?
+            <a href="signup.html" class="signup-link">회원가입</a>
+         </p>
+      </div>
+   </div>
 
-	<!-- Footer -->
-	<footer class="footer">
-		<p>© 2025 MyTeamWebsite. All rights reserveds.</p>
-		<p>
-			이메일: <a href="mailto:wayawaya@smhrd.com">wayawaya@smhrd.com</a> |
-			고객센터: 1544-1234
-		</p>
-	</footer>
+   <!-- Footer -->
+   <footer class="footer">
+      <p>© 2025 MyTeamWebsite. All rights reserveds.</p>
+      <p>
+         이메일: <a href="mailto:wayawaya@smhrd.com">wayawaya@smhrd.com</a> |
+         고객센터: 1544-1234
+      </p>
+   </footer>
 
-	<script src="login.js"></script>
-	<script src="main.js"></script>
+   <script src="login.js"></script>
+   <script src="main.js"></script>
 </body>
 
 </html>

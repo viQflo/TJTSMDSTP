@@ -1,6 +1,9 @@
 document.addEventListener("DOMContentLoaded", function() {
 	const signupForm = document.getElementById("signup-form");
 	const signupMessage = document.getElementById("signup-message");
+	const modal = document.getElementById("additional-info-modal");
+	const closeModal = document.querySelector(".close");
+	const submitAdditionalInfo = document.getElementById("submit-additional-info");
 
 	// API Base URL
 	const API_BASE_URL = "http://localhost:8081/TJTSMDS/api";
@@ -23,14 +26,54 @@ document.addEventListener("DOMContentLoaded", function() {
 			create_dt: new Date().toISOString().split("T")[0], // 현재 날짜
 		};
 		console.log("FormData:", formData);
-		// 디버깅용 로그
-		console.log("회원가입 데이터:", formData);
 
-		// API 요청
+		// user_type이 '상담'이면 추가 정보 모달 띄우기
+		if (formData.user_type === "상담") {
+			modal.style.display = "flex";
+		} else {
+			// 일반/관리자일 경우 바로 회원가입 API 요청
+			sendSignupData(formData);
+		}
+	});
+
+	// 모달 닫기 버튼
+	closeModal.addEventListener("click", function() {
+		modal.style.display = "none";
+	});
+
+	// 모달에서 추가 정보 제출
+	submitAdditionalInfo.addEventListener("click", function() {
+		const additionalInfo = {
+			region: document.getElementById("region").value,
+			symptoms: document.getElementById("symptoms").value,
+		};
+
+		const formData = {
+			email: document.getElementById("email").value,
+			pw: document.getElementById("pw").value,
+			name: document.getElementById("name").value,
+			nick: document.getElementById("nick").value,
+			birthdate: document.getElementById("birthdate").value,
+			gender: document.getElementById("gender").value,
+			job: document.getElementById("job").value,
+			phone: document.getElementById("phone").value,
+			user_type: document.getElementById("user_type").value,
+			create_dt: new Date().toISOString().split("T")[0],
+			region: additionalInfo.region,
+			symptoms: additionalInfo.symptoms,
+		};
+
+		// 추가 정보 포함하여 회원가입 데이터 전송
+		sendSignupData(formData);
+		modal.style.display = "none"; // 모달 닫기
+	});
+
+	// 회원가입 데이터 전송 함수
+	function sendSignupData(data) {
 		fetch(`${API_BASE_URL}/users`, {
 			method: "POST",
 			headers: { "Content-Type": "application/json; charset=UTF-8" },
-			body: JSON.stringify(formData),
+			body: JSON.stringify(data),
 		})
 			.then(function(response) {
 				console.log("응답 상태 코드:", response.status);
@@ -72,5 +115,5 @@ document.addEventListener("DOMContentLoaded", function() {
 				signupMessage.textContent = `오류: ${error.message}`;
 				signupMessage.style.color = "red";
 			});
-	});
+	}
 });

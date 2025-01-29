@@ -16,6 +16,9 @@ public class MemberDAO {
 		}
 	}
 	
+	// 추가 정보 삽입 메서드
+	
+	
 	// 로그인 메서드
     public MemberDTO login(MemberDTO memberDTO) {
         try (SqlSession session = sqlSessionFactory.openSession(true)) {
