@@ -1,3 +1,6 @@
+
+
+
 const portfolioItems = [
 	{ id: 1, title: "어쩌구 마음 센터", category: "#직장인#학생", image: "https://metizen.co.kr/wp-content/uploads/2022/08/2208-%E1%84%80%E1%85%A9%E1%84%85%E1%85%A9-%E1%84%8B%E1%85%B2%E1%84%85%E1%85%A5%E1%86%B8-%E1%84%8B%E1%85%A7%E1%84%92%E1%85%A2%E1%86%BC-%E1%84%83%E1%85%B5%E1%84%8C%E1%85%A5%E1%84%90%E1%85%B33.jpg", link: "https://example.com/durigolf" },
 	{ id: 2, title: "어쩌구 마음 센터", category: "#직장인#학생", image: "https://metizen.co.kr/wp-content/uploads/2022/08/2208-%E1%84%80%E1%85%A9%E1%84%85%E1%85%A9-%E1%84%8B%E1%85%B2%E1%84%85%E1%85%A5%E1%86%B8-%E1%84%8B%E1%85%A7%E1%84%92%E1%85%A2%E1%86%BC-%E1%84%83%E1%85%B5%E1%84%8C%E1%85%A5%E1%84%90%E1%85%B33.jpg", link: "https://example.com/durigolf" },

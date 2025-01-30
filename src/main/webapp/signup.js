@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	signupForm.addEventListener("submit", function(event) {
 		event.preventDefault(); // 기본 제출 동작 방지
 
-		// 폼 데이터 수집
+		// 기본 회원가입 정보 수집
 		const formData = {
 			email: document.getElementById("email").value,
 			pw: document.getElementById("pw").value,
@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
 			user_type: document.getElementById("user_type").value,
 			create_dt: new Date().toISOString().split("T")[0], // 현재 날짜
 		};
+
 		console.log("FormData:", formData);
 
 		// user_type이 '상담'이면 추가 정보 모달 띄우기
@@ -41,15 +42,11 @@ document.addEventListener("DOMContentLoaded", function() {
 		modal.style.display = "none";
 	});
 
-	// 모달에서 추가 정보 제출
+	// 모달에서 추가 정보 제출 (전문 상담사일 경우)
 	submitAdditionalInfo.addEventListener("click", function() {
-		const additionalInfo = {
-			region: document.getElementById("region").value,
-			symptoms: document.getElementById("symptoms").value,
-		};
-
-		const formData = {
-			email: document.getElementById("email").value,
+		// 기존 회원가입 정보에 상담사 추가 정보 포함
+		const fullFormData = {
+			email: document.getElementById("email").value, // 상담사 ID = 이메일 (TB_COUNSELOR.cs_id)
 			pw: document.getElementById("pw").value,
 			name: document.getElementById("name").value,
 			nick: document.getElementById("nick").value,
@@ -59,12 +56,20 @@ document.addEventListener("DOMContentLoaded", function() {
 			phone: document.getElementById("phone").value,
 			user_type: document.getElementById("user_type").value,
 			create_dt: new Date().toISOString().split("T")[0],
-			region: additionalInfo.region,
-			symptoms: additionalInfo.symptoms,
+
+			// 상담사 추가 정보 (TB_COUNSELOR)
+			cs_id: document.getElementById("email").value, // 상담사 ID (이메일과 동일)
+			cs_charge: document.getElementById("symptoms").value || "", // 상담 분야 (빈 값 방지)
+			cs_certi: document.getElementById("certification").value || "", // 자격증 (빈 값 방지)
+			location: document.getElementById("region").value || "", // 지역 (빈 값 방지)
+			cs_approved: "N", // 승인 상태 (기본값 'N')
 		};
 
-		// 추가 정보 포함하여 회원가입 데이터 전송
-		sendSignupData(formData);
+		// JSON 구조 확인
+		console.log("전송할 데이터:", JSON.stringify(fullFormData));
+
+		// 상담사 회원가입 요청 전송
+		sendSignupData(fullFormData);
 		modal.style.display = "none"; // 모달 닫기
 	});
 
