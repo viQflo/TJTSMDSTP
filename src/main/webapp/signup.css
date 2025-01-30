@@ -1,123 +1,140 @@
 /* body 설정 */
 body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #eef2ff, #cfd9df);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100vh;
-    margin: 0;
+	font-family: Arial, sans-serif;
+	background: linear-gradient(to right, #eef2ff, #cfd9df);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100vh;
+	margin: 0;
 }
 
 /* 컨테이너가 네비게이션과 푸터 사이에 위치 */
 .container {
-    flex: 1; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 120px 20px 120px; /* 네비게이션과 푸터 여백 조정 */
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 120px 20px 120px; /* 네비게이션과 푸터 여백 조정 */
 }
 
 /* 회원가입 박스 */
 .signup-box {
-    background: white;
-    width: 400px;
-    max-width: 90%;
-    padding: 60px;
-    
-    margin-top: 100px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
+	background: white;
+	width: 400px;
+	max-width: 90%;
+	padding: 60px;
+	margin-top: 100px;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	text-align: center;
 }
 
 /* 입력 폼 스타일 */
 .form-group {
-    margin-bottom: 15px;
-    text-align: left;
+	margin-bottom: 15px;
+	text-align: left;
 }
 
 label {
-    display: block;
-    margin-bottom: 5px;
-    color: #555;
+	display: block;
+	margin-bottom: 5px;
+	color: #555;
 }
 
 input, select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	box-sizing: border-box;
 }
 
 #signup-button {
-    width: 100%;
-    padding: 12px;
-    background-color: #4a90e2;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+	width: 100%;
+	padding: 12px;
+	background-color: #4a90e2;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
 }
 
 #signup-button:hover {
-    background-color: #357ab7;
+	background-color: #357ab7;
 }
 
 .message {
-    margin-top: 10px;
-    color: green;
-    font-weight: bold;
+	margin-top: 10px;
+	color: green;
+	font-weight: bold;
 }
 
+/* ✅ 모달 중앙 정렬 */
 .modal {
-    display: none; /* 기본적으로 숨김 */
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* 배경에 반투명 검정색 */
-    justify-content: center;
-    align-items: center;
+	display: none;
+	justify-content: center !important;
+	align-items: center !important;
+	position: fixed !important;
+	top: 0 !important;
+	left: 0 !important;
+	width: 100% !important;
+	height: 100% !important;
+	background: rgba(0, 0, 0, 0.5) !important;
+	z-index: 1000 !important;
 }
 
-/* 모달 내용 */
+/* ✅ 모달 컨텐츠 가운데 정렬 */
 .modal-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    width: 400px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	background: white !important;
+	padding: 20px !important;
+	border-radius: 10px !important;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+	text-align: center !important; /* 제목과 내용 가운데 정렬 */
+	width: 400px !important; /* 모달 크기 조정 */
 }
 
-/* 모달 닫기 버튼 */
+/* 닫기 버튼 */
 .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+	position: absolute !important;
+	top: 10px !important;
+	right: 15px !important;
+	font-size: 20px !important;
+	cursor: pointer !important;
 }
 
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-/* 버튼 스타일 */
+/* ✅ 버튼을 가운데 정렬 */
 #submit-additional-info {
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+	display: block !important;
+	margin: 20px auto !important; /* 수직 여백 추가 후 가운데 정렬 */
+	padding: 10px 20px !important;
+	font-size: 16px !important;
+	background-color: #007bff !important;
+	color: white !important;
+	border: none !important;
+	border-radius: 5px !important;
+	cursor: pointer !important;
 }
 
 #submit-additional-info:hover {
-    background-color: #0056b3;
+	background-color: #0056b3 !important;
+}
+
+/* ✅ 폼 요소 가운데 정렬 */
+.form-group {
+	text-align: left !important;
+	margin-bottom: 15px !important;
+}
+
+.form-group label {
+	display: block !important;
+	font-weight: bold !important;
+	margin-bottom: 5px !important;
+}
+
+.form-group select {
+	width: 100% !important;
+	padding: 8px !important;
+	border: 1px solid #ddd !important;
+	border-radius: 5px !important;
 }

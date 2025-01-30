@@ -21,5 +21,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
    <!-- SQL문들을 정의해주는 MAPPER.XML 경로 지정 -->
    <mappers>
       <mapper resource="com/smhrd/database/MemberMapper.xml" />
+      <mapper resource="com/smhrd/database/CounselorMapper.xml" />
    </mappers>
 </configuration>

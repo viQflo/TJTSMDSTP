@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smhrd.model.CounselorDAO">
+
+	<insert id="insertCounselor"
+		parameterType="com.smhrd.model.CounselorDTO">
+		INSERT INTO TB_COUNSELOR (
+		CS_ID,
+		CS_CHARGE,
+		CS_CERTI,
+		CS_APPROVED,
+		LOCATION
+		) VALUES (
+		#{csId},
+		#{csCharge},
+		#{csCerti},
+		'N',
+		#{location}
+		)
+	</insert>
+
+</mapper>

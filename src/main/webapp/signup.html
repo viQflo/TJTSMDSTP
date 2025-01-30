@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>회원가입</title>
-    <!-- CSS 파일 -->
-    <link rel="stylesheet" href="common.css">
-    <link rel="stylesheet" href="signup.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>회원가입</title>
+<!-- CSS 파일 -->
+<link rel="stylesheet" href="common.css">
+<link rel="stylesheet" href="signup.css">
 </head>
 <body>
 
@@ -33,44 +33,43 @@
 			<h2>회원가입</h2>
 			<form id="signup-form">
 				<div class="form-group">
-					<label for="email">이메일</label> 
-					<input type="email" id="email" name="email" required>
+					<label for="email">이메일</label> <input type="email" id="email"
+						name="email" required>
 				</div>
 				<div class="form-group">
-					<label for="pw">비밀번호</label> 
-					<input type="password" id="pw" name="pw" required>
+					<label for="pw">비밀번호</label> <input type="password" id="pw"
+						name="pw" required>
 				</div>
 				<div class="form-group">
-					<label for="name">이름</label> 
-					<input type="text" id="name" name="name" required>
+					<label for="name">이름</label> <input type="text" id="name"
+						name="name" required>
 				</div>
 				<div class="form-group">
-					<label for="nick">닉네임</label> 
-					<input type="text" id="nick" name="nick" required>
+					<label for="nick">닉네임</label> <input type="text" id="nick"
+						name="nick" required>
 				</div>
 				<div class="form-group">
-					<label for="birthdate">생년월일</label> 
-					<input type="date" id="birthdate" name="birthdate" required>
+					<label for="birthdate">생년월일</label> <input type="date"
+						id="birthdate" name="birthdate" required>
 				</div>
 				<div class="form-group">
-					<label for="gender">성별</label> 
-					<select id="gender" name="gender" required>
+					<label for="gender">성별</label> <select id="gender" name="gender"
+						required>
 						<option value="">선택하세요</option>
 						<option value="남성">남성</option>
 						<option value="여성">여성</option>
 					</select>
 				</div>
 				<div class="form-group">
-					<label for="job">직업</label> 
-					<input type="text" id="job" name="job">
+					<label for="job">직업</label> <input type="text" id="job" name="job">
 				</div>
 				<div class="form-group">
-					<label for="phone">전화번호</label> 
-					<input type="tel" id="phone" name="phone" required>
+					<label for="phone">전화번호</label> <input type="tel" id="phone"
+						name="phone" required>
 				</div>
 				<div class="form-group">
-					<label for="user_type">사용자 유형</label> 
-					<select id="user_type" name="user_type">
+					<label for="user_type">사용자 유형</label> <select id="user_type"
+						name="user_type">
 						<option value="일반">일반 사용자</option>
 						<option value="상담">전문 상담사</option>
 						<option value="관리">관리자</option>
@@ -88,8 +87,7 @@
 			<span class="close">&times;</span>
 			<h2>상담사 추가 정보 입력</h2>
 			<div class="form-group">
-				<label for="region">지역</label>
-				<select id="region" name="region">
+				<label for="region">지역</label> <select id="region" name="region">
 					<option value="서울">서울</option>
 					<option value="부산">부산</option>
 					<option value="대구">대구</option>
@@ -110,8 +108,8 @@
 				</select>
 			</div>
 			<div class="form-group">
-				<label for="symptoms">증상</label>
-				<select id="symptoms" name="symptoms">
+				<label for="symptoms">관련 분야</label> <select id="symptoms"
+					name="symptoms">
 					<option value="우울감">우울감</option>
 					<option value="불안">불안</option>
 					<option value="공황">공황</option>
@@ -128,8 +126,18 @@
 					<option value="외상 후 스트레스">외상 후 스트레스</option>
 					<option value="자존감 저하">자존감 저하</option>
 				</select>
+				<!-- ✅ 자격증 추가 -->
+				<div class="form-group">
+					<label for="certification">자격증</label> <select id="certification"
+						name="certification">
+						<option value="전문가">전문가</option>
+						<option value="1급">1급</option>
+						<option value="2급">2급</option>
+						<option value="3급">3급</option>
+					</select>
+				</div>
 			</div>
-			<button id="submit-additional-info">추가정보 제출</button>
+			<button id="submit-additional-info" align="center">추가정보 제출</button>
 		</div>
 	</div>
 
