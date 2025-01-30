@@ -21,7 +21,7 @@ html, body {
    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
    position: fixed !important;
    top: 0 !important;
-   width: 100% !important;
+   width: 100vw !important;
    height: auto !important;
    z-index: 1000 !important;
    border-bottom: 1px solid #ddd !important;
