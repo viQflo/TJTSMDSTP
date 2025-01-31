@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const symptomList = document.getElementById("symptomList");
     const toggleRegionButton = document.getElementById("toggleRegionButton");
     const toggleSymptomsButton = document.getElementById("toggleSymptomsButton");
+    const findButton = document.querySelector(".find-button");
 
     let isRegionOpen = true;
     let isSymptomsOpen = true;
@@ -45,17 +46,24 @@ document.addEventListener("DOMContentLoaded", function () {
         toggleSymptomsButton.textContent = isSymptomsOpen ? "증상 목록 닫기 -" : "증상 목록 열기 +";
     });
 
-    // 🔹 상담사 찾기 버튼 클릭 이벤트
-    document.querySelector(".find-button").addEventListener("click", function () {
-        const selectedRegions = Array.from(regionList.querySelectorAll("input:checked")).map((input) => input.value);
-        const selectedSymptoms = Array.from(symptomList.querySelectorAll("input:checked")).map((input) => input.value);
+    // 🔹 상담사 찾기 버튼 클릭 이벤트 (counselor.jsp로 이동)
+    findButton.addEventListener("click", function () {
+        const selectedRegions = Array.from(regionList.querySelectorAll("input:checked"))
+            .map(input => input.value);
+        const selectedSymptoms = Array.from(symptomList.querySelectorAll("input:checked"))
+            .map(input => input.value);
 
         if (selectedRegions.length === 0 || selectedSymptoms.length === 0) {
             alert("최소 한 개의 지역과 증상을 선택하세요!");
             return;
-        }else {window.location.href = "counselor.html";}
+        }
 
-        
-        ;
+        // 선택한 지역과 증상을 URL 파라미터로 전달 (counselor.jsp로 변경)
+        const queryParams = new URLSearchParams({
+            location: selectedRegions.join(","), // 여러 개 선택 가능
+            cs_charge: selectedSymptoms.join(",") // 여러 개 선택 가능
+        }).toString();
+		console.log(queryParams);
+        window.location.href = `counselor.jsp?${queryParams}`;
     });
 });
