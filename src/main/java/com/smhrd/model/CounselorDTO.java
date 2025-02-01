@@ -21,6 +21,8 @@ public class CounselorDTO {
 
     @JsonProperty("location")
     private String location; // 지역 (TB_COUNSELOR.LOCATION)
+    
+    
 
     // 🔹 기본 생성자 (필수)
     public CounselorDTO() {}
@@ -41,6 +43,8 @@ public class CounselorDTO {
         this.location = location;
         this.csApproved = csApproved;
     }
+    
+    
 
     // 🔹 Getter & Setter (필수)
     public String getName() { return name; }
@@ -60,4 +64,6 @@ public class CounselorDTO {
 
     public String getLocation() { return location; }
     public void setLocation(String location) { this.location = location; }
+    
+    
 }

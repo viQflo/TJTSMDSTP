@@ -53,6 +53,15 @@ public class MemberDAO {
             return session.update("updatePassword", member);
         }
     }
+    
+    // 사용자 전화번호 조회 (EMAIL 기반)
+    public String getUserPhone(String email) {
+        String phone = null;
+        try (SqlSession session = sqlSessionFactory.openSession(true)) {
+            phone = session.selectOne("getUserPhone", email);
+        }
+        return phone;
+    }
 
 	
 

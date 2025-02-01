@@ -70,6 +70,30 @@
 			<button id="change-password-btn">변경</button>
 		</div>
 	</div>
+	<div class="counsel-section">
+			<h3>상담 신청 현황</h3>
+			<table>
+				<thead>
+					<tr>
+						<th>신청 날짜</th>
+						<th>상담 유형</th>
+						<th>상담자 이름</th>
+						<th>진행 상태</th>
+					</tr>
+				</thead>
+				<tbody id="counsel-list">
+					<!-- JavaScript에서 동적으로 추가됨 -->
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<footer class="footer">
+		<p>© 2025 MyTeamWebsite. All rights reserved.</p>
+		<p>
+			이메일: <a href="mailto:wayawaya@smhrd.com">wayawaya@smhrd.com</a> |
+			고객센터: 1544-1234
+		</p>
+	</footer>
 
 	<script>
     $(document).ready(function() {
@@ -140,6 +164,8 @@
                     $("#new-password").val("");
                 });
             });
+            
+            
     });
         
     </script>

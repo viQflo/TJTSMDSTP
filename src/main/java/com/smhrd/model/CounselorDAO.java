@@ -1,5 +1,6 @@
 package com.smhrd.model;
 
+import java.security.Timestamp;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -24,7 +25,7 @@ public class CounselorDAO {
 	
 	
 	public List<CounselorDTO> getFilteredCounselors(String location, String csCharge) {
-	    SqlSession session = sqlSessionFactory.openSession();
+	    SqlSession session = sqlSessionFactory.openSession(true);
 	    List<CounselorDTO> counselorList = null;
 
 	    try {
@@ -52,5 +53,8 @@ public class CounselorDAO {
 	    }
 	    return counselorList;
 	}
+	
+	
+	  
 
 	}
