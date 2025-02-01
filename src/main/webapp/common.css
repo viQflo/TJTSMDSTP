@@ -17,12 +17,12 @@ html, body {
    background-color: white !important;
    display: flex !important;
    align-items: center !important;
-   padding: 10px 20px !important;
+   padding: 30px 20px !important; /* 패딩 추가로 두께 증가 */
    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
    position: fixed !important;
    top: 0 !important;
    width: 100vw !important;
-   height: auto !important;
+   height: 125px !important; /* 네비게이션 바 더 두껍게 */
    z-index: 1000 !important;
    border-bottom: 1px solid #ddd !important;
    box-sizing: border-box !important;
@@ -30,29 +30,36 @@ html, body {
 
 /* 로고와 텍스트 */
 .logo {
-   flex: 1 !important; /* 헤더의 1/3 공간 */
+   flex: 1 !important;
    display: flex !important;
-   align-items: center !important;
-   justify-content: center !important; /* 중앙 정렬 */
+   align-items: center !important; /* 가로 중앙 정렬 */
+   justify-content: center !important;
    cursor: pointer !important;
+   gap: 15px !important; /* 로고와 텍스트 간격 */
 }
 
+/* 로고 이미지 */
 .logo-img {
-   height: 40px !important;
+   height: 65px !important; /* 로고 크기 키움 */
 }
 
+/* 메인 텍스트 */
 .logo-text {
-   font-size: 1.5rem !important;
-   margin-left: 10px !important;
+   font-size: 1.8rem !important; /* 글자 크기 약간 증가 */
    font-weight: bold !important;
    color: #333 !important;
+   text-align: center !important;
+   margin: 0 !important;
 }
 
+/* 서브 텍스트 */
 .sub-text {
-   font-size: 0.9rem !important;
+   font-size: 1.1rem !important; /* 서브텍스트 조금 더 키움 */
    color: #888 !important;
-   margin-left: 5px !important;
+   text-align: center !important;
+   margin: 0 !important;
 }
+
 
 /* 네비게이션 링크 */
 .nav-links {
