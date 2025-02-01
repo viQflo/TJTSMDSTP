@@ -49,6 +49,15 @@ if (request.getAttribute("vouchers") == null) {
 <br><br><br><br><br>
     <h2>바우처 사이트</h2>
 <br><br>
+<!-- ✅ 검색창 -->
+<div class="search-container">
+    <input type="text" id="searchInput" placeholder="원하는 바우처 정보를 입력하세요.">
+    <button id="searchButton">
+        <img src="search-icon.png" alt="검색" width="20">
+    </button>
+</div>
+
+<br><br>
     <%
     if (vouchers == null) {
         out.println("<p style='color:red;'>🚨 서버에서 데이터를 받지 못했습니다.</p>");
@@ -80,7 +89,7 @@ if (request.getAttribute("vouchers") == null) {
         }
         %>
     </div>
-
+<br><br>
     <!-- ✅ 간결한 페이지네이션 UI -->
     <div class="pagination">
         <button id="prevPage" class="page-btn">이전</button>
@@ -148,5 +157,6 @@ if (request.getAttribute("vouchers") == null) {
 </script>
 
 <script src="main.js"></script>
+<script src="voucher.js"></script>
 </body>
 </html>
