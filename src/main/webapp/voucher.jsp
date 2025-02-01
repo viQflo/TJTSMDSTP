@@ -31,7 +31,7 @@ if (request.getAttribute("vouchers") == null) {
 <!-- ✅ Navbar -->
 <nav class="navbar">
     <div class="logo" id="homeButton">
-        <img src="vite.svg" alt="Logo" class="logo-img">
+        <img src="./videos/image_no_bg.png" alt="Logo" class="logo-img">
         <div>
             <p class="logo-text">누구나</p>
             <p class="sub-text">Look+na</p>
@@ -53,7 +53,7 @@ if (request.getAttribute("vouchers") == null) {
 <div class="search-container">
     <input type="text" id="searchInput" placeholder="원하는 바우처 정보를 입력하세요.">
     <button id="searchButton">
-        <img src="search-icon.png" alt="검색" width="20">
+        <img src="./videos/search-2911.png" alt="검색" width="20">
     </button>
 </div>
 
