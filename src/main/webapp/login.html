@@ -7,7 +7,6 @@
    <title>로그인</title>
    <link rel="stylesheet" href="common.css">
    <link rel="stylesheet" href="login.css">
-
 </head>
 
 <body>
@@ -52,12 +51,28 @@
             계정이 없으신가요?
             <a href="signup.html" class="signup-link">회원가입</a>
          </p>
+
+         <!-- ✅ 소셜 로그인 버튼 추가 -->
+         <div class="social-login">
+            <p class="social-text">또는 소셜 로그인</p>
+            <div class="social-buttons">
+               <button id="google-login" class="social-btn google">
+                  <img src="google.png" alt="Google">
+               </button>
+               <button id="kakao-login" class="social-btn kakao">
+                  <img src="kakao.png" alt="Kakao">
+               </button>
+               <button id="naver-login" class="social-btn naver">
+                  <img src="naver.png" alt="Naver"> 
+               </button>
+            </div>
+         </div>
       </div>
    </div>
 
    <!-- Footer -->
    <footer class="footer">
-      <p>© 2025 MyTeamWebsite. All rights reserveds.</p>
+      <p>© 2025 MyTeamWebsite. All rights reserved.</p>
       <p>
          이메일: <a href="mailto:wayawaya@smhrd.com">wayawaya@smhrd.com</a> |
          고객센터: 1544-1234

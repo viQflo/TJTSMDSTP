@@ -1,3 +1,16 @@
+document.getElementById("google-login").addEventListener("click", function() {
+      window.location.href = "https://accounts.google.com/o/oauth2/auth?client_id=YOUR_GOOGLE_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=email profile";
+   });
+
+   document.getElementById("kakao-login").addEventListener("click", function() {
+      window.location.href = "https://kauth.kakao.com/oauth/authorize?client_id=YOUR_KAKAO_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code";
+   });
+
+   document.getElementById("naver-login").addEventListener("click", function() {
+      window.location.href = "https://nid.naver.com/oauth2.0/authorize?client_id=YOUR_NAVER_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&state=RANDOM_STATE";
+   });
+
+
 document.addEventListener("DOMContentLoaded", function() {
 	const loginForm = document.getElementById("login-form");
 	const errorMessage = document.getElementById("error-message");
@@ -33,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function() {
 							throw new Error(errorData.message || "로그인에 실패했습니다.");
 						} catch (e) {
 							console.error("HTML 에러:", errorText);
-							throw new Error("서버에서 HTML 응답을 반환했습니다.");
+							throw new Error("서버에서 HTML 응답을 반환했습니다."); 
 						}
 					});
 				}

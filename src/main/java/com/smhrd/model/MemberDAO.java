@@ -62,6 +62,26 @@ public class MemberDAO {
         }
         return phone;
     }
+    // ✅ 기존 계정과 소셜 계정 연동
+    public boolean linkSocialAccount(String email, String socialEmail, String provider) {
+        try (SqlSession session = sqlSessionFactory.openSession(true)) {
+            MemberDTO existingUser = session.selectOne("MemberMapper.findByEmail", email);
+            
+            if (existingUser == null) return false;
+
+            existingUser.setSocialEmail(socialEmail);
+            existingUser.setSocialProvider(provider);
+            session.update("MemberMapper.linkSocialAccount", existingUser);
+            return true;
+        }
+    }
+
+    // ✅ 소셜 로그인 이메일이 연동된 계정 찾기
+    public MemberDTO findBySocialEmail(String socialEmail) {
+        try (SqlSession session = sqlSessionFactory.openSession()) {
+            return session.selectOne("MemberMapper.findBySocialEmail", socialEmail);
+        }
+    }
 
 	
 

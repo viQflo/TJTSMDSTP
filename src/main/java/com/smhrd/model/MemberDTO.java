@@ -11,6 +11,7 @@ public class MemberDTO {
     private String gender;
     private String job;
     private String phone;
+    
 
     @JsonProperty("user_type") // 클라이언트 JSON의 user_type 필드와 매핑
     private String userType;
