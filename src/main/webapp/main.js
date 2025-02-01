@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
 				if (data.isLoggedIn) {
 					// 로그인 상태일 경우: 네비게이션 바 변경
 					navbar.innerHTML = `
-                        <button class="nav-button" data-path="voucher.html">바우처 정보</button>
+                        <button class="nav-button" data-path="voucher.jsp">바우처 정보</button>
                         <button class="nav-button" data-path="counsel.html">상담 연결서비스</button>
                         <button class="nav-button" data-path="Board.html">커뮤니티</button>
                         <button class="nav-button" data-path="mypage.html">마이페이지</button>
@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function() {
 				} else {
 					// 비로그인 상태일 경우: 네비게이션 바 변경
 					navbar.innerHTML = `
-                        <button class="nav-button" data-path="voucher.html">바우처 정보</button>
+                        <button class="nav-button" data-path="voucher.jsp">바우처 정보</button>
                         <button class="nav-button" data-path="counsel.html">상담 연결서비스</button>
                         <button class="nav-button" data-path="Board.html">커뮤니티</button>
                         <button class="nav-button" data-path="login.html">로그인</button>
@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function() {
 			.catch((error) => {
 				console.error("세션 확인 실패:", error.message);
 				navbar.innerHTML = `
-                    <button class="nav-button" data-path="voucher.html">바우처 정보</button>
+                    <button class="nav-button" data-path="voucher.jsp">바우처 정보</button>
                     <button class="nav-button" data-path="counsel.html">상담 연결서비스</button>
                     <button class="nav-button" data-path="Board.html">커뮤니티</button>
                     <button class="nav-button" data-path="login.html">로그인</button>
@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	} else {
 		// 토큰이 없으면 비로그인 상태로 처리
 		navbar.innerHTML = `
-            <button class="nav-button" data-path="voucher.html">바우처 정보</button>
+            <button class="nav-button" data-path="voucher.jsp">바우처 정보</button>
             <button class="nav-button" data-path="counsel.html">상담 연결서비스</button>
             <button class="nav-button" data-path="Board.html">커뮤니티</button>
             <button class="nav-button" data-path="login.html">로그인</button>

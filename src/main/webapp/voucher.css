@@ -1,157 +1,141 @@
-/* 공통 스타일 */
 body {
-   font-family: Arial, sans-serif;
-   background-color: #f9f9f9;
-   margin: 0;
-   padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    position: relative;
+    z-index: 10;
 }
 
 .container {
-   max-width: 1400px;
-   margin: 0 auto;
-   padding: 120px 20px 120px;
-   
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+    padding-top: 80px
 }
-section {
-   max-width: 1400px;
-   margin: 0 auto;
-   padding: 10px;
-}
-
-/* 메인 콘텐츠에 충분한 여백 추가 */
-main {
-   padding-top: 200px; /* 헤더 높이 + 여유 공간 */
-   padding-bottom: 60px; /* 푸터 높이 */
-}
-
-/* 검색창 */
-.search-bar {
-   display: flex;
-   align-items: center;
-   justify-content: space-between;
-   background: white;
-   border: 1px solid #ddd;
-   border-radius: 50px;
-   padding: 10px 20px;
-   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-   margin-top: 160px; 
-   max-width: 900px; 
-   width: 90%; 
-   margin-left: auto;
-   margin-right: auto;
-}
-
-.search-bar input {
-   flex: 1;
-   border: none;
-   outline: none;
-   padding: 12px;
-   font-size: 1rem;
-   width: 100%;
-}
-
-.search-bar button {
-   background-color: #007bff;
-   color: white;
-   border: none;
-   padding: 10px 20px;
-   border-radius: 50px;
-   cursor: pointer;
-   margin-left: 10px;
-}
-
-.search-bar button:hover {
-   background-color: #0056b3;
-}
-
-.filters {
-   display: flex;
-   gap: 10px;
-   margin-top: 30px;
-   max-width: 900px; /* 검색창 길이와 동일하게 설정 */
-   margin-left: auto; /* 중앙 정렬 */
-   margin-right: auto; /* 중앙 정렬 */
-   height: 50px;
-}
-
-.filters select {
-   flex: 1;
-   padding: 10px;
-   border: 1px solid #ddd;
-   border-radius: 50px;
-   outline: none;
-}
-
-.reset-button {
-   background-color: #6c757d;
-   color: white;
-   border: none;
-   padding: 10px 20px;
-   border-radius: 50px;
-   cursor: pointer;
-}
-
-.reset-button:hover {
-   background-color: #5a6268;
-}
-
-/* 포트폴리오 */
-.portfolio {
-   margin: 40px 0px 40px;   
-}
-
-.portfolio h2 {
-   font-size: 2rem;
-   font-weight: bold;
-   margin-bottom: 20px;
-   }
 
 #portfolioGrid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 🔹 4개의 열로 고정 */
-    gap: 70px 70px;
-    justify-content: space-between; /* 🔹 아이템을 균등 간격으로 정렬 */
-    align-items: stretch; /* 🔹 아이템 높이를 맞추기 */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px 40px;
 }
 
 .portfolio-item {
-   background: white;
-   border-radius: 10px;
-   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-   overflow: hidden;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    padding: 15px;
 }
 
 .portfolio-item img {
-   width: 100%;
-   height: 200px;
-   object-fit: cover;
+    width: 80%;
+    height: 200px;
+    object-fit: cover;
 }
 
 .portfolio-item .content {
-   padding: 20px;
+    padding: 10px;
 }
 
 .portfolio-item .content h3 {
-   font-size: 1.2rem;
-   font-weight: bold;
-   margin: 0 0 10px 0;
-}
-
-.portfolio-item .content p {
-   color: #666;
-   margin-bottom: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 
 .portfolio-item .content a {
-   display: inline-block;
-   background: #6f42c1;
-   color: white;
-   text-decoration: none;
-   padding: 10px 20px;
-   border-radius: 5px;
-   text-align: center;
+    display: inline-block;
+    background: #6f42c1;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
 }
 
 .portfolio-item .content a:hover {
-   background: #563d7c;
+    background: #563d7c;
+}
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.search-container input {
+    width: 300px;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 16px;
+}
+
+.search-container button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-left: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.search-container button:hover {
+    background-color: #0056b3;
+}
+
+.filter-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filter-container select,
+.filter-container button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 8px;
+}
+
+.page-btn {
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    background: #f5f5f5;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.page-btn:hover {
+    background: #ddd;
+}
+
+.page-btn.active {
+    background: #007bff;
+    color: white;
+    font-weight: bold;
+}
+
+.page-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
 }
