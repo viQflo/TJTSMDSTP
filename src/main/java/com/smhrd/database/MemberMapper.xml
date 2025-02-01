@@ -49,7 +49,28 @@
 		WHERE EMAIL = #{email} AND PW = #{pw}
 	</select>
 	
+	 <!-- ✅ 이메일로 회원 정보 가져오기 -->
+    <select id="getMemberByEmail" parameterType="string" resultType="com.smhrd.model.MemberDTO">
+        SELECT email, name, phone, job 
+        FROM TB_USER 
+        WHERE email = #{email}
+    </select>
 
+    <!-- ✅ 전화번호 업데이트 -->
+    <update id="updatePhone" parameterType="com.smhrd.model.MemberDTO">
+        UPDATE TB_USER 
+        SET phone = #{phone}
+        WHERE email = #{email}
+    </update>
+
+    <!-- ✅ 비밀번호 업데이트 -->
+    <update id="updatePassword" parameterType="com.smhrd.model.MemberDTO">
+        UPDATE TB_USER 
+        SET pw = #{pw}
+        WHERE email = #{email}
+    </update>
+	
+	
 
 
 </mapper> 

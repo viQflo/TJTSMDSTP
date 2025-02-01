@@ -26,6 +26,42 @@ public class MemberDAO {
 			return session.selectOne("login", memberDTO);
 		}
 	}
+	
+	// ✅ 이메일을 기반으로 사용자 정보 가져오기 (마이페이지에서 사용)
+    public MemberDTO getMemberByEmail(String email) {
+        try (SqlSession session = sqlSessionFactory.openSession()) {
+            return session.selectOne("getMemberByEmail", email);
+        }
+    }
+
+    // ✅ 전화번호 업데이트
+    public int updatePhone(String email, String phone) {
+        try (SqlSession session = sqlSessionFactory.openSession(true)) {
+            MemberDTO member = new MemberDTO();
+            member.setEmail(email);
+            member.setPhone(phone);
+            return session.update("updatePhone", member);
+        }
+    }
+
+    // ✅ 비밀번호 변경
+    public int updatePassword(String email, String newPassword) {
+        try (SqlSession session = sqlSessionFactory.openSession(true)) {
+            MemberDTO member = new MemberDTO();
+            member.setEmail(email);
+            member.setPw(newPassword);
+            return session.update("updatePassword", member);
+        }
+    }
+    
+    // 사용자 전화번호 조회 (EMAIL 기반)
+    public String getUserPhone(String email) {
+        String phone = null;
+        try (SqlSession session = sqlSessionFactory.openSession(true)) {
+            phone = session.selectOne("getUserPhone", email);
+        }
+        return phone;
+    }
 
 	
 

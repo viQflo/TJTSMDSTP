@@ -19,4 +19,25 @@
 		)
 	</insert>
 
+
+
+
+
+	<select id="getFilteredCounselors"
+		parameterType="com.smhrd.model.CounselorDTO"
+		resultType="com.smhrd.model.CounselorDTO">
+		SELECT
+		U.NAME AS name,
+		C.CS_CHARGE AS csCharge,
+		C.LOCATION AS location
+		FROM TB_COUNSELOR C
+		JOIN TB_USER U ON C.CS_ID = U.EMAIL
+		WHERE UPPER(TRIM(C.LOCATION)) = UPPER(TRIM(#{location}))
+		AND UPPER(TRIM(C.CS_CHARGE)) = UPPER(TRIM(#{csCharge}))
+	</select>
+
+	
+
+
+
 </mapper>
