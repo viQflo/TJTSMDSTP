@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         <button class="nav-button" data-path="voucher.html">바우처 정보</button>
                         <button class="nav-button" data-path="counsel.html">상담 연결서비스</button>
                         <button class="nav-button" data-path="Board.html">커뮤니티</button>
-                        <button class="nav-button" data-path="mypage.html">마이페이지</button>
+                        <button class="nav-button" data-path="mypage.jsp">마이페이지</button>
                         <button class="nav-button" id="logout-button">로그아웃</button>
                     `;
 					// 로그아웃 버튼 클릭 시 토큰 삭제 후 로그아웃 처리
