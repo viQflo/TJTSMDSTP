@@ -16,7 +16,7 @@ public class CounselorDAO {
 	// 상담사 추가 정보 저장 메서드
 	public int insertCounselorInfo(CounselorDTO counselorDTO) {
 		try (SqlSession session = sqlSessionFactory.openSession(true)) {
-			int result = session.insert("insertCounselor", counselorDTO);
+			int result = session.insert("com.smhrd.model.CounselorDAO.insertCounselor", counselorDTO);
 			session.close();
 			return result;
 		}

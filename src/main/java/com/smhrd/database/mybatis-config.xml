@@ -15,7 +15,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             <property name="username" value="mp_24K_bigdata28_p2_1" />
             <property name="password" value="smhrd1" />
          </dataSource>
-      </environment>
+      </environment> 
    </environments>
 
    <!-- SQL문들을 정의해주는 MAPPER.XML 경로 지정 -->

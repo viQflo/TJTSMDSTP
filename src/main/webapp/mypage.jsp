@@ -86,7 +86,7 @@
 				</tbody>
 			</table>
 		</div>
-	</div>
+	
 	<footer class="footer">
 		<p>© 2025 MyTeamWebsite. All rights reserved.</p>
 		<p>
