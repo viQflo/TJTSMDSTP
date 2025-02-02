@@ -231,7 +231,7 @@ body {
     transform: scale(1.1);
 }
 .counsel1234 {
-    
+    opacity: 0;
     background: linear-gradient(to right, #ffe4e1, #ffdab9, #add8e6);
     
 }

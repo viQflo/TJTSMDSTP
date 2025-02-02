@@ -145,32 +145,39 @@
 	<!-- JavaScript: Intersection Observer API 사용 -->
 	<script>
 		document.addEventListener("DOMContentLoaded", function () {
-			const mainContent = document.getElementById("animatedMainContent");
+    // 첫 번째 요소 (animatedMainContent) 감지
+    const animatedMainContent = document.getElementById("animatedMainContent");
+    if (animatedMainContent) {
+        const observer1 = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animatedMainContent.classList.add("show");
+                }
+            });
+        }, { threshold: 0.2 });
 
-			const observer = new IntersectionObserver(entries => {
-				entries.forEach(entry => {
-					if (entry.isIntersecting) {
-						mainContent.classList.add("show");
-					}
-				});
-			}, {threshold: 0.2});
+        observer1.observe(animatedMainContent);
+    } else {
+        console.warn("animatedMainContent 요소를 찾을 수 없습니다!");
+    }
 
-			observer.observe(mainContent);
-		});
-		
-		document.addEventListener("DOMContentLoaded", function () {
-			const mainContent = document.getElementById("counsel1234");
+    // 두 번째 요소 (counsel1234) 감지
+    const counsel1234 = document.getElementById("counsel1234");
+    if (counsel1234) {
+        const observer2 = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    counsel1234.classList.add("show");
+                }
+            });
+        }, { threshold: 0.2 });
 
-			const observer = new IntersectionObserver(entries => {
-				entries.forEach(entry => {
-					if (entry.isIntersecting) {
-						mainContent.classList.add("show");
-					}
-				});
-			}, {threshold: 0.2});
+        observer2.observe(counsel1234);
+    } else {
+        console.warn("counsel1234 요소를 찾을 수 없습니다!");
+    }
+});
 
-			observer.observe(mainContent);
-		});
 	</script>
 	
 
