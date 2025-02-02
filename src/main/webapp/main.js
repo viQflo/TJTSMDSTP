@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", function() {
 	document.getElementById("homeButton").addEventListener("click", () => {
 		window.location.href = "Main.html"; // main.html 경로로 이동
 	});
+	
+	
 
 	// 로컬 스토리지에서 토큰 가져오기
 	const token = localStorage.getItem("authToken");

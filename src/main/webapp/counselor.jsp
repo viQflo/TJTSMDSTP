@@ -121,13 +121,12 @@ $(document).ready(function() {
         }
     });
 
-    // ✅ 입장 시 안내 모달 (한 번만 실행)
+    // ✅ 입장 시 안내 모달 (한 번만 실행)ㅁ
     const welcomeModal = $("#welcomeModal");
     $("#closeWelcomeModal, .close-welcome").click(function() {
         welcomeModal.hide();
     });
 
-    // ✅ 처음 페이지 로드 시 안내 모달만 보이도록 설정
     $(window).on("load", function() {
         welcomeModal.show();
     });
@@ -141,7 +140,6 @@ $(document).ready(function() {
 
     let isReservationMode = false; 
 
-    // ✅ 예약 버튼 클릭 시 모달 열기 (처음 입장 시 실행 안 됨)
     function openReservationModal(name, field) {
         modalTitle.text(name + " 상담사와 예약 신청");
         modalInfo.text("분야: " + field);
@@ -149,16 +147,28 @@ $(document).ready(function() {
         reservationModal.show();
     }
 
-    // ✅ 예약 신청 버튼 클릭 시
     confirmReservation.click(function() {
         if (isReservationMode) {
+            $.ajax({
+                url: 'SendSMSServlet',
+                type: 'POST',
+                data: {
+                    message: "상담 신청과 관련하여 메시지가 도착했습니다"
+                },
+                success: function(response) {
+                    alert("문자가 발송되었습니다!");
+                },
+                error: function() {
+                    alert("문자 발송에 실패했습니다.");
+                }
+            });
+
             alert("예약 신청 완료! 마이페이지에서 신청 현황을 확인하세요!");
         }
         reservationModal.hide();
         isReservationMode = false;
     });
 
-    // ✅ 모달 닫기
     closeReservation.click(function() {
         reservationModal.hide();
         isReservationMode = false;

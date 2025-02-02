@@ -1,3 +1,51 @@
+<<<<<<< HEAD
+document.getElementById("google-login").addEventListener("click", function() {
+	window.location.href = "https://accounts.google.com/o/oauth2/auth?client_id=YOUR_GOOGLE_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=email profile";
+});
+
+document.getElementById("google-login").addEventListener("click", function() {
+	window.location.href = "https://accounts.google.com/o/oauth2/auth?client_id=YOUR_GOOGLE_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=email profile";
+});
+
+document.getElementById("kakao-login").addEventListener("click", function() {
+	const KAKAO_CLIENT_ID = "8a582482509b48121de75cdf6846ab30";
+	const REDIRECT_URI = "http://localhost:8081/TJTSMDS/api/kakao/callback";
+
+	const kakaoAuthUrl = `https://kauth.kakao.com/oauth/authorize?client_id=${KAKAO_CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=code`;
+	window.location.href = kakaoAuthUrl;
+});
+
+// ✅ 로그인 상태 확인 및 유지
+function checkLoginStatus() {
+	const token = localStorage.getItem("authToken");
+	if (token) {
+		console.log("✅ 로그인 상태 유지 중");
+		document.getElementById("login-button").style.display = "none"; // 로그인 버튼 숨기기
+	}
+}
+
+// ✅ URL에서 JWT 토큰 가져오기
+function getTokenFromURL() {
+	const urlParams = new URLSearchParams(window.location.search);
+	return urlParams.get("token");
+}
+
+// ✅ 로그인 후 JWT 저장 및 페이지 이동
+document.addEventListener("DOMContentLoaded", function() {
+	checkLoginStatus();
+
+	const token = getTokenFromURL();
+	if (token) {
+		console.log("🔵 카카오 로그인 완료, 토큰 저장 중:", token);
+		localStorage.setItem("authToken", token);
+		window.location.href = "Main.html"; // ✅ 로그인 후 메인 페이지 이동
+	}
+});
+
+document.getElementById("naver-login").addEventListener("click", function() {
+	window.location.href = "https://nid.naver.com/oauth2.0/authorize?client_id=YOUR_NAVER_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&state=RANDOM_STATE";
+});
+=======
 
 /*document.getElementById("google-login").addEventListener("click", function() {
 
@@ -23,6 +71,7 @@ document.getElementById("naver-login").addEventListener("click", function() {
 */
 
 
+>>>>>>> branch 'master' of https://github.com/viQflo/TJTSMDSTP.git
 
 
 document.addEventListener("DOMContentLoaded", function() {

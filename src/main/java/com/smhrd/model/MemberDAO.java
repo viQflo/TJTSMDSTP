@@ -43,6 +43,48 @@ public class MemberDAO {
 		}
 	}
 
+
+    // ✅ 비밀번호 변경
+    public int updatePassword(String email, String newPassword) {
+        try (SqlSession session = sqlSessionFactory.openSession(true)) {
+            MemberDTO member = new MemberDTO();
+            member.setEmail(email);
+            member.setPw(newPassword);
+            return session.update("updatePassword", member);
+        }
+    }
+    
+    // 사용자 전화번호 조회 (EMAIL 기반)
+    public String getUserPhone(String email) {
+        String phone = null;
+        try (SqlSession session = sqlSessionFactory.openSession(true)) {
+            phone = session.selectOne("getUserPhone", email);
+        }
+        return phone;
+    }
+    public MemberDTO findBySocialEmail(String socialEmail) {
+        try (SqlSession session = sqlSessionFactory.openSession()) {
+            return session.selectOne("com.smhrd.model.MemberDAO.findBySocialEmail", socialEmail);
+        }
+    }
+
+    public void linkSocialAccount(String email, String socialEmail, String provider) {
+        try (SqlSession session = sqlSessionFactory.openSession()) {
+            MemberDTO param = new MemberDTO();
+            param.setEmail(email);
+            param.setSocialLinkedEmail(socialEmail);
+            param.setSocialProvider(provider);
+            session.update("com.smhrd.model.MemberDAO.linkSocialAccount", param);
+            session.commit();
+        }
+    }
+    
+    public int insertSocialMember(MemberDTO memberDTO) {
+        try (SqlSession session = sqlSessionFactory.openSession(true)) {
+            return session.insert("com.smhrd.model.MemberDAO.insertSocialMember", memberDTO);
+        }
+    }
+
 	// ✅ 비밀번호 변경
 	public int updatePassword(String email, String newPassword) {
 		try (SqlSession session = sqlSessionFactory.openSession(true)) {
@@ -52,6 +94,7 @@ public class MemberDAO {
 			return session.update("com.smhrd.model.MemberDAO.updatePassword", member);
 		}
 	}
+
 
 	// 사용자 전화번호 조회 (EMAIL 기반)
 	public String getUserPhone(String email) {
