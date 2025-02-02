@@ -69,6 +69,20 @@
         SET pw = #{pw}
         WHERE email = #{email}
     </update>
+    
+    <select id="findBySocialEmail" parameterType="string" resultType="com.smhrd.model.MemberDTO">
+        SELECT * FROM TB_USER WHERE SOCIAL_LINKED_EMAIL = #{socialEmail}
+    </select>
+
+    <update id="linkSocialAccount" parameterType="com.smhrd.model.MemberDTO">
+        UPDATE TB_USER 
+        SET SOCIAL_LINKED_EMAIL = #{socialLinkedEmail}, SOCIAL_PROVIDER = #{socialProvider}
+        WHERE EMAIL = #{email}
+    </update>
+    <insert id="insertSocialMember" parameterType="com.smhrd.model.MemberDTO">
+    INSERT INTO TB_USER (EMAIL, NICK, SOCIAL_PROVIDER, CREATE_DT)
+    VALUES (#{email}, #{nick}, #{socialProvider}, SYSTIMESTAMP)
+</insert>
 	
 	
 

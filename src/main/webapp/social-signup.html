@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>소셜 회원가입</title>
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="signup.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="signup-box">
+            <h2>소셜 계정 회원가입</h2>
+
+            <form id="signup-form">
+                <p id="error-message" class="error-message"></p>
+
+                <!-- ✅ 소셜 로그인 이메일 자동 입력 -->
+                <div class="form-group">
+                    <label for="email">이메일</label>
+                    <input type="email" id="email" name="email" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label for="name">이름</label>
+                    <input type="text" id="name" name="name" placeholder="이름을 입력하세요" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="nick">닉네임</label>
+                    <input type="text" id="nick" name="nick" placeholder="닉네임을 입력하세요" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">전화번호</label>
+                    <input type="text" id="phone" name="phone" placeholder="전화번호를 입력하세요" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="job">직업</label>
+                    <input type="text" id="job" name="job" placeholder="직업을 입력하세요" required>
+                </div>
+
+                <!-- ✅ 소셜 로그인 제공자 정보 (숨김 필드) -->
+                <input type="hidden" id="provider" name="provider">
+
+                <button type="submit" id="signup-button">회원가입</button>
+            </form>
+
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const email = urlParams.get("email");
+            const provider = urlParams.get("provider");
+
+            // ✅ 이메일과 제공자를 자동 입력
+            document.getElementById("email").value = email || "소셜 로그인 이메일 없음";
+            document.getElementById("provider").value = provider || "unknown";
+
+            document.getElementById("signup-form").addEventListener("submit", function (event) {
+                event.preventDefault();
+
+                const signupData = {
+                    email: document.getElementById("email").value,
+                    name: document.getElementById("name").value,
+                    nick: document.getElementById("nick").value,
+                    phone: document.getElementById("phone").value,
+                    job: document.getElementById("job").value,
+                    provider: document.getElementById("provider").value
+                };
+
+                console.log("소셜 회원가입 데이터:", signupData);
+
+                fetch("http://localhost:8081/TJTSMDS/api/social-signup", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json; charset=UTF-8" },
+                    body: JSON.stringify(signupData)
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log("응답 데이터:", data);
+                        if (data.message === "회원가입 성공") {
+                            alert("회원가입이 완료되었습니다! 로그인 페이지로 이동합니다.");
+                            window.location.href = "login.html";
+                        } else {
+                            document.getElementById("error-message").textContent = "회원가입 실패: " + data.message;
+                        }
+                    })
+                    .catch(error => {
+                        console.error("회원가입 오류:", error);
+                        document.getElementById("error-message").textContent = "서버 오류가 발생했습니다.";
+                    });
+            });
+        });
+    </script>
+
+</body>
+
+</html>

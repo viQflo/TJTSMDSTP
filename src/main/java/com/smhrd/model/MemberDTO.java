@@ -11,6 +11,8 @@ public class MemberDTO {
     private String gender;
     private String job;
     private String phone;
+    private String socialLinkedEmail;
+    private String socialProvider;
     
 
     @JsonProperty("user_type") // 클라이언트 JSON의 user_type 필드와 매핑
@@ -118,4 +120,16 @@ public class MemberDTO {
     public void setCreateDt(String createDt) {
         this.createDt = createDt;
     }
+    
+    public String getEmail2() { return email; }
+    public void setEmail2(String email) { this.email = email; }
+
+    public String getPw2() { return pw; }
+    public void setPw2(String pw) { this.pw = pw; }
+
+    public String getSocialLinkedEmail() { return socialLinkedEmail; }
+    public void setSocialLinkedEmail(String socialLinkedEmail) { this.socialLinkedEmail = socialLinkedEmail; }
+
+    public String getSocialProvider() { return socialProvider; }
+    public void setSocialProvider(String socialProvider) { this.socialProvider = socialProvider; }
 }
