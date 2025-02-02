@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", function() {
 	const navbar = document.querySelector(".nav-links");
 
+
+
 	// 로고 클릭 시 메인 페이지(main.html)로 이동
 	document.getElementById("homeButton").addEventListener("click", () => {
 		window.location.href = "Main.html"; // main.html 경로로 이동
@@ -105,4 +107,13 @@ document.addEventListener("DOMContentLoaded", function() {
 			}
 		});
 	});
+});
+
+/*바우처 버튼 사이트*/
+document.getElementById("btn-1").addEventListener("click", () => {
+	window.location.href = "voucher.jsp";
+});
+/*상담 서비스 버튼 사이트*/
+document.getElementById("btn-2").addEventListener("click", () => {
+	window.location.href = "counsel.html";
 });
