@@ -1,43 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
 <mapper namespace="com.smhrd.model.CounselorDAO">
+
 
 	<insert id="insertCounselor"
 		parameterType="com.smhrd.model.CounselorDTO">
+
 		INSERT INTO TB_COUNSELOR (
+
 		CS_ID,
+
 		CS_CHARGE,
+
 		CS_CERTI,
+
 		CS_APPROVED,
+
 		LOCATION
+
 		) VALUES (
+
 		#{csId},
+
 		#{csCharge},
+
 		#{csCerti},
+
 		'N',
+
 		#{location}
+
 		)
+
 	</insert>
-
-
-
 
 
 	<select id="getFilteredCounselors"
 		parameterType="com.smhrd.model.CounselorDTO"
 		resultType="com.smhrd.model.CounselorDTO">
+
 		SELECT
+
 		U.NAME AS name,
+
 		C.CS_CHARGE AS csCharge,
+
 		C.LOCATION AS location
+
 		FROM TB_COUNSELOR C
+
 		JOIN TB_USER U ON C.CS_ID = U.EMAIL
+
 		WHERE UPPER(TRIM(C.LOCATION)) = UPPER(TRIM(#{location}))
+
 		AND UPPER(TRIM(C.CS_CHARGE)) = UPPER(TRIM(#{csCharge}))
+
 	</select>
-
-	
-
 
 
 </mapper>

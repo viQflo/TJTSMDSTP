@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	const token = localStorage.getItem("authToken");
 
 	if (token) {
+		// window.location.origin+"/" + window.location.pathname.split('/')[1]+"/api/"; 
 		// 토큰이 있는 경우 JWT 인증을 통해 세션 상태 확인
 		fetch("http://localhost:8081/TJTSMDS/api/session-check", {
 			method: "GET",

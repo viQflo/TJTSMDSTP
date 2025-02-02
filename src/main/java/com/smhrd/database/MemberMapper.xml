@@ -1,77 +1,151 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <!DOCTYPE mapper
+
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 
 
 
+
+
+
+
+
 <mapper namespace="com.smhrd.model.MemberDAO">
+
 	<insert id="join" parameterType="com.smhrd.model.MemberDTO">
+
 		INSERT INTO TB_USER (
+
 		EMAIL,
+
 		PW,
+
 		NAME,
+
 		NICK,
+
 		BIRTHDATE,
+
 		GENDER,
+
 		JOB,
+
 		PHONE,
+
 		USER_TYPE,
+
 		CREATE_DT
+
 		) VALUES (
+
 		#{email},
+
 		#{pw},
+
 		#{name},
+
 		#{nick},
+
 		#{birthdate},
+
 		#{gender},
+
 		#{job},
+
 		#{phone},
+
 		#{userType},
+
 		SYSTIMESTAMP
+
 		)
+
 	</insert>
+
 	<!-- 로그인 SQL -->
+
 	<select id="login" parameterType="com.smhrd.model.MemberDTO"
+
 		resultType="com.smhrd.model.MemberDTO">
+
 		SELECT
+
 		EMAIL,
+
 		NAME,
+
 		NICK,
+
 		BIRTHDATE,
+
 		GENDER,
+
 		JOB,
+
 		PHONE,
+
 		USER_TYPE,
+
 		CREATE_DT
+
 		FROM TB_USER
+
 		WHERE EMAIL = #{email} AND PW = #{pw}
+
 	</select>
+
 	
+
 	 <!-- ✅ 이메일로 회원 정보 가져오기 -->
+
     <select id="getMemberByEmail" parameterType="string" resultType="com.smhrd.model.MemberDTO">
+
         SELECT email, name, phone, job 
+
         FROM TB_USER 
+
         WHERE email = #{email}
+
     </select>
 
+
+
     <!-- ✅ 전화번호 업데이트 -->
+
     <update id="updatePhone" parameterType="com.smhrd.model.MemberDTO">
+
         UPDATE TB_USER 
+
         SET phone = #{phone}
+
         WHERE email = #{email}
+
     </update>
 
+
+
     <!-- ✅ 비밀번호 업데이트 -->
+
     <update id="updatePassword" parameterType="com.smhrd.model.MemberDTO">
+
         UPDATE TB_USER 
+
         SET pw = #{pw}
+
         WHERE email = #{email}
+
     </update>
+
 	
+
 	
+
+
+
 
 
 </mapper> 
-       

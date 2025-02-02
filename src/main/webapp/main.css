@@ -1,3 +1,17 @@
+@font-face {
+    font-family: 'Freesentation-4Regular';
+    src: url('./font/Freesentation-v2.000/Freesentation-4Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 홈페이지 전체에 폰트 적용 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Freesentation-4Regular', sans-serif;
+}
 /* 메인 컨텐츠 */
 .main-content {
     flex: 1;
@@ -15,6 +29,7 @@ video {
   height: 100vh; /* 전체 화면 높이 */
   object-fit: contain; /* 동영상을 자르지 않고 전체 표시 */
   display: block;
+  padding-bottom: 70px;
 }
 
 /* 버튼 스타일 */
@@ -72,5 +87,136 @@ video {
     width: 100%;
     height: 100%;
     object-fit: cover;
+   
 }
 
+
+body {
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+/* 사이트 소개 섹션 스타일 */
+.voucher123 {
+    padding: 50px 20px;
+}
+
+/* 제목 스타일 */
+.title123 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #666;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: slide-up 1s 0.5s ease-out forwards;
+    margin-bottom: 40px;
+}
+
+.icon {
+    width: 80px; /* 아이콘 크기 */
+    height: auto;
+    margin-bottom: 8px; /* 아이콘과 글자 사이 간격 */
+    animation: slide-up 1s 0.5s ease-out forwards;
+}
+
+/* 헤드라인 */
+.headline {
+    font-size: 35px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    opacity: 0;
+    animation: slide-up 1s 0.5s ease-out forwards;
+}
+
+/* 설명 */
+.description {
+    font-size: 23px;
+    margin: 10px auto 30px;
+    width: 60%;
+    line-height: 1.6;
+    color: #444;
+    opacity: 0;
+    animation: fade-in 1.2s 1s ease-out forwards;
+    padding-bottom: 30px;
+}
+
+/* 이미지 컨테이너 */
+.image-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+/* 이미지 스타일 */
+.image-container img {
+    width: 300px; /* 기존보다 살짝 키웠어요 */
+    height: 300px;
+    border-radius: 15px;
+    object-fit: cover;
+    opacity: 0;
+    transform: scale(0.9);
+    animation: fade-in 1s 1.5s ease-out forwards, scale-up 1s 1.5s ease-out forwards;
+}
+
+/* 버튼 스타일 */
+.btn-1 {
+    background-color: #4A90E2;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-1:hover {
+    background-color: #357ABD;
+    transform: scale(1.1);
+}
+
+/* 애니메이션 효과 */
+@keyframes slide-down {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-up {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scale-up {
+    from {
+        transform: scale(0.9);
+    }
+    to {
+        transform: scale(1);
+    }
+}

@@ -1,3 +1,17 @@
+@font-face {
+    font-family: 'Freesentation-4Regular';
+    src: url('./font/Freesentation-v2.000/Freesentation-4Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 홈페이지 전체에 폰트 적용 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Freesentation-4Regular', sans-serif;
+}
 body {
     font-family: Arial, sans-serif;
     background-color: #f9f9f9;
@@ -8,6 +22,7 @@ body {
 h2 {
     position: relative;
     z-index: 10;
+    font-size: 30px;
 }
 
 .container {

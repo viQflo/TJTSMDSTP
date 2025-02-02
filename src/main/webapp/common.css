@@ -1,3 +1,18 @@
+@font-face {
+    font-family: 'Freesentation-4Regular';
+    src: url('./font/Freesentation-v2.000/Freesentation-4Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 홈페이지 전체에 폰트 적용 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Freesentation-4Regular', sans-serif;
+}
+
 /* 기본 스타일 */
 html, body {
    height: 100% !important;
@@ -40,12 +55,12 @@ html, body {
 
 /* 로고 이미지 */
 .logo-img {
-   height: 65px !important; /* 로고 크기 키움 */
+   height: 70px !important; /* 로고 크기 키움 */
 }
 
 /* 메인 텍스트 */
 .logo-text {
-   font-size: 1.8rem !important; /* 글자 크기 약간 증가 */
+   font-size: 1.9rem !important; /* 글자 크기 약간 증가 */
    font-weight: bold !important;
    color: #333 !important;
    text-align: center !important;
@@ -54,7 +69,7 @@ html, body {
 
 /* 서브 텍스트 */
 .sub-text {
-   font-size: 1.1rem !important; /* 서브텍스트 조금 더 키움 */
+   font-size: 1.2rem !important; /* 서브텍스트 조금 더 키움 */
    color: #888 !important;
    text-align: center !important;
    margin: 0 !important;
@@ -75,7 +90,7 @@ html, body {
    background-color: transparent !important;
    border: none !important;
    color: #333 !important;
-   font-size: 1rem !important;
+   font-size: 1.3rem !important;
    font-weight: bold !important;
    cursor: pointer !important;
    transition: color 0.3s !important;   
