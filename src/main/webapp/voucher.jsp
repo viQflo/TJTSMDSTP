@@ -31,7 +31,7 @@ if (request.getAttribute("vouchers") == null) {
 <!-- ✅ Navbar -->
 <nav class="navbar">
     <div class="logo" id="homeButton">
-        <img src="./videos/image_no_bg.png" alt="Logo" class="logo-img">
+        <img src="./videos/메인 로고.png" alt="Logo" class="logo-img">
         <div>
             <p class="logo-text">누구나</p>
             <p class="sub-text">Look+na</p>

@@ -121,3 +121,59 @@ function setDefaultNavbar(navbar) {
         `;
     }
 }
+/*맨 아래 커뮤니티 소개창 애니메이션*/
+document.addEventListener("DOMContentLoaded", function () {
+    const magicCards = document.querySelectorAll(".zoom_card");
+
+    const magicObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("magic_active");
+            }
+        });
+    }, { threshold: 0.2 });
+
+    magicCards.forEach(card => magicObserver.observe(card));
+});
+/* 바우처 정보 사이트로 이동*/
+document.addEventListener("DOMContentLoaded", function () {
+    
+    const portalButton = document.querySelector(".btn-1");
+
+    // 버튼이 존재하는지 확인 후 클릭 이벤트 추가
+    if (portalButton) {
+        portalButton.addEventListener("click", function () {
+            window.location.href = "voucher.jsp"; // 이동할 페이지
+        });
+    } else {
+        console.warn("btn-1 요소를 찾을 수 없습니다!");
+    }
+});
+/* 상담 연결 사이트로 이동*/
+document.addEventListener("DOMContentLoaded", function () {
+    
+    const portalButton = document.querySelector(".btn-2");
+
+    // 버튼이 존재하는지 확인 후 클릭 이벤트 추가
+    if (portalButton) {
+        portalButton.addEventListener("click", function () {
+            window.location.href = "counsel.html"; // 이동할 페이지
+        });
+    } else {
+        console.warn("btn-2 요소를 찾을 수 없습니다!");
+    }
+});
+/* 커뮤니티 사이트로 이동*/
+document.addEventListener("DOMContentLoaded", function () {
+    
+    const portalButton = document.querySelector(".portal_button");
+
+    // 버튼이 존재하는지 확인 후 클릭 이벤트 추가
+    if (portalButton) {
+        portalButton.addEventListener("click", function () {
+            window.location.href = "Board.jsp"; // 이동할 페이지
+        });
+    } else {
+        console.warn("portal_button 요소를 찾을 수 없습니다!");
+    }
+});
