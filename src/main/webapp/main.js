@@ -177,3 +177,16 @@ document.addEventListener("DOMContentLoaded", function () {
         console.warn("portal_button 요소를 찾을 수 없습니다!");
     }
 });
+document.addEventListener("DOMContentLoaded", function () {
+    const cosmicElements = document.querySelectorAll(".fade-effect");
+
+    const cosmicObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("starlit-show");
+            }
+        });
+    }, { threshold: 0.3 });
+
+    cosmicElements.forEach(element => cosmicObserver.observe(element));
+});

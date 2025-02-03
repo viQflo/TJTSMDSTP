@@ -1,836 +1,905 @@
 @font-face {
-    font-family: 'Freesentation-4Regular';
-    src: url('./font/Freesentation-v2.000/Freesentation-4Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+	font-family: 'Freesentation-4Regular';
+	src: url('./font/Freesentation-v2.000/Freesentation-4Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
 }
 
 /* 홈페이지 전체에 폰트 적용 */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Freesentation-4Regular', sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Freesentation-4Regular', sans-serif;
 }
+
 /* 애니메이션 효과 */
 @keyframes slide-down {
-    from {
-        transform: translateY(-20px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
+	from {
+		transform: translateY(-20px);
+		opacity: 0;
+	}
+
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
 }
 
 @keyframes slide-up {
-    from {
-        transform: translateY(20px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
+	from {
+		transform: translateY(20px);
+		opacity: 0;
+	}
+
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
 }
+
 @keyframes slide-left {
-    from {
-        transform: translateX(-50px); 
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0); 
-        opacity: 1;
-    }
+	from {
+		transform: translateX(-50px);
+		opacity: 0;
+	}
+
+	to {
+		transform: translateX(0);
+		opacity: 1;
+	}
 }
 
 
 @keyframes fade-in {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
 }
 
 @keyframes scale-up {
-    from {
-        transform: scale(0.9);
-    }
-    to {
-        transform: scale(1);
-    }
+	from {
+		transform: scale(0.9);
+	}
+
+	to {
+		transform: scale(1);
+	}
 }
+
 /* 메인 컨텐츠 */
 .main-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-color: #f3f3fc;
-    padding: 120px 20px 100px; /* 네비게이션과 푸터 간격 추가 */
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	background-color: rgb(255, 255, 255);
+	padding: 120px 20px 100px;
+	/* 네비게이션과 푸터 간격 추가 */
 }
 
 /*동영상 넣기*/
 video {
-  width: 100%;
-  height: 100vh; /* 전체 화면 높이 */
-  object-fit: contain; /* 동영상을 자르지 않고 전체 표시 */
-  display: block;
-  padding-bottom: 70px;
+	width: 100%;
+	height: 100vh;
+	/* 전체 화면 높이 */
+	object-fit: contain;
+	/* 동영상을 자르지 않고 전체 표시 */
+	display: block;
+	padding-bottom: 70px;
 }
 
 /* 버튼 스타일 */
 .button-container button {
-    padding: 10px 20px;
-    margin: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+	padding: 10px 20px;
+	margin: 10px;
+	background-color: #6ec096;
+	color: white;
+	font-size: 16px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
 }
 
 .button-container button:hover {
-    background-color: #0056b3;
+	background-color: #649976;
 }
 
-/* 프로필 영역 */
-.profile-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-top: 30px;
-}
 
-.profile-container .profile {
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-}
-
-.profile-container .profile:hover {
-    text-decoration: none;
-    color: black;
-}
-
-.profile img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 10px;
-}
 
 /* 동영상 스타일 */
 .video-container {
-    width: 100%;
-    height: 450px;
-    overflow: hidden;
-    position: relative;
+	width: 100%;
+	height: 450px;
+	overflow: hidden;
+	position: relative;
+	background-color: white;
 }
 
 .video-container video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-   
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+
 }
 
 
 body {
-    text-align: center;
-    background-color: #f9f9f9;
+	text-align: center;
+	background-color: #f9f9f9;
 }
 
 /* 사이트 소개 섹션 스타일 */
 .voucher123 {
-    padding: 50px 20px;
+	padding: 50px 20px;
+	background-color: white;
 }
 
 /* 제목 스타일 */
 .title123 {
-    text-align: center;
-    font-size: 24px;
-    font-weight: bold;
-    color: #666;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    animation: slide-up 1s 0.5s ease-out forwards;
-    margin-bottom: 40px;
+	text-align: center;
+	font-size: 24px;
+	font-weight: bold;
+	color: #666;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	animation: slide-up 1s 0.5s ease-out forwards;
+	margin-bottom: 40px;
 }
 
 .icon1 {
-    width: 80px; /* 아이콘 크기 */
-    height: auto;
-    margin-bottom: 8px; /* 아이콘과 글자 사이 간격 */
-    animation: slide-up 1s 0.5s ease-out forwards;
+	width: 80px;
+	/* 아이콘 크기 */
+	height: auto;
+	margin-bottom: 8px;
+	/* 아이콘과 글자 사이 간격 */
+	animation: slide-up 1s 0.5s ease-out forwards;
 }
 
 /* 헤드라인 */
 .headline {
-    font-size: 35px;
-    font-weight: bold;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    opacity: 0;
-    animation: slide-up 1s 0.5s ease-out forwards;
+	font-size: 35px;
+	font-weight: bold;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	opacity: 0;
+	animation: slide-up 1s 0.5s ease-out forwards;
 }
 
 /* 설명 */
 .description {
-    font-size: 23px;
-    margin: 10px auto 30px;
-    width: 60%;
-    line-height: 1.6;
-    color: #444;
-    opacity: 0;
-    animation: fade-in 1.2s 1s ease-out forwards;
-    padding-bottom: 30px;
+	font-size: 23px;
+	margin: 10px auto 30px;
+	width: 60%;
+	line-height: 1.6;
+	color: #444;
+	opacity: 0;
+	animation: fade-in 1.2s 1s ease-out forwards;
+	padding-bottom: 30px;
 }
 
 /* 이미지 컨테이너 */
 .image-container {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-bottom: 50px;
+	display: flex;
+	justify-content: center;
+	gap: 30px;
+	margin-bottom: 50px;
 }
 
 /* 이미지 스타일 */
 .image-container img {
-    width: 300px; /* 기존보다 살짝 키웠어요 */
-    height: 300px;
-    border-radius: 15px;
-    object-fit: cover;
-    opacity: 0;
-    transform: scale(0.9);
-    animation: fade-in 1s 1.5s ease-out forwards, scale-up 1s 1.5s ease-out forwards;
+	width: 300px;
+	/* 기존보다 살짝 키웠어요 */
+	height: 300px;
+	border-radius: 15px;
+	object-fit: cover;
+	opacity: 0;
+	transform: scale(0.9);
+	animation: fade-in 1s 1.5s ease-out forwards, scale-up 1s 1.5s ease-out forwards;
 }
 
 /* 버튼 스타일 */
 .btn-1 {
-    background-color: #4A90E2;
-    color: white;
-    border: none;
-    padding: 12px 30px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: all 0.3s ease-in-out;
+	background-color: #6ec096;
+	color: white;
+	border: none;
+	padding: 12px 30px;
+	font-size: 16px;
+	cursor: pointer;
+	border-radius: 5px;
+	transition: all 0.3s ease-in-out;
 }
 
 .btn-1:hover {
-    background-color: #357ABD;
-    transform: scale(1.1);
+	background-color: #649976;
+	transform: scale(1.1);
 }
 
 
 .counsel123 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 80px;
-    padding: 50px;
-    max-width: 1100px;
-    margin: auto; 
-    
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 80px;
+	padding: 50px;
+	max-width: 1100px;
+	margin: auto;
+
+
+
 }
 
 
 .content1 {
-    text-align: left;
-    max-width: 500px;
-    
+	text-align: left;
+	max-width: 500px;
+	flex: 1;
 }
 
 
 .icon2 {
-    width: 80px;
-    height: auto;
-    display: block;
-    margin-bottom: 10px;
-    opacity: 0;
-    animation: slide-left 1s 0.5s ease-out forwards;
-    
+	width: 80px;
+	height: auto;
+	display: block;
+	margin-bottom: 10px;
+	opacity: 0;
+	animation: slide-left 1s 0.5s ease-out forwards;
+
 }
 
 .title1234 {
-    font-size: 22px;
-    color: #333;
+	font-size: 22px;
+	color: #333;
 }
 
 .highlight1 {
- font-size: 24px;
-    font-weight: bold;
-    color: #666;   
-    opacity: 0;
-    animation: slide-left 1s 0.5s ease-out forwards;
-    margin-bottom: 20px;
+	font-size: 24px;
+	font-weight: bold;
+	color: #666;
+	opacity: 0;
+	animation: slide-left 1s 0.5s ease-out forwards;
+	margin-bottom: 20px;
 }
-    
-   
+
+
 .highlight2 {
-    font-size: 32px;
-    font-weight: bold;
-    color: black;
-    opacity: 0;
-    animation: fade-in 0.8s 0.5s ease-out forwards;
+	font-size: 32px;
+	font-weight: bold;
+	color: black;
+	opacity: 0;
+	animation: fade-in 0.8s 0.5s ease-out forwards;
 }
 
 .description1 {
-    font-size: 23px;
-    color: #555;
-    line-height: 1.6;
-    margin: 15px 0;
-    opacity: 0;
-    animation: slide-left 1s 0.5s ease-out forwards;
+	font-size: 23px;
+	color: #555;
+	line-height: 1.6;
+	margin: 15px 0;
+	opacity: 0;
+	animation: slide-left 1s 0.5s ease-out forwards;
 }
 
 .btn-2 {
-    background-color: #4A90E2;
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: all 0.3s ease-in-out;
+	background-color: #6ec096;
+	color: white;
+	border: none;
+	padding: 12px 20px;
+	font-size: 16px;
+	cursor: pointer;
+	border-radius: 5px;
+	transition: all 0.3s ease-in-out;
 }
 
 .btn-2:hover {
-    background-color: #357ABD;
-    transform: scale(1.1);
+	background-color: #649976;
+	transform: scale(1.1);
+}
+
+.counsel00 {
+	flex: 1;
+	display: flex;
+	justify-content: flex-end;
 }
 
 .counsel00 img {
-    width: 500px;
-    height: auto;
-    border-radius: 15px;
-    opacity: 0;
-    animation: fade-in 1s 1.5s ease-out forwards, scale-up 1s 1.5s ease-out forwards;
+	width: 500px;
+	height: auto;
+	border-radius: 15px;
+	opacity: 0;
+	animation: fade-in 1s 1.5s ease-out forwards, scale-up 1s 1.5s ease-out forwards;
 }
 
 /* 반응형 스타일 */
 @media (max-width: 900px) {
-    .counsel123 {
-        flex-direction: column;
-        text-align: center;
-    }
+	.counsel123 {
+		flex-direction: column;
+		text-align: center;
+	}
 
-    .content1 {
-        text-align: center;
-    }
+	.content1 {
+		text-align: center;
+	}
 
-    .counsel00 img {
-        width: 100%;
-        max-width: 400px;
-    }
+	.counsel00 img {
+		width: 100%;
+		max-width: 400px;
+	}
 }
 
 /* ✅ 챗봇 아이콘 - 좌하단 고정 */
 #chatbot-icon {
-    position: fixed;
-    bottom: 80px;
-    left: 20px;
-    width: 60px;
-    height: 60px;
-    background-color: #ffffff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+	position: fixed;
+	bottom: 80px;
+	left: 20px;
+	width: 60px;
+	height: 60px;
+	background-color: #ffffff;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
+
 #chatbot-icon img {
-    width: 40px;
-    height: 40px;
+	width: 40px;
+	height: 40px;
 }
 
 /* ✅ 챗봇 모달창 */
 #chatbot-modal {
-    position: fixed;
-    bottom: 160px;
-    left: 20px;
-    width: 300px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    display: none;
-    flex-direction: column;
-    border: 1px solid #ddd;
+	position: fixed;
+	bottom: 160px;
+	left: 20px;
+	width: 300px;
+	background: white;
+	border-radius: 10px;
+	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+	display: none;
+	flex-direction: column;
+	border: 1px solid #ddd;
 }
 
 /* ✅ 챗봇 헤더 */
 #chatbot-header {
-    background: #007bff;
-    color: white;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 10px 10px 0 0;
+	background: #007bff;
+	color: white;
+	padding: 10px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-radius: 10px 10px 0 0;
 }
+
 #chatbot-header button {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 20px;
-    cursor: pointer;
+	background: none;
+	border: none;
+	color: white;
+	font-size: 20px;
+	cursor: pointer;
 }
 
 /* ✅ 챗봇 메시지 창 */
 #chatbot-body {
-    padding: 10px;
-    max-height: 300px;
-    overflow-y: auto;
+	padding: 10px;
+	max-height: 300px;
+	overflow-y: auto;
 }
+
 #chatbot-messages {
-    display: flex;
-    flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
+
 .chatbot-message {
-    padding: 8px;
-    margin: 5px;
-    border-radius: 5px;
+	padding: 8px;
+	margin: 5px;
+	border-radius: 5px;
 }
+
 .user-message {
-    background: #007bff;
-    color: white;
-    align-self: flex-end;
+	background: #007bff;
+	color: white;
+	align-self: flex-end;
 }
+
 .bot-message {
-    background: #f1f1f1;
-    color: black;
-    align-self: flex-start;
+	background: #f1f1f1;
+	color: black;
+	align-self: flex-start;
 }
 
 /* ✅ 챗봇 입력창 */
 #chatbot-footer {
-    display: flex;
-    padding: 10px;
-    border-top: 1px solid #ddd;
+	display: flex;
+	padding: 10px;
+	border-top: 1px solid #ddd;
 }
+
 #chatbot-input {
-    flex: 1;
-    padding: 5px;
+	flex: 1;
+	padding: 5px;
 }
+
 #chatbot-send {
-    background: #007bff;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    
+	background: #007bff;
+	color: white;
+	border: none;
+	padding: 5px 10px;
+
 }
 
 /* ✅ 다크 모드 토글 버튼 (톱니바퀴) */
 #dark-mode-toggle {
-    position: fixed;
-    bottom: 80px; /* 푸터 바로 위 */
-    right: 20px; /* 우측 하단 */
-    width: 60px;
-    height: 60px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
+	position: fixed;
+	bottom: 80px;
+	/* 푸터 바로 위 */
+	right: 20px;
+	/* 우측 하단 */
+	width: 60px;
+	height: 60px;
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 0;
 }
 
 /* ✅ 톱니바퀴 이미지 */
 #dark-mode-toggle img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    transition: transform 0.3s ease-in-out;
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	transition: transform 0.3s ease-in-out;
 }
 
 /* ✅ 마우스 오버 시 무한 회전 애니메이션 */
 #dark-mode-toggle:hover img {
-    animation: spin 1s linear infinite;
+	animation: spin 1s linear infinite;
 }
 
 /* ✅ 무한 회전 애니메이션 정의 */
 @keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
 }
 
 /* ✅ 다크 모드 전역 스타일 */
 body.dark-mode {
-    background-color: #121212;
-    color: #e0e0e0;
+	background-color: #121212;
+	color: #e0e0e0;
 }
 
 /* ✅ 네비게이션 바 */
 body.dark-mode .navbar {
-    background-color: #1e1e1e;
-    border-bottom: 1px solid #333;
+	background-color: #1e1e1e;
+	border-bottom: 1px solid #333;
 }
 
 body.dark-mode .nav-links .nav-button {
-    background-color: #222;
-    color: #e0e0e0;
-    border: 1px solid #333;
+	background-color: #222;
+	color: #e0e0e0;
+	border: 1px solid #333;
 }
 
 body.dark-mode .nav-links .nav-button:hover {
-    background-color: #333;
+	background-color: #333;
 }
 
 /* ✅ 메인 컨텐츠 */
 body.dark-mode .main-content {
-    background: #1e1e1e;
-    color: #e0e0e0;
+	background: #1e1e1e;
+	color: #e0e0e0;
 }
 
 /* ✅ 버튼 */
 body.dark-mode .button-container button {
-    background-color: #333;
-    color: #e0e0e0;
-    border: 1px solid #444;
+	background-color: #333;
+	color: #e0e0e0;
+	border: 1px solid #444;
 }
 
 body.dark-mode .button-container button:hover {
-    background-color: #444;
+	background-color: #444;
 }
 
 /* ✅ 프로필 컨테이너 */
 body.dark-mode .profile-container .profile {
-    color: #e0e0e0;
-    background: #222;
-    padding: 10px;
-    border-radius: 10px;
+	color: #e0e0e0;
+	background: #222;
+	padding: 10px;
+	border-radius: 10px;
 }
 
 body.dark-mode .profile-container .profile:hover {
-    background: #333;
+	background: #333;
 }
 
 /* ✅ 바우처 섹션 */
 body.dark-mode .voucher123 {
-    background-color: #1e1e1e;
-    color: #e0e0e0;
+	background-color: #1e1e1e;
+	color: #e0e0e0;
 }
 
 body.dark-mode .title123 {
-    color: #ccc;
+	color: #ccc;
 }
 
 body.dark-mode .headline {
-    color: #f8f8f8;
+	color: #f8f8f8;
 }
 
 body.dark-mode .description {
-    color: #bbb;
+	color: #bbb;
 }
 
 /* ✅ 이미지 컨테이너 */
 body.dark-mode .image-container img {
-    filter: brightness(70%);
+	filter: brightness(70%);
 }
 
 /* ✅ 상담 연결 섹션 */
 body.dark-mode .counsel1234 {
-    background-color: #1e1e1e;
+	background-color: #1e1e1e;
 }
 
 body.dark-mode .highlight1,
 body.dark-mode .highlight2 {
-    color: #e0e0e0;
+	color: #e0e0e0;
 }
 
 body.dark-mode .description1 {
-    color: #bbb;
+	color: #bbb;
 }
 
 /* ✅ 버튼 */
-body.dark-mode .btn-1, body.dark-mode .btn-2 {
-    background-color: #333;
-    color: #e0e0e0;
-    border: 1px solid #444;
+body.dark-mode .btn-1,
+body.dark-mode .btn-2 {
+	background-color: #333;
+	color: #e0e0e0;
+	border: 1px solid #444;
 }
 
-body.dark-mode .btn-1:hover, 
+body.dark-mode .btn-1:hover,
 body.dark-mode .btn-2:hover {
-    background-color: #444;
+	background-color: #444;
 }
 
 /* ✅ 챗봇 */
 body.dark-mode #chatbot-modal {
-    background: #1e1e1e;
-    color: #e0e0e0;
-    border: 1px solid #333;
+	background: #1e1e1e;
+	color: #e0e0e0;
+	border: 1px solid #333;
 }
 
 body.dark-mode #chatbot-header {
-    background: #333;
+	background: #333;
 }
 
 body.dark-mode #chatbot-input {
-    background: #222;
-    color: #e0e0e0;
-    border: 1px solid #444;
+	background: #222;
+	color: #e0e0e0;
+	border: 1px solid #444;
 }
 
 body.dark-mode #chatbot-send {
-    background: #333;
+	background: #333;
 }
 
 body.dark-mode .chatbot-message {
-    background: #222;
-    color: #e0e0e0;
+	background: #222;
+	color: #e0e0e0;
 }
 
 body.dark-mode .user-message {
-    background: #444;
+	background: #444;
 }
 
 /* ✅ 푸터 */
 body.dark-mode .footer {
-    background-color: #1e1e1e;
-    color: #e0e0e0;
+	background-color: #1e1e1e;
+	color: #e0e0e0;
 }
 
 body.dark-mode .footer a {
-    color: #4a90e2;
+	color: #4a90e2;
 }
+
 /* 섹션 스타일 */
 .facilities-section {
-    padding: 50px 20px;
+	padding: 50px 20px;
 }
 
 .container12345 {
-    text-align: center;
-    margin-bottom: 40px;
+	text-align: center;
+	margin-bottom: 40px;
 }
 
 .icon123 {
-    width: 50px;
-    margin-bottom: 10px;
+	width: 50px;
+	margin-bottom: 10px;
 }
 
 .subtitle {
-    font-size: 18px;
-    color: #777;
+	font-size: 18px;
+	color: #777;
 }
 
 .title {
-    font-size: 28px;
-    font-weight: bold;
+	font-size: 28px;
+	font-weight: bold;
 }
 
 .description {
-    font-size: 18px;
-    margin-top: 10px;
-    color: #555;
-    line-height: 1.6;
+	font-size: 18px;
+	margin-top: 10px;
+	color: #555;
+	line-height: 1.6;
 }
 
 /* 시설 카드 스타일 */
 .facility-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 30px;
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+	margin-top: 30px;
 }
 
 .facility-card {
-    width: 400px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transform: translateY(30px);
-    opacity: 0;
-    transition: all 1s ease-out;
+	width: 400px;
+	background-color: white;
+	border-radius: 10px;
+	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+	transform: translateY(30px);
+	opacity: 0;
+	transition: all 1s ease-out;
 }
 
 .facility-card img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
+	width: 100%;
+	height: 250px;
+	object-fit: cover;
 }
 
 .facility-info {
-    padding: 15px;
+	padding: 15px;
 }
 
 .facility-info h2 {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 10px;
+	font-size: 20px;
+	font-weight: bold;
+	margin-bottom: 10px;
 }
 
 .facility-info p {
-    font-size: 16px;
-    color: #666;
+	font-size: 16px;
+	color: #666;
 }
 
 /* 버튼 스타일 */
 .more-btn {
-    margin-top: 30px;
-    padding: 12px 25px;
-    background-color: #4A90E2;
-    color: white;
-    border: none;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s;
+	margin-top: 30px;
+	padding: 12px 25px;
+	background-color: #4A90E2;
+	color: white;
+	border: none;
+	font-size: 16px;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: all 0.3s;
 }
 
 .more-btn:hover {
-    background-color: #357ABD;
-    transform: scale(1.05);
+	background-color: #357ABD;
+	transform: scale(1.05);
 }
 
 /* 애니메이션 */
 .hidden {
-    opacity: 0;
-    transform: translateY(30px);
+	opacity: 0;
+	transform: translateY(30px);
 }
 
 .show {
-    opacity: 1;
-    transform: translateY(0);
+	opacity: 1;
+	transform: translateY(0);
 }
 
 /* 반응형 스타일 */
 @media (max-width: 900px) {
-    .facility-container {
-        flex-direction: column;
-        align-items: center;
-    }
+	.facility-container {
+		flex-direction: column;
+		align-items: center;
+	}
 
-    .facility-card {
-        width: 90%;
-    }
+	.facility-card {
+		width: 90%;
+	}
 
 }
-/*맨 아래 커뮤니티 소개창*/    
+
+/*맨 아래 커뮤니티 소개창*/
 
 
 /* 섹션 스타일 */
 .wonderland {
-    padding: 50px 20px;
+	padding: 50px 20px;
+	background-color: white !important;
 }
 
 .text_bubble {
-    text-align: center;
-    margin-bottom: 40px;
+	text-align: center;
+	margin-bottom: 40px;
+	transition: all 1s ease-out;
+
+
+
 }
 
 .paw_logo {
-    width: 50px;
-    margin-bottom: 10px;
+	width: 80px;
+	margin-bottom: 8px;
 }
 
 .happy_motto {
-    font-size: 18px;
-    color: #666;
+	font-size: 22px;
+	font-weight: bold;
+	color: #666;
+	margin-bottom: 20px;
+
 }
 
 .grand_title {
-    font-size: 30px;
-    font-weight: bold;
+	font-size: 35px;
+	font-weight: bold;
+
 }
 
 .cozy_text {
-    font-size: 18px;
-    margin-top: 10px;
-    color: #444;
-    line-height: 1.6;
+	font-size: 23px;
+	margin-top: 10px;
+	color: #444;
+	line-height: 1.6;
 }
 
 /* 카드 스타일 */
 .magic_box {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 30px;
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+	margin-top: 30px;
 }
 
 .zoom_card {
-    width: 400px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transform: translateY(30px);
-    opacity: 0;
-    transition: all 1s ease-out;
+	width: 400px;
+	background-color: white;
+	border-radius: 10px;
+	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+	transform: translateY(30px);
+	opacity: 0;
+	transition: all 1s ease-out;
 }
 
 .zoom_card img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
+	width: 100%;
+	height: 250px;
+	object-fit: cover;
 }
 
 .card_content {
-    padding: 15px;
+	padding: 15px;
 }
 
 .card_content h2 {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 10px;
+	font-size: 24px;
+	font-weight: bold;
+	margin-bottom: 10px;
 }
 
 .card_content p {
-    font-size: 16px;
-    color: #666;
+	font-size: 20px;
+	color: #666;
 }
 
 /* 버튼 스타일 */
 .portal_button {
-    margin-top: 30px;
-    padding: 12px 25px;
-    background-color: #4A90E2;
-    color: white;
-    border: none;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s;
+	margin-top: 30px;
+	padding: 12px 25px;
+	background-color:
+		#6dc395;
+	color: white;
+	border: none;
+	font-size: 16px;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: all 0.3s;
 }
 
 .portal_button:hover {
-    background-color: #357ABD;
-    transform: scale(1.05);
+	background-color: #649976;
+	transform: scale(1.05);
 }
 
 /* 애니메이션 */
 .surprise {
-    opacity: 0;
-    transform: translateY(30px);
+	opacity: 0;
+	transform: translateY(30px);
 }
 
 .magic_active {
-    opacity: 1;
-    transform: translateY(0);
+	opacity: 1;
+	transform: translateY(0);
 }
 
 /* 반응형 디자인 */
 @media (max-width: 900px) {
-    .magic_box {
-        flex-direction: column;
-        align-items: center;
-    }
+	.magic_box {
+		flex-direction: column;
+		align-items: center;
+	}
 
-    .zoom_card {
-        width: 90%;
-    }
+	.zoom_card {
+		width: 90%;
+	}
+}
+
+.introduce {
+	background-color:
+		#f9f9f9;
+	align-items: center;
+	padding: 100px 20px;
+
+}
+
+.introduce123 {
+	font-size: 28px;
+	padding: 10px 10px;
+	color: #777;
+	font-weight: bold;
+
+}
+
+.last_logo {
+	width: 80px;
+	margin-bottom: 8px;
+
+}
+
+.signupButton {
+	margin-top: 30px !important;
+	padding: 12px 25px !important;
+	background-color: #6dc395 !important;
+	color: white !important;
+	border: none !important;
+	font-size: 16px !important;
+	border-radius: 5px !important;
+	cursor: pointer !important;
+	transition: all 0.3s !important;
+}
+
+.loginButton {
+	margin-top: 30px !important;
+	padding: 12px 25px !important;
+	background-color: #6dc395 !important;
+	color: white !important;
+	border: none !important;
+	font-size: 16px !important;
+	border-radius: 5px !important;
+	cursor: pointer !important;
+	transition: all 0.3s !important;
 }
