@@ -333,3 +333,276 @@ body {
         max-width: 400px;
     }
 }
+
+/* ✅ 챗봇 아이콘 - 좌하단 고정 */
+#chatbot-icon {
+    position: fixed;
+    bottom: 80px;
+    left: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+#chatbot-icon img {
+    width: 40px;
+    height: 40px;
+}
+
+/* ✅ 챗봇 모달창 */
+#chatbot-modal {
+    position: fixed;
+    bottom: 160px;
+    left: 20px;
+    width: 300px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    display: none;
+    flex-direction: column;
+    border: 1px solid #ddd;
+}
+
+/* ✅ 챗봇 헤더 */
+#chatbot-header {
+    background: #007bff;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px 10px 0 0;
+}
+#chatbot-header button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* ✅ 챗봇 메시지 창 */
+#chatbot-body {
+    padding: 10px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+#chatbot-messages {
+    display: flex;
+    flex-direction: column;
+}
+.chatbot-message {
+    padding: 8px;
+    margin: 5px;
+    border-radius: 5px;
+}
+.user-message {
+    background: #007bff;
+    color: white;
+    align-self: flex-end;
+}
+.bot-message {
+    background: #f1f1f1;
+    color: black;
+    align-self: flex-start;
+}
+
+/* ✅ 챗봇 입력창 */
+#chatbot-footer {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+}
+#chatbot-input {
+    flex: 1;
+    padding: 5px;
+}
+#chatbot-send {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    
+}
+
+/* ✅ 다크 모드 토글 버튼 (톱니바퀴) */
+#dark-mode-toggle {
+    position: fixed;
+    bottom: 80px; /* 푸터 바로 위 */
+    right: 20px; /* 우측 하단 */
+    width: 60px;
+    height: 60px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+/* ✅ 톱니바퀴 이미지 */
+#dark-mode-toggle img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* ✅ 마우스 오버 시 무한 회전 애니메이션 */
+#dark-mode-toggle:hover img {
+    animation: spin 1s linear infinite;
+}
+
+/* ✅ 무한 회전 애니메이션 정의 */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ✅ 다크 모드 전역 스타일 */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+/* ✅ 네비게이션 바 */
+body.dark-mode .navbar {
+    background-color: #1e1e1e;
+    border-bottom: 1px solid #333;
+}
+
+body.dark-mode .nav-links .nav-button {
+    background-color: #222;
+    color: #e0e0e0;
+    border: 1px solid #333;
+}
+
+body.dark-mode .nav-links .nav-button:hover {
+    background-color: #333;
+}
+
+/* ✅ 메인 컨텐츠 */
+body.dark-mode .main-content {
+    background: #1e1e1e;
+    color: #e0e0e0;
+}
+
+/* ✅ 버튼 */
+body.dark-mode .button-container button {
+    background-color: #333;
+    color: #e0e0e0;
+    border: 1px solid #444;
+}
+
+body.dark-mode .button-container button:hover {
+    background-color: #444;
+}
+
+/* ✅ 프로필 컨테이너 */
+body.dark-mode .profile-container .profile {
+    color: #e0e0e0;
+    background: #222;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+body.dark-mode .profile-container .profile:hover {
+    background: #333;
+}
+
+/* ✅ 바우처 섹션 */
+body.dark-mode .voucher123 {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
+
+body.dark-mode .title123 {
+    color: #ccc;
+}
+
+body.dark-mode .headline {
+    color: #f8f8f8;
+}
+
+body.dark-mode .description {
+    color: #bbb;
+}
+
+/* ✅ 이미지 컨테이너 */
+body.dark-mode .image-container img {
+    filter: brightness(70%);
+}
+
+/* ✅ 상담 연결 섹션 */
+body.dark-mode .counsel1234 {
+    background-color: #1e1e1e;
+}
+
+body.dark-mode .highlight1,
+body.dark-mode .highlight2 {
+    color: #e0e0e0;
+}
+
+body.dark-mode .description1 {
+    color: #bbb;
+}
+
+/* ✅ 버튼 */
+body.dark-mode .btn-1, body.dark-mode .btn-2 {
+    background-color: #333;
+    color: #e0e0e0;
+    border: 1px solid #444;
+}
+
+body.dark-mode .btn-1:hover, 
+body.dark-mode .btn-2:hover {
+    background-color: #444;
+}
+
+/* ✅ 챗봇 */
+body.dark-mode #chatbot-modal {
+    background: #1e1e1e;
+    color: #e0e0e0;
+    border: 1px solid #333;
+}
+
+body.dark-mode #chatbot-header {
+    background: #333;
+}
+
+body.dark-mode #chatbot-input {
+    background: #222;
+    color: #e0e0e0;
+    border: 1px solid #444;
+}
+
+body.dark-mode #chatbot-send {
+    background: #333;
+}
+
+body.dark-mode .chatbot-message {
+    background: #222;
+    color: #e0e0e0;
+}
+
+body.dark-mode .user-message {
+    background: #444;
+}
+
+/* ✅ 푸터 */
+body.dark-mode .footer {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
+
+body.dark-mode .footer a {
+    color: #4a90e2;
+}
+
