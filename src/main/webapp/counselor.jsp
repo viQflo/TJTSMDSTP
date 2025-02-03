@@ -33,7 +33,7 @@
             <h2>상담사 연결 선택창</h2>
         </section>
 
-        <!-- 검색 필터 추가 -->
+        <!-- 검색 필터 -->
         <div class="search-filter">
             <input type="text" id="search" placeholder="상담사 이름 또는 분야 검색">
             <select id="filter">
@@ -45,6 +45,7 @@
             </select>
         </div>
 
+        <!-- 상담사 리스트 -->
         <div class="counselor-list" id="counselor-list">
             <!-- 상담사 정보가 동적으로 추가됨 -->
         </div>
@@ -96,38 +97,44 @@ $(document).ready(function() {
 
             if (data && data.length > 0) {
                 data.forEach(function(counselor) {
-                    let randomRating = (Math.random() * (4.9 - 4.1) + 4.1).toFixed(1); // 🔹 4.1 ~ 4.9 랜덤 평점
+                    let randomRating = (Math.random() * (4.9 - 4.1) + 4.1).toFixed(1);
 
                     var counselorCard = $('<div class="counselor-card">')
-                        .append('<img src="https://image-cdn.hypb.st/https%3A%2F%2Fkr.hypebeast.com%2Ffiles%2F2024%2F08%2F20%2Fjujutsu-kaisen-final-chapter-release-date-01.jpg?q=75&w=800&cbr=1&fit=max" alt="image">')
+                        .append('<img src="https://example.com/sample-image.jpg" alt="image">')
                         .append('<h3>' + counselor.name + '</h3>')
                         .append('<p>' + counselor.csCharge + '</p>')  
                         .append('<p class="rating">⭐ ' + randomRating + '</p>') 
                         .append('<button class="book-btn">예약</button>');
 
-                    // ✅ 예약 버튼 이벤트 추가 (클릭 시 모달 열림)
+                    // ✅ 예약 버튼 이벤트 추가
                     counselorCard.find(".book-btn").click(function() {
+                        console.log("DEBUG: 예약 버튼 클릭됨 - 상담사:", counselor.name, "분야:", counselor.csCharge);
                         openReservationModal(counselor.name, counselor.csCharge);
                     });
 
                     counselorList.append(counselorCard);
                 });
             } else {
+                console.warn("DEBUG: 조건에 맞는 상담사가 없음");
                 counselorList.append('<p>해당 조건에 맞는 상담사가 없습니다.</p>');
             }
         },
-        error: function() {
+        error: function(xhr, status, error) {
+            console.error("ERROR: 상담사 정보를 가져오는 데 실패했습니다.", status, error);
             alert('상담사 정보를 가져오는 데 실패했습니다.');
         }
     });
 
-    // ✅ 입장 시 안내 모달 (한 번만 실행)ㅁ
-    const welcomeModal = $("#welcomeModal");
+    // ✅ 안내 모달 관련 요소
+    var welcomeModal = $("#welcomeModal");
+
     $("#closeWelcomeModal, .close-welcome").click(function() {
+        console.log("DEBUG: '네, 알겠습니다!' 버튼 클릭됨 → 모달 닫기");
         welcomeModal.hide();
     });
 
     $(window).on("load", function() {
+        console.log("DEBUG: 페이지 로드됨 → 안내 모달 표시");
         welcomeModal.show();
     });
 
@@ -136,11 +143,11 @@ $(document).ready(function() {
     const modalTitle = $("#modalTitle");
     const modalInfo = $("#modalInfo");
     const confirmReservation = $("#confirmReservation");
-    const closeReservation = $(".close-reservation");
 
-    let isReservationMode = false; 
+    let isReservationMode = false;
 
     function openReservationModal(name, field) {
+        console.log("DEBUG: 예약 모달 오픈 - 상담사:", name, "분야:", field);
         modalTitle.text(name + " 상담사와 예약 신청");
         modalInfo.text("분야: " + field);
         isReservationMode = true;
@@ -149,40 +156,39 @@ $(document).ready(function() {
 
     confirmReservation.click(function() {
         if (isReservationMode) {
+            var counselorName = modalTitle.text().replace(" 상담사와 예약 신청", "");
+            var csCharge = modalInfo.text().replace("분야: ", "");
+
+            console.log("DEBUG: SMS 요청 전송 - 상담사:", counselorName, "분야:", csCharge);
+
             $.ajax({
                 url: 'SendSMSServlet',
                 type: 'POST',
-                data: {
-                    message: "상담 신청과 관련하여 메시지가 도착했습니다"
-                },
+                data: { counselorName: counselorName, csCharge: csCharge },
+                dataType: "json",  // ✅ JSON 응답을 자동으로 파싱
                 success: function(response) {
-                    alert("문자가 발송되었습니다!");
+                    console.log("DEBUG: SMS 전송 응답 - ", response);
+                    
+                    if (response.status === "success") {
+                        alert(response.message); // ✅ 정상적인 메시지 출력
+                    } else {
+                        alert("오류 발생: " + response.message);
+                    }
                 },
-                error: function() {
+                error: function(xhr, status, error) {
+                    console.error("ERROR: 문자 발송 실패 -", status, error);
                     alert("문자 발송에 실패했습니다.");
                 }
             });
 
-            alert("예약 신청 완료! 마이페이지에서 신청 현황을 확인하세요!");
+            alert("예약 신청 완료!");
         }
         reservationModal.hide();
         isReservationMode = false;
     });
 
-    closeReservation.click(function() {
-        reservationModal.hide();
-        isReservationMode = false;
-    });
-
-    $(window).click(function(event) {
-        if ($(event.target).is("#reservationModal")) {
-            reservationModal.hide();
-            isReservationMode = false;
-        }
-    });
 });
 </script>
-
-    <script src="main.js"></script>
+<script src="main.js"></script>
 </body>
 </html>

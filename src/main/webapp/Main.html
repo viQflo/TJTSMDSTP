@@ -2,24 +2,24 @@
 <html lang="ko">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Look+na</title>
-	<link rel="stylesheet" href="common.css">
-	<link rel="stylesheet" href="main.css">
-	<style>
-		/* 스크롤 애니메이션 스타일 */
-		.hidden-box {
-			opacity: 0;
-			transform: translateY(50px);
-			transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-		}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Look+na</title>
+<link rel="stylesheet" href="common.css">
+<link rel="stylesheet" href="main.css">
+<style>
+/* 스크롤 애니메이션 스타일 */
+.hidden-box {
+	opacity: 0;
+	transform: translateY(50px);
+	transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
 
-		.show {
-			opacity: 1;
-			transform: translateY(0);
-		}
-	</style>
+.show {
+	opacity: 1;
+	transform: translateY(0);
+}
+</style>
 </head>
 
 <body>
@@ -36,12 +36,16 @@
 		<div class="nav-links">
 			<button class="nav-button" data-path="voucher.jsp">바우처 정보</button>
 			<button class="nav-button" data-path="counsel.html">상담 연결서비스</button>
-			<button class="nav-button" data-path="Board.html">커뮤니티</button>
+			<button class="nav-button" data-path="Board.jsp">커뮤니티</button>
 			<button class="nav-button" data-path="login.html">로그인</button>
 		</div>
 	</nav>
 
-	<br><br><br><br><br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
 
 	<!-- 네비게이션 바 아래에 동영상 삽입 -->
 	<video width="100%" height="auto" autoplay muted loop>
@@ -53,45 +57,45 @@
 	<!--사이트 소개 부분-->
 	<section class="voucher123">
 		<h2 class="title123">
-			<img src="./videos/image_no_bg.png" alt="아이콘" class="icon1">바우처 사이트 소개
+			<img src="./videos/image_no_bg.png" alt="아이콘" class="icon1">바우처
+			사이트 소개
 		</h2>
 		<h1 class="headline">바우처를 편하게 사용하려면, '누구나'를 이용하세요</h1>
 
 		<p class="description">
-			다양한 바우처 사이트를 한눈에 볼 수 있도록 정리되어 있습니다.<br>
-			검색 기능도 탑재되어 있으니, 아래 버튼을 눌러 원하는 바우처 사이트를 검색해 보세요!
+			다양한 바우처 사이트를 한눈에 볼 수 있도록 정리되어 있습니다.<br> 검색 기능도 탑재되어 있으니, 아래 버튼을
+			눌러 원하는 바우처 사이트를 검색해 보세요!
 		</p>
 
 		<div class="image-container">
-			<img src="https://images.unsplash.com/photo-1562564055-71e051d33c19?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8JUVDJTgzJTgxJUVCJThCJUI0fGVufDB8fDB8fHww"
-				alt="바우처 관련 이미지 1" class="fade-in">
-			<img src="https://plus.unsplash.com/premium_photo-1680230177520-e87271066e5d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8JUVDJUE3JTgwJUVDJTlCJTkwJUVBJUI4JTg4fGVufDB8fDB8fHww"
-				alt="바우처 관련 이미지 2" class="fade-in">
-			<img src="https://plus.unsplash.com/premium_photo-1663040369863-4a0f4f13d1a2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fCVFQyU4MyU4MSVFQiU4QiVCNHxlbnwwfHwwfHx8MA%3D%3D"
+			<img
+				src="https://images.unsplash.com/photo-1562564055-71e051d33c19?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8JUVDJTgzJTgxJUVCJThCJUI0fGVufDB8fDB8fHww"
+				alt="바우처 관련 이미지 1" class="fade-in"> <img
+				src="https://plus.unsplash.com/premium_photo-1680230177520-e87271066e5d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8JUVDJUE3JTgwJUVDJTlCJTkwJUVBJUI4JTg4fGVufDB8fDB8fHww"
+				alt="바우처 관련 이미지 2" class="fade-in"> <img
+				src="https://plus.unsplash.com/premium_photo-1663040369863-4a0f4f13d1a2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fCVFQyU4MyU4MSVFQiU4QiVCNHxlbnwwfHwwfHx8MA%3D%3D"
 				alt="바우처 관련 이미지 3" class="fade-in">
 		</div>
 
-		<button id="btn-1" class="btn-1" data-path="voucher.jsp">바우처 정보 사이트</button>
+		<button id="btn-1" class="btn-1" data-path="voucher.jsp">바우처
+			정보 사이트</button>
 	</section>
 
-<div class="counsel1234" id="counsel1234">
-	<section id="counsel123" class="counsel123">
-		<div class="content1">
-			<img src="./videos/image_no_bg.png" alt="아이콘" class="icon2">
-			<h2 class="highlight1">보다 편안한 상담 예약이 가능합니다.</h2>
-			<h1 class="highlight2">상담 연결</h1>
-			<p class="description1">
-				펫카페는 반려견 동반 카페로,
-				즐거운 시간을 보낼 수 있도록 넓은 야외마당과
-				편안히 쉴 수 있는 실내 놀이터가 준비되어 있습니다.
-			</p>
-			<button id="btn-2" class="btn-2">상담 연결 서비스</button>
-		</div>
-		<div class="counsel00">
-			<img src="./videos/상담캡쳐.png" alt="상담페이지">
-		</div>
-	</section>
-</div>
+	<div class="counsel1234" id="counsel1234">
+		<section id="counsel123" class="counsel123">
+			<div class="content1">
+				<img src="./videos/image_no_bg.png" alt="아이콘" class="icon2">
+				<h2 class="highlight1">보다 편안한 상담 예약이 가능합니다.</h2>
+				<h1 class="highlight2">상담 연결</h1>
+				<p class="description1">펫카페는 반려견 동반 카페로, 즐거운 시간을 보낼 수 있도록 넓은
+					야외마당과 편안히 쉴 수 있는 실내 놀이터가 준비되어 있습니다.</p>
+				<button id="btn-2" class="btn-2">상담 연결 서비스</button>
+			</div>
+			<div class="counsel00">
+				<img src="./videos/상담캡쳐.png" alt="상담페이지">
+			</div>
+		</section>
+	</div>
 
 
 
@@ -110,29 +114,43 @@
 
 		<!-- 프로필 컨테이너 -->
 		<div class="profile-container">
-			<a href="office.html" class="profile">
-				<img src="https://png.pngtree.com/png-clipart/20230403/original/pngtree-fireman-firefighter-profession-flat-illustration-png-image_9024043.png"
-					alt="소방관, 경찰관 등 공무원">
+			<a href="office.html" class="profile"> <img
+				src="https://png.pngtree.com/png-clipart/20230403/original/pngtree-fireman-firefighter-profession-flat-illustration-png-image_9024043.png"
+				alt="소방관, 경찰관 등 공무원">
 				<p>소방관, 경찰관 등 공무원</p>
-			</a>
-			<a href="disa.html" class="profile">
-				<img src="https://www.urbanbrush.net/web/wp-content/uploads/edd/2024/05/pro-20240527070551064541.png"
-					alt="장애인">
+			</a> <a href="disa.html" class="profile"> <img
+				src="https://www.urbanbrush.net/web/wp-content/uploads/edd/2024/05/pro-20240527070551064541.png"
+				alt="장애인">
 				<p>장애인</p>
-			</a>
-			<a href="old.html" class="profile">
-				<img src="https://media.istockphoto.com/id/1333301048/ko/%EB%B2%A1%ED%84%B0/%EA%B3%A0%EB%A0%B9%EB%B6%80%EB%B6%80-%EA%B3%A0%EB%A0%B9%EB%B6%80%EB%B6%80-%EC%9D%BC%EB%9F%AC%EC%8A%A4%ED%8A%B8.jpg?s=1024x1024&w=is&k=20&c=DEKUt6q8dpvMg97BKAR6_YCLmJEPcw_h5KtD-yfk_FY="
-					alt="고령">
+			</a> <a href="old.html" class="profile"> <img
+				src="https://media.istockphoto.com/id/1333301048/ko/%EB%B2%A1%ED%84%B0/%EA%B3%A0%EB%A0%B9%EB%B6%80%EB%B6%80-%EA%B3%A0%EB%A0%B9%EB%B6%80%EB%B6%80-%EC%9D%BC%EB%9F%AC%EC%8A%A4%ED%8A%B8.jpg?s=1024x1024&w=is&k=20&c=DEKUt6q8dpvMg97BKAR6_YCLmJEPcw_h5KtD-yfk_FY="
+				alt="고령">
 				<p>고령</p>
-			</a>
-			<a href="stu.html" class="profile">
-				<img src="https://png.pngtree.com/element_our/20200610/ourlarge/pngtree-parental-counseling-online-class-vector-image_2236335.jpg"
-					alt="학생 및 부모님">
+			</a> <a href="stu.html" class="profile"> <img
+				src="https://png.pngtree.com/element_our/20200610/ourlarge/pngtree-parental-counseling-online-class-vector-image_2236335.jpg"
+				alt="학생 및 부모님">
 				<p>학생 및 부모님</p>
 			</a>
 		</div>
 	</div>
-
+	<!-- ✅ 고정된 챗봇 아이콘 -->
+	<div id="chatbot-icon">
+		<img src="Chatbot Chat Message.jpg" alt="챗봇 아이콘">
+	</div>
+	<div id="chatbot-modal">
+		<div id="chatbot-header">
+			<span>Gemini AI 상담 챗봇</span>
+			<button id="chatbot-close">&times;</button>
+		</div>
+		<div id="chatbot-body">
+			<div id="chatbot-messages"></div>
+		</div>
+		<div id="chatbot-footer">
+			<input type="text" id="chatbot-input" placeholder="여기에 메시지를 입력하세요..." />
+			<button id="chatbot-send">전송</button>
+		</div>
+	</div>
+	<button id="dark-mode-toggle"> <img src="tobni.png" alt="다크 모드 토글 버튼"></button>
 	<!-- Footer -->
 	<footer class="footer">
 		<p>© 2025 MyTeamWebsite. All rights reserved.</p>
@@ -179,10 +197,11 @@
 });
 
 	</script>
-	
+
 
 	<script src="main.js"></script>
 	<script src="common.js"></script>
+	<script src="chatbot.js"></script>
 
 </body>
 
