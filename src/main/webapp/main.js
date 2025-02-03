@@ -20,51 +20,8 @@ document.addEventListener("DOMContentLoaded", function () {
             document.body.classList.add("dark-mode");
         }
 
-<<<<<<< HEAD
-	if (token) {
-		// window.location.origin+"/" + window.location.pathname.split('/')[1]+"/api/"; 
-		// 토큰이 있는 경우 JWT 인증을 통해 세션 상태 확인
-		fetch("http://localhost:8081/TJTSMDS/api/session-check", {
-			method: "GET",
-			headers: {
-				"Authorization": `Bearer ${token}`, // JWT 토큰을 Authorization 헤더에 포함
-			}
-		})
-			.then((response) => {
-				if (response.ok) {
-					return response.json();
-				}
-				throw new Error("세션 확인 실패");
-			})
-			.then((data) => {
-				if (data.isLoggedIn) {
-					// 로그인 상태일 경우: 네비게이션 바 변경
-					navbar.innerHTML = `
-                        <button class="nav-button" data-path="voucher.jsp">바우처 정보</button>
-                        <button class="nav-button" data-path="counsel.html">상담 연결서비스</button>
-                        <button class="nav-button" data-path="boardlist.jsp">커뮤니티</button>
-                        <button class="nav-button" data-path="mypage.jsp">마이페이지</button>
-                        <button class="nav-button" id="logout-button">로그아웃</button>
-                    `;
-					// 로그아웃 버튼 클릭 시 토큰 삭제 후 로그아웃 처리
-					document.getElementById("logout-button").addEventListener("click", () => {
-						localStorage.removeItem("authToken"); // 로컬 스토리지에서 토큰 삭제
-						alert("로그아웃되었습니다.");
-						window.location.href = "Main.html";
-					});
-				} else {
-					// 비로그인 상태일 경우: 네비게이션 바 변경
-					navbar.innerHTML = `
-                        <button class="nav-button" data-path="voucher.jsp">바우처 정보</button>
-                        <button class="nav-button" data-path="counsel.html">상담 연결서비스</button>
-                        <button class="nav-button" data-path="boardlist.jsp">커뮤니티</button>
-                        <button class="nav-button" data-path="login.html">로그인</button>
-                    `;
-				}
-=======
         darkModeToggle.addEventListener("click", function () {
             document.body.classList.toggle("dark-mode");
->>>>>>> branch 'master' of https://github.com/viQflo/TJTSMDSTP
 
             if (document.body.classList.contains("dark-mode")) {
                 localStorage.setItem("theme", "dark");
@@ -127,14 +84,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 navbar.innerHTML = `
                     <button class="nav-button" data-path="voucher.jsp">바우처 정보</button>
                     <button class="nav-button" data-path="counsel.html">상담 연결서비스</button>
-<<<<<<< HEAD
-                    <button class="nav-button" data-path="boardlist.jsp">커뮤니티</button>
-                    <button class="nav-button" data-path="login.html">로그인</button>
-=======
                     <button class="nav-button" data-path="Board.jsp">커뮤니티</button>
                     <button class="nav-button" data-path="mypage.jsp">마이페이지</button>
                     <button class="nav-button" id="logout-button">로그아웃</button>
->>>>>>> branch 'master' of https://github.com/viQflo/TJTSMDSTP
                 `;
 
                 const logoutButton = document.getElementById("logout-button");
@@ -164,11 +116,7 @@ function setDefaultNavbar(navbar) {
         navbar.innerHTML = `
             <button class="nav-button" data-path="voucher.jsp">바우처 정보</button>
             <button class="nav-button" data-path="counsel.html">상담 연결서비스</button>
-<<<<<<< HEAD
-            <button class="nav-button" data-path="boardlist.jsp">커뮤니티</button>
-=======
             <button class="nav-button" data-path="Board.jsp">커뮤니티</button>
->>>>>>> branch 'master' of https://github.com/viQflo/TJTSMDSTP
             <button class="nav-button" data-path="login.html">로그인</button>
         `;
     }

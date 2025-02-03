@@ -1,11 +1,5 @@
 
-<<<<<<< HEAD
-document.getElementById("google-login").addEventListener("click", function() {
-	window.location.href = "https://accounts.google.com/o/oauth2/auth?client_id=YOUR_GOOGLE_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=email profile";
-});
-=======
 
->>>>>>> branch 'master' of https://github.com/viQflo/TJTSMDSTP
 
 document.getElementById("google-login").addEventListener("click", function() {
     const GOOGLE_CLIENT_ID = "74295089266-1kqp4bt7r1u1d4t04eiuc3k5d07cammr.apps.googleusercontent.com";
@@ -83,8 +77,6 @@ document.getElementById("naver-login").addEventListener("click", function() {
     
     window.location.href = naverAuthUrl;
 });
-<<<<<<< HEAD
-=======
 
 // ✅ 로그인 상태 확인 (JWT 유지)
 function checkLoginStatus() {
@@ -108,7 +100,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
->>>>>>> branch 'master' of https://github.com/viQflo/TJTSMDSTP
 
 /*document.getElementById("google-login").addEventListener("click", function() {
 
@@ -133,11 +124,8 @@ document.getElementById("naver-login").addEventListener("click", function() {
 });
 */
 
-<<<<<<< HEAD
-=======
 
 
->>>>>>> branch 'master' of https://github.com/viQflo/TJTSMDSTP
 document.addEventListener("DOMContentLoaded", function() {
 
    const loginForm = document.getElementById("login-form");
