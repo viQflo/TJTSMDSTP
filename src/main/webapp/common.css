@@ -55,7 +55,7 @@ html, body {
 
 /* 로고 이미지 */
 .logo-img {
-   height: 70px !important; /* 로고 크기 키움 */
+   height: 55px !important; /* 로고 크기 키움 */
 }
 
 /* 메인 텍스트 */
@@ -114,10 +114,11 @@ html, body {
 .footer {
    background-color: white !important;
    color: #666 !important;
-   font-size: 0.9rem !important;
+   font-size: 1rem !important;
    text-align: center !important;
-   padding: 15px 0 !important;
+   padding: 16px 0 !important;
    border-top: 1px solid #ccc !important;
+   line-height: 1.5;
    width: 100% !important;
    position: relative !important; /* 화면 하단에 고정되도록 설정 */
    bottom: 0 !important;

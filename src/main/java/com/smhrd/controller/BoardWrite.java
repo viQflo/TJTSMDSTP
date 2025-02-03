@@ -1,10 +1,14 @@
 package com.smhrd.controller;
 
 import java.io.IOException;
+import java.util.Base64;
+
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.*;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -13,7 +17,6 @@ import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import com.smhrd.model.BoardDAO;
 import com.smhrd.model.BoardDTO;
-import java.util.Base64;
 
 @WebServlet("/write.do")
 public class BoardWrite extends HttpServlet {

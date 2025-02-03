@@ -22,7 +22,8 @@ public class CounselorDTO {
     @JsonProperty("location")
     private String location; // 지역 (TB_COUNSELOR.LOCATION)
     
-    
+    @JsonProperty("waiting")
+    private String waiting; 
 
     // 🔹 기본 생성자 (필수)
     public CounselorDTO() {}
@@ -33,6 +34,9 @@ public class CounselorDTO {
         this.csCharge = csCharge;
         this.location = location;
     }
+    
+    public String getWaiting() { return waiting; }
+    public void setWaiting(String waiting) { this.waiting = waiting; }
 
     // 🔹 회원가입 및 등록용 생성자 (기존 `insertCounselor`용)
     public CounselorDTO(String csId, String name, String csCharge, String csCerti, String location, String csApproved) {
@@ -64,6 +68,7 @@ public class CounselorDTO {
 
     public String getLocation() { return location; }
     public void setLocation(String location) { this.location = location; }
+    
     
     
 }

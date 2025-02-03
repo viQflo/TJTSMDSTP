@@ -98,66 +98,119 @@
 
 	</select>
 
-	
-
-	 <!-- ✅ 이메일로 회원 정보 가져오기 -->
-
-    <select id="getMemberByEmail" parameterType="string" resultType="com.smhrd.model.MemberDTO">
-
-        SELECT email, name, phone, job 
-
-        FROM TB_USER 
-
-        WHERE email = #{email}
-
-    </select>
 
 
+	<!-- ✅ 이메일로 회원 정보 가져오기 -->
 
-    <!-- ✅ 전화번호 업데이트 -->
+	<select id="getMemberByEmail" parameterType="string"
+		resultType="com.smhrd.model.MemberDTO">
 
-    <update id="updatePhone" parameterType="com.smhrd.model.MemberDTO">
+		SELECT email, name, phone, job
 
-        UPDATE TB_USER 
+		FROM TB_USER
 
-        SET phone = #{phone}
+		WHERE email =
+		#{email}
 
-        WHERE email = #{email}
-
-    </update>
+	</select>
 
 
 
-    <!-- ✅ 비밀번호 업데이트 -->
+	<!-- ✅ 전화번호 업데이트 -->
 
-    <update id="updatePassword" parameterType="com.smhrd.model.MemberDTO">
+	<update id="updatePhone"
+		parameterType="com.smhrd.model.MemberDTO">
 
-        UPDATE TB_USER 
+		UPDATE TB_USER
 
-        SET pw = #{pw}
+		SET phone = #{phone}
 
-        WHERE email = #{email}
+		WHERE email = #{email}
 
-    </update>
-    
-    <select id="findBySocialEmail" parameterType="string" resultType="com.smhrd.model.MemberDTO">
-        SELECT * FROM TB_USER WHERE SOCIAL_LINKED_EMAIL = #{socialEmail}
-    </select>
-
-    <update id="linkSocialAccount" parameterType="com.smhrd.model.MemberDTO">
-        UPDATE TB_USER 
-        SET SOCIAL_LINKED_EMAIL = #{socialLinkedEmail}, SOCIAL_PROVIDER = #{socialProvider}
-        WHERE EMAIL = #{email}
-    </update>
-    <insert id="insertSocialMember" parameterType="com.smhrd.model.MemberDTO">
-    INSERT INTO TB_USER (EMAIL, NICK, SOCIAL_PROVIDER, CREATE_DT)
-    VALUES (#{email}, #{nick}, #{socialProvider}, SYSTIMESTAMP)
-</insert>
+	</update>
 
 
-	
 
-	
+	<!-- ✅ 비밀번호 업데이트 -->
+
+	<update id="updatePassword"
+		parameterType="com.smhrd.model.MemberDTO">
+
+		UPDATE TB_USER
+
+		SET pw = #{pw}
+
+		WHERE email = #{email}
+
+	</update>
+
+	<select id="findBySocialEmail" parameterType="string"
+		resultType="com.smhrd.model.MemberDTO">
+		SELECT * FROM TB_USER WHERE SOCIAL_LINKED_EMAIL =
+		#{socialEmail}
+	</select>
+
+	<update id="linkSocialAccount"
+		parameterType="com.smhrd.model.MemberDTO">
+		UPDATE TB_USER
+		SET SOCIAL_LINKED_EMAIL =
+		#{socialLinkedEmail}, SOCIAL_PROVIDER =
+		#{socialProvider}
+		WHERE EMAIL =
+		#{email}
+	</update>
+	<insert id="insertSocialMember"
+		parameterType="com.smhrd.model.MemberDTO">
+		INSERT INTO TB_USER (EMAIL, NICK, SOCIAL_PROVIDER,
+		CREATE_DT)
+		VALUES (#{email}, #{nick}, #{socialProvider}, SYSTIMESTAMP)
+	</insert>
+
+	<select id="findByEmail" parameterType="string"
+		resultType="com.smhrd.model.MemberDTO">
+		SELECT * FROM TB_USER WHERE EMAIL = #{email}
+	</select>
+
+	<insert id="insertSocialMember2"
+		parameterType="com.smhrd.model.MemberDTO">
+		INSERT INTO TB_USER (EMAIL, NAME, NICK, PW,
+		SOCIAL_PROVIDER,
+		SOCIAL_LINKED_EMAIL)
+		VALUES (#{email}, #{name},
+		#{nick}, #{pw}, #{socialProvider},
+		#{socialLinkedEmail})
+	</insert>
+
+	<update id="updateSocialLink"
+		parameterType="com.smhrd.model.MemberDTO">
+		UPDATE TB_USER
+		SET SOCIAL_LINKED_EMAIL =
+		#{socialLinkedEmail}, SOCIAL_PROVIDER =
+		#{socialProvider}
+		WHERE EMAIL =
+		#{email}
+	</update>
+
+	<select id="findEmailByNameAndPhone"
+		parameterType="com.smhrd.model.MemberDTO" resultType="String">
+		SELECT EMAIL
+		FROM TB_USER
+		WHERE NAME = #{name}
+		AND PHONE = #{phone}
+		ORDER BY CREATE_DT DESC
+
+
+	</select>
+	<!-- 이메일로 비밀번호 찾기 -->
+	<select id="findPasswordByEmail" parameterType="String"
+		resultType="String">
+		SELECT PW FROM TB_USER WHERE EMAIL = #{email}
+	</select>
+
+
+
+
+
 
 
 

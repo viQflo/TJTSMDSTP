@@ -11,13 +11,13 @@ import javax.servlet.http.HttpServletResponse;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.smhrd.model.MemberDAO;
 import com.smhrd.model.MemberDTO;
-import com.smhrd.util.HttpUtil;
+import com.smhrd.util.NaverLoginUtil;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
-@WebServlet("/api/kakao/callback")
-public class KakaoLoginController extends HttpServlet {
+@WebServlet("/api/naver/callback")
+public class NaverLoginController extends HttpServlet {
 
     private final MemberDAO memberDAO = new MemberDAO();
     private static final String SECRET_KEY = "mySecretKey";
@@ -26,56 +26,51 @@ public class KakaoLoginController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        response.setContentType("text/html;charset=UTF-8");
+        System.out.println("🔵 [NaverLoginController] 네이버 로그인 요청 시작!");
 
         String authCode = request.getParameter("code");
-        if (authCode == null) {
+        String state = request.getParameter("state");
+
+        if (authCode == null || state == null) {
+            System.out.println("❌ [NaverLoginController] 인증 코드 또는 state 값 없음!");
             response.sendRedirect("/TJTSMDS/login.html?error=auth_code_missing");
             return;
         }
 
-        JsonNode tokenResponse = HttpUtil.getKakaoAccessToken(authCode);
-        if (tokenResponse == null || tokenResponse.get("access_token") == null) {
+        JsonNode tokenResponse = NaverLoginUtil.getNaverAccessToken(authCode, state);
+        if (tokenResponse == null || !tokenResponse.has("access_token")) {
+            System.out.println("❌ [NaverLoginController] Access Token 요청 실패!");
             response.sendRedirect("/TJTSMDS/login.html?error=token_failed");
             return;
         }
 
         String accessToken = tokenResponse.get("access_token").asText();
-        JsonNode userInfo = HttpUtil.getKakaoUserInfo(accessToken);
-        if (userInfo == null) {
+        JsonNode userInfo = NaverLoginUtil.getNaverUserInfo(accessToken);
+        if (userInfo == null || !userInfo.has("response")) {
+            System.out.println("❌ [NaverLoginController] 사용자 정보 요청 실패!");
             response.sendRedirect("/TJTSMDS/login.html?error=user_info_failed");
             return;
         }
 
-        JsonNode kakaoAccount = userInfo.get("kakao_account");
-        String socialEmail = (kakaoAccount != null && kakaoAccount.has("email")) ? kakaoAccount.get("email").asText() : null;
-        String nickname = userInfo.has("properties") && userInfo.get("properties").has("nickname") ? userInfo.get("properties").get("nickname").asText() : null;
+        JsonNode responseNode = userInfo.get("response");
+        String naverEmail = responseNode.get("email").asText();
+        String name = responseNode.get("name").asText();
 
-        long randomValue = System.currentTimeMillis();
-        if (socialEmail == null) {
-            socialEmail = "kakao_" + randomValue + "@kakao.com";
-        }
-        if (nickname == null) {
-            nickname = "KAKAOUSER_" + randomValue;
-        }
+        System.out.println("✅ [NaverLoginController] 사용자 이메일: " + naverEmail);
 
-        String name = "KAKAOUSER";
-
-        MemberDTO member = memberDAO.findBySocialEmail(socialEmail);
-
+        MemberDTO member = memberDAO.findByEmail(naverEmail);
         if (member == null) {
             member = new MemberDTO();
-            member.setEmail(socialEmail);
+            member.setEmail(naverEmail);
             member.setName(name);
-            member.setNick(nickname);
-            member.setSocialProvider("kakao");
-            member.setPw("SOCIAL_" + randomValue);
-
-            try {
-                memberDAO.insertSocialMember(member);
-            } catch (Exception e) {
-                member = memberDAO.findBySocialEmail(socialEmail);
-            }
+            member.setNick(name);
+            member.setSocialProvider("naver");
+            member.setPw("SOCIAL_" + System.currentTimeMillis());
+            memberDAO.insertSocialMember(member);
+        } else {
+            member.setSocialLinkedEmail(naverEmail);
+            member.setSocialProvider("naver");
+            memberDAO.updateSocialLink(member);
         }
 
         String jwtToken = Jwts.builder()
@@ -85,7 +80,8 @@ public class KakaoLoginController extends HttpServlet {
                 .signWith(SignatureAlgorithm.HS256, SECRET_KEY)
                 .compact();
 
-        // ✅ `Main.html`의 절대 경로로 이동하도록 수정
+        System.out.println("✅ [NaverLoginController] JWT 생성 완료!");
+
         response.setContentType("text/html; charset=UTF-8");
         response.getWriter().write(
                 "<html><head>" +
