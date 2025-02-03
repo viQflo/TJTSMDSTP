@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function() {
 					navbar.innerHTML = `
                         <button class="nav-button" data-path="voucher.jsp">바우처 정보</button>
                         <button class="nav-button" data-path="counsel.html">상담 연결서비스</button>
-                        <button class="nav-button" data-path="Board.html">커뮤니티</button>
+                        <button class="nav-button" data-path="boardlist.jsp">커뮤니티</button>
                         <button class="nav-button" data-path="mypage.jsp">마이페이지</button>
                         <button class="nav-button" id="logout-button">로그아웃</button>
                     `;
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function() {
 					navbar.innerHTML = `
                         <button class="nav-button" data-path="voucher.jsp">바우처 정보</button>
                         <button class="nav-button" data-path="counsel.html">상담 연결서비스</button>
-                        <button class="nav-button" data-path="Board.html">커뮤니티</button>
+                        <button class="nav-button" data-path="boardlist.jsp">커뮤니티</button>
                         <button class="nav-button" data-path="login.html">로그인</button>
                     `;
 				}
@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function() {
 				navbar.innerHTML = `
                     <button class="nav-button" data-path="voucher.jsp">바우처 정보</button>
                     <button class="nav-button" data-path="counsel.html">상담 연결서비스</button>
-                    <button class="nav-button" data-path="Board.html">커뮤니티</button>
+                    <button class="nav-button" data-path="boardlist.jsp">커뮤니티</button>
                     <button class="nav-button" data-path="login.html">로그인</button>
                 `;
 			});
@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		navbar.innerHTML = `
             <button class="nav-button" data-path="voucher.jsp">바우처 정보</button>
             <button class="nav-button" data-path="counsel.html">상담 연결서비스</button>
-            <button class="nav-button" data-path="Board.html">커뮤니티</button>
+            <button class="nav-button" data-path="boardlist.jsp">커뮤니티</button>
             <button class="nav-button" data-path="login.html">로그인</button>
         `;
 	}

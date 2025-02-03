@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 document.getElementById("google-login").addEventListener("click", function() {
 	window.location.href = "https://accounts.google.com/o/oauth2/auth?client_id=YOUR_GOOGLE_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=email profile";
 });
@@ -45,7 +45,6 @@ document.addEventListener("DOMContentLoaded", function() {
 document.getElementById("naver-login").addEventListener("click", function() {
 	window.location.href = "https://nid.naver.com/oauth2.0/authorize?client_id=YOUR_NAVER_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&state=RANDOM_STATE";
 });
-=======
 
 /*document.getElementById("google-login").addEventListener("click", function() {
 
@@ -69,10 +68,6 @@ document.getElementById("naver-login").addEventListener("click", function() {
 
 });
 */
-
-
->>>>>>> branch 'master' of https://github.com/viQflo/TJTSMDSTP.git
-
 
 document.addEventListener("DOMContentLoaded", function() {
 

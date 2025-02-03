@@ -14,4 +14,6 @@
 		<filter-name>CORSFilter</filter-name>
 		<url-pattern>/*</url-pattern> <!-- 모든 요청에 대해 적용 -->
 	</filter-mapping>
+	
+
 </web-app>
