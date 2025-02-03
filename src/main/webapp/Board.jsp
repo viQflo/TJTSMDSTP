@@ -24,7 +24,7 @@
          <img src="./videos/메인 로고.png" alt="Logo" class="logo-img">
          <div>
             <p class="logo-text">누구나</p>
-            <p class="sub-text">Look+na</p>
+            <p class="sub-text">&nbsp;Look+我(나)</p>
          </div>
       </div>
       <div class="nav-links"></div>
