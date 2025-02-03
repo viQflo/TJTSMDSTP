@@ -1,22 +1,12 @@
 
-<<<<<<< HEAD
-document.getElementById("google-login").addEventListener("click", function() {
-   window.location.href = "https://accounts.google.com/o/oauth2/auth?client_id=YOUR_GOOGLE_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=email profile";
-});
-=======
 
->>>>>>> branch 'master' of https://github.com/viQflo/TJTSMDSTP
 
 document.getElementById("google-login").addEventListener("click", function() {
-<<<<<<< HEAD
-   window.location.href = "https://accounts.google.com/o/oauth2/auth?client_id=YOUR_GOOGLE_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=email profile";
-=======
     const GOOGLE_CLIENT_ID = "74295089266-1kqp4bt7r1u1d4t04eiuc3k5d07cammr.apps.googleusercontent.com";
     const REDIRECT_URI = "http://localhost:8081/TJTSMDS/api/google/callback";
 
     const googleAuthUrl = `https://accounts.google.com/o/oauth2/auth?client_id=${GOOGLE_CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=code&scope=email profile`;
     window.location.href = googleAuthUrl;
->>>>>>> branch 'master' of https://github.com/viQflo/TJTSMDSTP
 });
 
 // ✅ 로그인 상태 확인 (JWT 유지)
@@ -79,9 +69,6 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 document.getElementById("naver-login").addEventListener("click", function() {
-<<<<<<< HEAD
-   window.location.href = "https://nid.naver.com/oauth2.0/authorize?client_id=YOUR_NAVER_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&state=RANDOM_STATE";
-=======
     const NAVER_CLIENT_ID = "Eicmp9EZTakx68iOqOQQ";
     const REDIRECT_URI = "http://localhost:8081/TJTSMDS/api/naver/callback";
     const STATE = "RANDOM_STATE";  // CSRF 공격 방지를 위한 상태 값
@@ -89,11 +76,8 @@ document.getElementById("naver-login").addEventListener("click", function() {
     const naverAuthUrl = `https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=${NAVER_CLIENT_ID}&redirect_uri=${REDIRECT_URI}&state=${STATE}`;
     
     window.location.href = naverAuthUrl;
->>>>>>> branch 'master' of https://github.com/viQflo/TJTSMDSTP
 });
 
-<<<<<<< HEAD
-=======
 // ✅ 로그인 상태 확인 (JWT 유지)
 function checkLoginStatus() {
     const token = localStorage.getItem("authToken");
@@ -116,7 +100,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
->>>>>>> branch 'master' of https://github.com/viQflo/TJTSMDSTP
 
 /*document.getElementById("google-login").addEventListener("click", function() {
 
