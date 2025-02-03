@@ -230,11 +230,7 @@ body {
     background-color: #357ABD;
     transform: scale(1.1);
 }
-.counsel1234 {
-    opacity: 0;
-    background: linear-gradient(to right, #ffe4e1, #ffdab9, #add8e6);
-    
-}
+
 
 .counsel123 {
     display: flex;
@@ -244,7 +240,7 @@ body {
     padding: 50px;
     max-width: 1100px;
     margin: auto;
-    opacity: 0;
+    
     
 }
 
