@@ -121,4 +121,7 @@ public class MemberDAO {
             return session.selectOne("com.smhrd.model.MemberDAO.findPasswordByEmail", email);
         }
     }
+ 
+    
+    
 }

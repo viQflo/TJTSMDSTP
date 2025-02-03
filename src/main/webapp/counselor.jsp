@@ -169,7 +169,7 @@ $(document).ready(function() {
                 success: function(response) {
                     console.log("DEBUG: SMS 전송 응답 - ", response);
                     
-                    if (response.status === "success") {
+                    if (response.status === "success") {	
                         alert(response.message); // ✅ 정상적인 메시지 출력
                     } else {
                         alert("오류 발생: " + response.message);

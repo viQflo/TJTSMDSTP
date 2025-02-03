@@ -132,3 +132,12 @@ th, td {
     background-color: green;
     color: white;
 }
+
+.counsel-section {
+            text-align: center;
+            margin: 0 auto;
+            width: 50%;
+        }
+        .counsel-section h3 {
+            text-align: center;
+        }

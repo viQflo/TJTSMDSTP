@@ -14,6 +14,31 @@ public class MemberDTO {
     private String socialLinkedEmail;
     private String socialProvider;
     
+    private String requestDate;
+    private String counselorName;
+    private String status;
+    
+    public MemberDTO(String requestDate, String counselorName) {
+        this.requestDate = requestDate;
+        this.counselorName = counselorName;
+    }
+    
+    public String getRequestDate() {
+        return requestDate;
+    }
+
+    public void setRequestDate(String requestDate) {
+        this.requestDate = requestDate;
+    }
+
+    public String getCounselorName() {
+        return counselorName;
+    }
+
+    public void setCounselorName(String counselorName) {
+        this.counselorName = counselorName;
+    }
+    
 
     @JsonProperty("user_type") // 클라이언트 JSON의 user_type 필드와 매핑
     private String userType;
