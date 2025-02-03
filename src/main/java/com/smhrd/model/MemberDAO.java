@@ -1,5 +1,7 @@
 package com.smhrd.model;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import com.smhrd.database.SqlSessionManager;
@@ -98,5 +100,25 @@ public class MemberDAO {
     public int updateSocialLink(MemberDTO member) {
     	SqlSession session = sqlSessionFactory.openSession(true);
         return session.update("com.smhrd.model.MemberDAO.updateSocialLink", member);
+    }
+    
+    public String findEmailByNameAndPhone(String name, String phone) {
+        try (SqlSession session = sqlSessionFactory.openSession(true)) {
+            MemberDTO param = new MemberDTO();
+            param.setName(name);
+            param.setPhone(phone);
+            List<String> emails = session.selectList("com.smhrd.model.MemberDAO.findEmailByNameAndPhone", param);
+
+            if (emails != null && !emails.isEmpty()) {
+                return emails.get(0); // 첫 번째 결과만 반환
+            }
+            return null; // 없으면 null 반환
+        }
+    }
+ // 이메일로 비밀번호 찾기
+    public String findPasswordByEmail(String email) {
+        try (SqlSession session = sqlSessionFactory.openSession()) {
+            return session.selectOne("com.smhrd.model.MemberDAO.findPasswordByEmail", email);
+        }
     }
 }

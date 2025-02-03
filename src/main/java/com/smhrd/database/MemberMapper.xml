@@ -179,6 +179,20 @@
 		#{socialProvider}
 		WHERE EMAIL = #{email}
 	</update>
+	
+	<select id="findEmailByNameAndPhone" parameterType="com.smhrd.model.MemberDTO" resultType="String">
+    SELECT EMAIL 
+    FROM TB_USER 
+    WHERE NAME = #{name} 
+    AND PHONE = #{phone} 
+    ORDER BY CREATE_DT DESC
+    
+    
+</select>
+<!-- 이메일로 비밀번호 찾기 -->
+    <select id="findPasswordByEmail" parameterType="String" resultType="String">
+        SELECT PW FROM TB_USER WHERE EMAIL = #{email}
+    </select>
 
 
 
