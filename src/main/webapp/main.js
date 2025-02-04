@@ -1,9 +1,10 @@
-document.addEventListener("DOMContentLoaded", function() {
-	const navbar = document.querySelector(".nav-links");
-	const darkModeToggle = document.getElementById("dark-mode-toggle");
-	const homeButton = document.getElementById("homeButton");
-	const signupButton = document.getElementById("signupButton");
-	const loginButton = document.getElementById("loginButton");
+document.addEventListener("DOMContentLoaded", function () {
+    const navbar = document.querySelector(".nav-links");
+    const darkModeToggle = document.getElementById("dark-button");
+    const homeButton = document.getElementById("homeButton");
+    const signupButton = document.getElementById("signupButton");
+    const loginButton = document.getElementById("loginButton");
+
 
 	// ✅ homeButton이 존재할 때만 이벤트 리스너 추가
 	if (homeButton) {
