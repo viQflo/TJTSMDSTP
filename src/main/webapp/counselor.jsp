@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" import="java.util.*, com.smhrd.model.CounselorDAO, com.smhrd.model.CounselorDTO"%>
+<%@ page import="java.util.ArrayList, java.util.Random" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -98,14 +99,16 @@ $(document).ready(function() {
             if (data && data.length > 0) {
                 data.forEach(function(counselor) {
                     let randomRating = (Math.random() * (4.9 - 4.1) + 4.1).toFixed(1);
-
+					                  
+                    
+                    
                     var counselorCard = $('<div class="counselor-card">')
-                        .append('<img src="https://example.com/sample-image.jpg" alt="image">')
+                        .append('<img src="./videos/일러스트.png" alt="image">')
                         .append('<h3>' + counselor.name + '</h3>')
                         .append('<p>' + counselor.csCharge + '</p>')  
                         .append('<p class="rating">⭐ ' + randomRating + '</p>') 
                         .append('<button class="book-btn">예약</button>');
-
+                    
                     // ✅ 예약 버튼 이벤트 추가
                     counselorCard.find(".book-btn").click(function() {
                         console.log("DEBUG: 예약 버튼 클릭됨 - 상담사:", counselor.name, "분야:", counselor.csCharge);
