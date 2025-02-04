@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const navbar = document.querySelector(".nav-links");
-    const darkModeToggle = document.getElementById("dark-mode-toggle");
+    const darkModeToggle = document.getElementById("dark-button");
     const homeButton = document.getElementById("homeButton");
     const signupButton = document.getElementById("signupButton");
     const loginButton = document.getElementById("loginButton");

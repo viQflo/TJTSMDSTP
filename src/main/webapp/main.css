@@ -334,11 +334,11 @@ body {
 	}
 }
 
-/* ✅ 챗봇 아이콘 - 좌하단 고정 */
+/* ✅ 챗봇 아이콘 - 우하단 고정(02.04 so.수정) */
 #chatbot-icon {
 	position: fixed;
-	bottom: 80px;
-	left: 20px;
+	bottom: 180px;
+	right: 20px;
 	width: 60px;
 	height: 60px;
 	background-color: #ffffff;
@@ -358,8 +358,8 @@ body {
 /* ✅ 챗봇 모달창 */
 #chatbot-modal {
 	position: fixed;
-	bottom: 160px;
-	left: 20px;
+	bottom: 250px;
+	right: 20px;
 	width: 300px;
 	background: white;
 	border-radius: 10px;
@@ -371,7 +371,7 @@ body {
 
 /* ✅ 챗봇 헤더 */
 #chatbot-header {
-	background: #007bff;
+	background: #6dc395;
 	color: white;
 	padding: 10px;
 	display: flex;
@@ -407,7 +407,7 @@ body {
 }
 
 .user-message {
-	background: #007bff;
+	background: #6dc395;
 	color: white;
 	align-self: flex-end;
 }
@@ -431,43 +431,83 @@ body {
 }
 
 #chatbot-send {
-	background: #007bff;
+	background: #6dc395;
 	color: white;
 	border: none;
 	padding: 5px 10px;
 
 }
+/*다크 모드*/
+#dark-button {
+  position: relative;
+  overflow: hidden;
+  height: 3rem;
+  padding: 0 2rem;
+  border-radius: 1.5rem;
+  background: #3d3a4e;
+  background-size: 400%;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+#dark-button:hover::before {
+  transform: scaleX(1);
+}
+
+.dark-button1 {
+  position: center;
+  z-index: 1;
+  text-align: left; /* ✅ 텍스트 왼쪽 정렬 */
+  margin-left: 1px; /* ✅ 글자를 좀 더 왼쪽으로 이동 */
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+#dark-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  width: 100%;
+  height: inherit;
+  border-radius: inherit;
+  background: linear-gradient(
+    82.3deg,
+    rgba(150, 93, 233, 1) 10.8%,
+    rgba(99, 88, 238, 1) 94.3%
+  );
+  transition: all 0.475s;
+}
+
 
 /* ✅ 다크 모드 토글 버튼 (톱니바퀴) */
-#dark-mode-toggle {
+#dark-button {
 	position: fixed;
-	bottom: 80px;
-	/* 푸터 바로 위 */
-	right: 20px;
-	/* 우측 하단 */
-	width: 60px;
-	height: 60px;
-	background: none;
-	border: none;
-	cursor: pointer;
-	padding: 0;
+	bottom: 110px;	 
+	right: 20px;	 
+	width: 40px;
+	height: 40px;
+
 }
 
 /* ✅ 톱니바퀴 이미지 */
-#dark-mode-toggle img {
+/*#dark-mode-toggle img {
 	width: 100%;
 	height: 100%;
 	object-fit: contain;
 	transition: transform 0.3s ease-in-out;
-}
+}*/
 
 /* ✅ 마우스 오버 시 무한 회전 애니메이션 */
-#dark-mode-toggle:hover img {
+/*#dark-mode-toggle:hover img {
 	animation: spin 1s linear infinite;
-}
+}*/
 
 /* ✅ 무한 회전 애니메이션 정의 */
-@keyframes spin {
+/*@keyframes spin {
 	from {
 		transform: rotate(0deg);
 	}
@@ -475,7 +515,7 @@ body {
 	to {
 		transform: rotate(360deg);
 	}
-}
+}*/
 
 /* ✅ 다크 모드 전역 스타일 */
 body.dark-mode {
@@ -565,6 +605,7 @@ body.dark-mode .description1 {
 	color: #bbb;
 }
 
+
 /* ✅ 버튼 */
 body.dark-mode .btn-1,
 body.dark-mode .btn-2 {
@@ -576,6 +617,14 @@ body.dark-mode .btn-2 {
 body.dark-mode .btn-1:hover,
 body.dark-mode .btn-2:hover {
 	background-color: #444;
+}
+body.dark-mode .portal_button {
+	background-color: #333;
+	color: #e0e0e0;
+	border: 1px solid #444;
+}
+body.dark-mode .portal_button:hover {
+background-color: #444;
 }
 
 /* ✅ 챗봇 */
@@ -617,6 +666,28 @@ body.dark-mode .footer {
 body.dark-mode .footer a {
 	color: #4a90e2;
 }
+body.dark-mode .wonderland,
+body.dark-mode .introduce {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
+
+body.dark-mode .grand_title,
+body.dark-mode .cozy_text,
+body.dark-mode .happy_motto {
+    color: #e0e0e0;
+}
+
+body.dark-mode .zoom_card {
+    background-color: #222;
+    color: #e0e0e0;
+}
+
+body.dark-mode .card_content h2,
+body.dark-mode .card_content p {
+    color: #e0e0e0;
+}
+
 
 /* 섹션 스타일 */
 .facilities-section {
@@ -738,7 +809,7 @@ body.dark-mode .footer a {
 /* 섹션 스타일 */
 .wonderland {
 	padding: 50px 20px;
-	background-color: white !important;
+	background-color: white;
 }
 
 .text_bubble {
