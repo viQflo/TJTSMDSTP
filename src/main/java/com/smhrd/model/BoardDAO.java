@@ -81,4 +81,46 @@ public class BoardDAO {
         }
     }
     
+    public BoardDTO getPostById(int postIdx) {
+        BoardDTO post = null;
+        SqlSession session = sqlSessionFactory.openSession(true);
+        try {
+            post = session.selectOne("com.smhrd.model.BoardDAO.getPostById", postIdx);
+        } finally {
+            session.close();
+        }
+        System.out.println(post);
+        System.out.println("여기냐");
+        return post;
+    }
+    
+ // ✅ 조회수 1 증가
+    public void incrementViewCount(int postIdx) {
+        try (SqlSession session = sqlSessionFactory.openSession(true)) {
+            session.update("com.smhrd.model.BoardDAO.incrementViewCount", postIdx);
+        }
+    }
+
+    // ✅ 좋아요 1 증가
+    public void incrementLikeCount(int postIdx) {
+        try (SqlSession session = sqlSessionFactory.openSession(true)) {
+            session.update("com.smhrd.model.BoardDAO.incrementLikeCount", postIdx);
+        }
+    }
+
+    // ✅ 이전 게시글 번호 가져오기
+    public Integer getPreviousPostIdx(int postIdx) {
+        try (SqlSession session = sqlSessionFactory.openSession(true)) {
+            return session.selectOne("com.smhrd.model.BoardDAO.getPreviousPostIdx", postIdx);
+        }
+    }
+
+    // ✅ 다음 게시글 번호 가져오기
+    public Integer getNextPostIdx(int postIdx) {
+        try (SqlSession session = sqlSessionFactory.openSession(true)) {
+            return session.selectOne("com.smhrd.model.BoardDAO.getNextPostIdx", postIdx);
+        }
+    }
+    
+    
 }
