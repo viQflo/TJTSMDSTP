@@ -134,3 +134,54 @@ button:hover {
         align-items: flex-start;
     }
 }
+
+#write-post-button {
+    display: block;
+    margin-top: 50px;  /* ✅ 글쓰기 버튼과 페이지네이션 사이 간격 */
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#write-post-button:hover {
+    background-color: #0056b3;
+    
+}
+
+/* 페이지네이션 버튼 스타일 */
+#pagination-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;  /* 버튼 간격 */
+    margin-top: 20px;  /* 글쓰기 버튼과 거리 */
+}
+
+.page-button {
+    display: inline-block;
+    padding: 8px 14px;
+    font-size: 14px;
+    color: #007bff;
+    background-color: #f8f9fa;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.page-button:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.page-button.active {
+    background-color: #0056b3;
+    color: white;
+    font-weight: bold;
+    border-color: #0056b3;
+}

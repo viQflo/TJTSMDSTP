@@ -1,66 +1,108 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.smhrd.model.BoardDAO">
-    <!-- 게시글 삽입 SQL 구문 (insertPost)
-       parameterType은 BoardDTO (패키지: com.smhrd.dto.BoardDTO)를 지정합니다. -->
-  <insert id="insertPost" parameterType="com.smhrd.model.BoardDTO">
-    INSERT INTO TB_POST (
-      POST_IDX,
-      POST_TITLE,
-      POST_CONTENT,
-      POST_FILE,
-      POST_VIEWS,
-      POST_LIKES,
-      EMAIL
-    )
-    VALUES (
-      TB_POST_SEQ.NEXTVAL, 
-        #{postTitle}, 
-        #{postContent}, 
-        #{postFile}, 
-        #{postViews}, 
-        #{postLikes},
-        #{email}
-    )
-  </insert>
-  
-  <!-- 게시글 조회 시 결과를 BoardDTO에 매핑 -->
-    <resultMap id="postResultMap" type="com.smhrd.model.BoardDTO">
-        <id property="postIdx" column="POST_IDX"/>
-        <result property="postTitle" column="POST_TITLE"/>
-        <result property="postContent" column="POST_CONTENT"/>
-        <result property="postFile" column="POST_FILE"/>
-        <result property="postViews" column="POST_VIEWS"/>
-        <result property="postLikes" column="POST_LIKES"/>
-        <result property="email" column="EMAIL"/>
-    </resultMap>
+	<!-- 게시글 삽입 SQL 구문 (insertPost) parameterType은 BoardDTO (패키지: com.smhrd.dto.BoardDTO)를 
+		지정합니다. -->
+	<insert id="insertPost" parameterType="com.smhrd.model.BoardDTO">
+		INSERT INTO TB_POST (
+		POST_IDX,
+		POST_TITLE,
+		POST_CONTENT,
+		POST_FILE,
+		POST_VIEWS,
+		POST_LIKES,
+		EMAIL
+		)
+		VALUES (
+		TB_POST_SEQ.NEXTVAL,
+		#{postTitle},
+		#{postContent},
+		#{postFile},
+		#{postViews},
+		#{postLikes},
+		#{email}
+		)
+	</insert>
 
-    <!-- 전체 게시글 조회 쿼리 -->
-    <select id="getAllPosts" resultMap="postResultMap">
-        SELECT POST_IDX, POST_TITLE, POST_CONTENT, POST_FILE, POST_VIEWS, POST_LIKES, EMAIL
-        FROM TB_POST
-        ORDER BY POST_IDX DESC
-    </select>
-    
-    <!-- 게시글 전체 개수 가져오기 -->
-    <select id="getTotalPostCount" resultType="int">
-        SELECT COUNT(*) FROM TB_POST
-    </select>
+	<!-- 게시글 조회 시 결과를 BoardDTO에 매핑 -->
+	<resultMap id="postResultMap" type="com.smhrd.model.BoardDTO">
+		<id property="postIdx" column="POST_IDX" />
+		<result property="postTitle" column="POST_TITLE" />
+		<result property="postContent" column="POST_CONTENT" />
+		<result property="postFile" column="POST_FILE" />
+		<result property="postViews" column="POST_VIEWS" />
+		<result property="postLikes" column="POST_LIKES" />
+		<result property="email" column="EMAIL" />
+	</resultMap>
 
-    <!-- Oracle 12c 이상에서 OFFSET, FETCH 사용 가능 -->
-    <select id="getPostsByPage" resultMap="postResultMap">
-        SELECT * FROM (
-            SELECT 
-                POST_IDX, 
-                POST_TITLE, 
-                POST_CONTENT, 
-                POST_FILE, 
-                POST_VIEWS, 
-                POST_LIKES, 
-                EMAIL,
-                ROW_NUMBER() OVER (ORDER BY POST_IDX DESC) AS RN
-            FROM TB_POST
-        )
-        WHERE RN BETWEEN #{startRow} AND #{endRow}
-    </select>
- </mapper>
+	<!-- 전체 게시글 조회 쿼리 -->
+	<select id="getAllPosts" resultMap="postResultMap">
+		SELECT POST_IDX, POST_TITLE,
+		POST_CONTENT, POST_FILE, POST_VIEWS,
+		POST_LIKES, EMAIL
+		FROM TB_POST
+		ORDER BY POST_IDX DESC
+	</select>
+
+	<!-- 게시글 전체 개수 가져오기 -->
+	<select id="getTotalPostCount" resultType="int">
+		SELECT COUNT(*) FROM
+		TB_POST
+	</select>
+
+	<!-- Oracle 12c 이상에서 OFFSET, FETCH 사용 가능 -->
+	<select id="getPostsByPage" resultMap="postResultMap">
+		SELECT * FROM (
+		SELECT
+		POST_IDX,
+		POST_TITLE,
+		POST_CONTENT,
+		POST_FILE,
+		POST_VIEWS,
+		POST_LIKES,
+		EMAIL,
+		ROW_NUMBER() OVER (ORDER BY POST_IDX DESC) AS RN
+		FROM TB_POST
+		)
+		WHERE RN BETWEEN #{startRow} AND #{endRow}
+	</select>
+	<select id="getPostById" parameterType="map"
+		resultMap="postResultMap">
+		SELECT POST_IDX,
+		POST_TITLE,
+		POST_CONTENT,
+		POST_FILE,
+		POST_VIEWS,
+		POST_LIKES,
+		EMAIL FROM TB_POST WHERE POST_IDX = #{postIdx}
+	</select>
+	<update id="incrementViewCount">
+		UPDATE TB_POST
+		SET POST_VIEWS = POST_VIEWS + 1
+		WHERE
+		POST_IDX = #{postIdx}
+	</update>
+
+	<!-- 좋아요 증가 -->
+	<update id="incrementLikeCount">
+		UPDATE TB_POST
+		SET POST_LIKES = POST_LIKES + 1
+		WHERE
+		POST_IDX = #{postIdx}
+	</update>
+
+	<select id="getPreviousPostIdx" resultType="int">
+		SELECT NVL(MAX(POST_IDX), -1)
+		FROM TB_POST
+		WHERE POST_IDX &lt; #{postIdx}
+	</select>
+
+	<!-- 다음 게시글 번호 (다음 게시글이 없으면 -1 반환) -->
+	<select id="getNextPostIdx" resultType="int">
+		SELECT NVL(MIN(POST_IDX), -1)
+		FROM TB_POST
+		WHERE POST_IDX &gt; #{postIdx}
+	</select>
+	
+	
+</mapper>
