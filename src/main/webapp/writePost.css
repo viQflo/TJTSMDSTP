@@ -1,0 +1,75 @@
+/* writePost.css */
+
+/* 전체 컨테이너: 화면 중앙 정렬 및 배경 설정 */
+#write-post-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f7f7f7;
+}
+
+/* 폼 스타일: 중앙에 위치하는 카드 형태 */
+.write-post-form {
+  width: 100%;
+  max-width: 500px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 공통 여백 클래스 */
+.mb-4 {
+  margin-bottom: 1rem;
+}
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+/* 라벨 스타일 */
+.label {
+  display: block;
+  color: #4a5568;
+  font-size: 0.875rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+/* 입력 필드 스타일 */
+.input-text,
+.textarea,
+.input-file {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #cbd5e0;
+  border-radius: 0.25rem;
+  color: #4a5568;
+}
+
+/* 버튼 컨테이너: 좌우 배치 */
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 버튼 기본 스타일 */
+.button {
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+/* 버튼 색상 변형 */
+.button-primary {
+  background: #4299e1;
+  color: #fff;
+}
+
+.button-secondary {
+  background: #a0aec0;
+  color: #fff;
+}

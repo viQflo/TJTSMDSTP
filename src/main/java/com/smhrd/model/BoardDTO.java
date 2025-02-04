@@ -1,30 +1,29 @@
 package com.smhrd.model;
 
-import java.sql.Timestamp;
-
 public class BoardDTO {
-    private int postIdx;
-    private String postTitle;
-    private String postContent;
-    private String postFile;
-    private Timestamp createDt;
-    private int postViews;
-    private int postLikes;
-    private String email;
+    private int postIdx;         // 글 식별자
+    private String postTitle;    // 글 제목
+    private String postContent;  // 글 내용
+    private String postFile;     // 글 첨부파일
+    private int postViews;       // 글 조회수
+    private int postLikes;       // 글 좋아요수
+    private String email;        // 글 작성자 (userEmail)
 
-    // 생성자 추가 (MyBatis 결과 매핑용)
-    public BoardDTO(int postIdx, String postTitle, String postContent, String postFile, Timestamp createDt, int postViews, int postLikes, String email) {
+    // 기본 생성자
+    public BoardDTO() {}
+
+    // 모든 필드를 초기화하는 생성자
+    public BoardDTO(int postIdx, String postTitle, String postContent, String postFile, int postViews, int postLikes, String email) {
         this.postIdx = postIdx;
         this.postTitle = postTitle;
         this.postContent = postContent;
         this.postFile = postFile;
-        this.createDt = createDt;
         this.postViews = postViews;
         this.postLikes = postLikes;
         this.email = email;
     }
 
-    // Getters and Setters
+    // Getter 및 Setter
     public int getPostIdx() {
         return postIdx;
     }
@@ -57,14 +56,6 @@ public class BoardDTO {
         this.postFile = postFile;
     }
 
-    public Timestamp getCreateDt() {
-        return createDt;
-    }
-
-    public void setCreateDt(Timestamp createDt) {
-        this.createDt = createDt;
-    }
-
     public int getPostViews() {
         return postViews;
     }
@@ -88,16 +79,19 @@ public class BoardDTO {
     public void setEmail(String email) {
         this.email = email;
     }
-    public BoardDTO(String postTitle, String postContent, String email, String postFile) {
-        this.postTitle = (postTitle != null && !postTitle.trim().isEmpty()) ? postTitle : "제목 없음";  // 기본 제목 처리
-        this.postContent = postContent;
-        this.email = email;
-        this.postFile = postFile;
-    }
-    public BoardDTO(String postTitle, String postContent, int postIdx, String postFile) {
-        this.postTitle = (postTitle != null && !postTitle.trim().isEmpty()) ? postTitle : "제목 없음";  // 기본 제목 처리
-        this.postContent = postContent;
-        this.postIdx = postIdx;
-        this.postFile = postFile;
+    
+    
+    
+    @Override
+    public String toString() {
+        return "BoardDTO{" +
+                "postIdx=" + postIdx +
+                ", postTitle='" + postTitle + '\'' +
+                ", postContent='" + postContent + '\'' +
+                ", postFile='" + postFile + '\'' +
+                ", postViews=" + postViews +
+                ", postLikes=" + postLikes +
+                ", email='" + email + '\'' +
+                '}';
     }
 }

@@ -34,7 +34,7 @@
     // 게시글 번호를 URL 파라미터에서 가져옴
     String postIdx = request.getParameter("idx");
     BoardDAO dao = new BoardDAO();
-    BoardDTO result = dao.getBoardContent(Integer.parseInt(postIdx));  // getBoardContent 메서드 호출
+    BoardDTO result = dao.getBoardContent(idx);  // getBoardContent 메서드 호출
 
     if (result == null) {  // result가 null일 경우 처리
 %>
