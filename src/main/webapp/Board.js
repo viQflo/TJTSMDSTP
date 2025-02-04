@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			alert('로그인이 필요한 서비스입니다.');
 			window.location.href = '/TJTSMDS/login.html';
 		} else {
-			window.location.href = '/dopost.html';
+			window.location.href = '/TJTSMDS/DoPost.jsp';
 		}
 	};
 
